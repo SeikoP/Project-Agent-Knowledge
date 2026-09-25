@@ -65,6 +65,10 @@ Lưu ý mở rộng: bất kỳ câu nào ở cuối slide có chức năng tóm
 
 3.11. Broad accessibility: khi dùng ví dụ, ưu tiên bối cảnh dễ hiểu ở nhiều độ tuổi, trừ khi chủ đề nhắm rõ vào một nhóm hẹp. Tránh thuật ngữ công việc/học thuật/niche không cần thiết.
 
+3.12. Evidence distance: mọi insight trung tâm, tension và payoff phải truy ngược được về evidence của package. Được cụ thể hóa evidence thành hành vi dễ nhận ra, nhưng không thêm động cơ, nỗi sợ, kỳ vọng, khuyết điểm hoặc hệ quả tâm lý mà evidence không hỗ trợ. Nếu một câu cần thêm một giả định mới để đúng, bỏ câu đó.
+
+3.13. Reaction over advice: khi RAW IDEA hỏi một cung phản ứng, nghĩ, để ý hoặc thay đổi thế nào trước một tình huống, lấy phản ứng đó làm chủ thể nội dung. Không tự chuyển thành hướng dẫn “nên tán/yêu/đối xử với cung này thế nào” trừ khi RAW IDEA yêu cầu advice. Advice nếu có chỉ là hệ quả phụ, không thay thế insight chính.
+
 ## 4. PROGRESSION GIỮA CÁC SLIDE
 
 4.1. Mỗi slide phải tiến (advance). Slide sau phải đào sâu, leo thang, tương phản, reveal, reframe, cho thấy hệ quả, hoặc phơi bày mặt trái.
@@ -83,11 +87,15 @@ Lưu ý mở rộng: bất kỳ câu nào ở cuối slide có chức năng tóm
 
 4.8. Sentence rhythm: pha trộn câu ngắn và dài. Tránh nhiều câu giải thích cùng cấu trúc. Không dùng thoại như cách triển khai slide.
 
-4.9. Chọn trục truyền tải trước khi viết: insight gốc không mặc định quyết định cấu trúc carousel. Trước khi viết, xác định điểm thú vị nhất của insight rồi chọn một trục giúp nó bộc lộ tốt nhất, sau đó mới triển khai các slide.
+4.9. Chọn core insight trước, trục truyền tải sau: từ RAW IDEA + evidence, xác định trước một insight trung tâm vừa trả đúng câu hỏi gốc vừa được evidence hỗ trợ. Sau đó mới chọn trục giúp insight đó bộc lộ rõ nhất. Không chọn progression, angle hoặc số slide trước rồi tìm cách lấp evidence vào cấu trúc.
 
 4.10. Xoay trục giữa các nội dung: không biến bất kỳ progression nào thành công thức mặc định. Có thể dùng độ thân thiết tăng dần; nguyên nhân → biểu hiện → cái giá; ấn tượng bên ngoài → điều kiện mở lòng → ranh giới; hành vi nhỏ → dấu hiệu rõ hơn → hệ quả; hoặc một trục khác phù hợp insight. Đây là gợi ý, không phải danh sách bắt buộc.
 
 4.11. Transmission diversity test: trong cùng batch, nếu nhiều cung có thể giữ nguyên cấu trúc và chỉ thay trait/tình huống, cần đổi trục ít nhất một số cung. Mục tiêu là khác cả insight lẫn cách người xem khám phá insight đó.
+
+4.12. Progression must be earned: không tạo slide chỉ để hoàn thành progression. Mỗi bước tiến phải thêm thông tin được evidence hỗ trợ. Nếu evidence chỉ đủ cho hai bước có ý nghĩa, dùng hai slide thay vì kéo thành ba slide bằng diễn giải, suy luận hoặc một hidden cost tự tạo.
+
+4.13. Angle is a lens, not a claim source: hidden_cost, contrast, red_flag, boundary và các editorial angle chỉ quyết định cách soi evidence, không cấp phép tạo claim mới. Nếu evidence không đủ cơ sở cho một mặt trái hoặc hệ quả, không ép angle thành một vấn đề tâm lý của cung.
 
 Progression Patterns — xoay vòng, không dùng một cấu trúc cho mọi cung:
 
@@ -110,7 +118,7 @@ Progression Patterns — xoay vòng, không dùng một cấu trúc cho mọi cu
 
 Trước khi duyệt nội dung, hỏi:
 
-A. Có hành vi, trigger, phản ứng hoặc mâu thuẫn cụ thể không? B. Có chi tiết khiến người xem nhận ra mình/người quen không? C. Có đang giải thích lại điều hành vi/hệ quả đã thể hiện không? D. Đổi tên cung khác vào có vẫn đúng gần như nguyên vẹn không? E. Slide 2 có thực sự tiến từ slide 1 không? F. Slide 3 có payoff/reframe/hệ quả/mặt trái không? G. Đảo thứ tự slide có làm yếu mạch nội dung không? H. Có câu nào nghe như AI kết luận bài không? I. Headline có được body "trả" đầy đủ không? J. Có chi tiết nào chỉ để trang trí nhưng không phục vụ ý chính không?
+A. Có hành vi, trigger, phản ứng hoặc mâu thuẫn cụ thể không? B. Có chi tiết khiến người xem nhận ra mình/người quen không? C. Có đang giải thích lại điều hành vi/hệ quả đã thể hiện không? D. Đổi tên cung khác vào có vẫn đúng gần như nguyên vẹn không? E. Slide 2 có thực sự tiến từ slide 1 không? F. Slide 3 có payoff/reframe/hệ quả/mặt trái không? G. Đảo thứ tự slide có làm yếu mạch nội dung không? H. Có câu nào nghe như AI kết luận bài không? I. Headline có được body "trả" đầy đủ không? J. Có chi tiết nào chỉ để trang trí nhưng không phục vụ ý chính không? K. Core Insight Test: trước khi review câu chữ, viết insight trung tâm thành một câu không dùng văn phong carousel. Câu đó có trả đúng RAW IDEA, được evidence hỗ trợ và đủ đáng để người xem biết không? Nếu thiếu một trong ba, quay lại chọn insight; không sửa copy.
 
 ## 7. KHOẢNG TRỐNG CHƯA QUY ĐỊNH (cần bổ sung sau nếu áp dụng)
 
