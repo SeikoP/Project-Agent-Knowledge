@@ -8,7 +8,7 @@ Canonical quality rules for reviewing and rewriting Zodiac TikTok content. Prefe
 
 ## 1. FORMAT & GIỚI HẠN
 
-1.1. Headline ≤55 ký tự; body mục tiêu mềm 285–320 ký tự khi package cho phép, không phải mức tối thiểu. OUTPUT_CONTRACT, OUTPUT_TEMPLATE hoặc SLIDE_OPTIONS của package quyết định giới hạn kỹ thuật như max_chars và max_lines cho từng block/layout; nếu hẹp hơn mốc chung thì tuân theo contract, không nhồi chữ để đạt 285. Ưu tiên cô đọng, giữ insight, tension, lý do, mâu thuẫn hoặc hệ quả quan trọng.
+1.1. Headline ≤55 ký tự. Với carousel dạng headline + body, body ưu tiên vùng 225–240 ký tự khi package cho phép; đây là vùng mục tiêu mềm, không phải mức tối thiểu. OUTPUT_CONTRACT, OUTPUT_TEMPLATE hoặc SLIDE_OPTIONS quyết định trần kỹ thuật như max_chars/max_lines cho từng block; nếu contract cho phép khoảng 242 ký tự thì vẫn ưu tiên dừng trong 225–240 và chỉ dùng phần dư khi thật sự cần. Không nhồi chữ để đủ độ dài. Ưu tiên insight, tension, hành vi hoặc chi tiết đáng nhớ.
 
 1.2. Header viết sentence case, không viết ALL CAPS. Header phải nghe tự nhiên và nói thẳng ý chính.
 
@@ -87,7 +87,7 @@ Lưu ý mở rộng: bất kỳ câu nào ở cuối slide có chức năng tóm
 
 4.7. Không phát triển POV/scene: nội dung hiện phục vụ carousel tĩnh, không phát triển luồng video. Không dựng mini-story, hội thoại hoặc POV như một format truyền tải. Mỗi slide ưu tiên insight, hành vi, tâm lý, mâu thuẫn, trigger và hệ quả. Ví dụ nếu có chỉ là chi tiết ngắn để làm rõ insight.
 
-4.8. Carousel rhythm: body ưu tiên 2–4 câu ngắn, đọc được theo từng nhịp mắt. Một câu chỉ nên mang một hành động hoặc một ý chính. Nếu một câu chứa đồng thời ví dụ + giải thích + kết luận, tách câu. Không biến body thành một đoạn văn dài chỉ vì còn dư ký tự. Pha trộn câu ngắn và vừa; tránh nhiều câu giải thích cùng cấu trúc. Không dùng thoại như cách triển khai slide.
+4.8. Carousel rhythm: mặc định dùng nhịp đọc chậm. Body ưu tiên 3–4 câu ngắn, mỗi câu tạo một điểm dừng rõ cho mắt. Một câu chỉ nên mang một hành động hoặc một ý chính. Có thể dùng câu rất ngắn để tách các chi tiết cụ thể trước khi đi đến phản ứng hoặc tension. Nếu một câu chứa đồng thời ví dụ + giải thích + kết luận, tách câu. Không gom nhiều hành động vào một câu để tiết kiệm ký tự và không biến body thành đoạn văn liên tục. Không dùng thoại như cách triển khai slide.
 
 4.8a. One memorable beat per sentence: mỗi câu nên làm một việc rõ ràng như nêu hành vi, cho phản ứng, tạo tương phản hoặc chốt tension. Không nhồi nhiều beat vào cùng một câu.
 
