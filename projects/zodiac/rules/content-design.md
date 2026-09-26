@@ -30,7 +30,7 @@ Lưu ý mở rộng: bất kỳ câu nào ở cuối slide có chức năng tóm
 
 2.4. Ưu tiên tiếng Việt tự nhiên. Từ chối các cụm nén/khái niệm nghe như AI viết dù đúng ngữ pháp. Ưu tiên cách nói một người Việt thực sự sẽ nói. Tránh các cấu trúc như "quan tâm đi kèm chỉnh sửa", "phản xạ phân tích", "cơ chế quan tâm" trừ khi cụm từ đó thực sự tự nhiên trong ngữ cảnh.
 
-2.4a. Giọng kể trực tiếp: ưu tiên cách nói thẳng, đời thường, ít giải thích. Viết như một người đang chỉ ra một hành vi vừa quan sát được, không như người đang phân tích tính cách cung hoàng đạo. Ưu tiên động từ, hành động và tình huống cụ thể hơn danh từ trừu tượng. Nếu có thể nói ngắn và tự nhiên hơn mà không mất ý, chọn bản ngắn. Không cố làm câu văn đẹp, cân đối hoặc học thuật.
+2.4a. Giọng kể trực tiếp: ưu tiên cách nói thẳng, đời thường, ít giải thích. Viết như một người đang chỉ ra một hành vi vừa quan sát được, không như người đang phân tích tính cách cung hoàng đạo. Ưu tiên động từ, hành động và tình huống cụ thể hơn danh từ trừu tượng. Nếu có thể nói ngắn và tự nhiên hơn mà không mất ý, chọn bản ngắn. Không cố làm câu văn đẹp, cân đối hoặc học thuật.\n\n2.4b. Tránh từ ngữ đo lường máy móc khi nói về cảm xúc hoặc tương tác giữa người với người. Các cụm như “cùng mức”, “mức cảm xúc”, “độ tương xứng” chỉ dùng khi thật sự tự nhiên trong câu; mặc định ưu tiên cách nói đời thường như “nhiệt tình hơn”, “hờ hững hơn”, “đáp lại có cảm xúc”, “chỉ trả lời cho xong”, hoặc mô tả trực tiếp hành vi tạo ra khoảng chênh. Nếu một cụm đúng nghĩa nhưng nghe như đang chấm điểm cảm xúc, viết lại.
 
 2.5. Headline phải mang claim/hook thật sự. Tránh headline dạng meta: "Lời đồn về…", "Thực tế…", "Góc nhìn khác…", "Sự thật về…", "Khía cạnh…".
 
