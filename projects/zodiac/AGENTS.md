@@ -11,6 +11,7 @@ Thư mục này chứa hướng dẫn riêng cho thiết kế nội dung của Z
 - Dùng KNOWLEDGE_CONTEXT và EDITORIAL_CONTEXT của package được chọn để xác định claim và evidence được phép sử dụng.
 - Dùng OUTPUT_CONTRACT, OUTPUT_TEMPLATE hoặc SLIDE_OPTIONS, CONTENT_FRAME.constraints, CONTENT_FRAME.text_layout và response_contract.exact_package_ids của package để xác định cấu trúc, block ID, thứ tự, giới hạn và phạm vi output.
 - Contract của package quyết định yêu cầu kỹ thuật khi khác với hướng dẫn độ dài chung trong rule biên tập.
+- Khi trả kết quả từ Writer Context, chỉ xuất một JSON object khớp response contract của package đang chọn. Không thêm Markdown fence, lời dẫn, ghi chú hay nội dung sau object; kiểm tra cú pháp JSON trước khi gửi.
 
 ## Khi thiếu nguồn
 
