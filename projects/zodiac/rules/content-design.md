@@ -34,7 +34,7 @@ Lưu ý mở rộng: bất kỳ câu nào ở cuối slide có chức năng tóm
 
 2.5. Headline phải mang claim/hook thật sự. Tránh headline dạng meta: "Lời đồn về…", "Thực tế…", "Góc nhìn khác…", "Sự thật về…", "Khía cạnh…".
 
-2.5a. Title là hook chính và thay vai trò headline của slide 1 về mặt biên tập. Viết title trước, sau đó viết body slide 1 để trả trực tiếp cho title; không nghĩ headline 1 trước rồi sao chép ngược thành title. Nếu OUTPUT_TEMPLATE vẫn bắt buộc block headline ở slide 1, điền chính title vào block đó chỉ để tương thích renderer/import, không tạo thêm một headline khác. Title/headline 1 phải nói thẳng insight hoặc tình huống đáng xem, ưu tiên ngôn ngữ tự nhiên và cụ thể; tránh tiêu đề chung chung chỉ nêu tên cung hoặc mô tả trait.
+2.5a. Title = headline slide 1. Viết title trước để định vị rõ nội dung người xem đang xem, sau đó dùng nguyên title làm headline slide 1 nếu OUTPUT_TEMPLATE yêu cầu block headline. Không nghĩ headline 1 trước rồi sao chép ngược thành title. Title không bắt buộc phải là hook mạnh; clarity đứng trước hook. Title/headline 1 phải nói rõ chủ đề hoặc insight chính, đủ cụ thể để người xem hiểu nội dung ngay từ slide đầu. Body slide 1 mở rộng, chứng minh hoặc cụ thể hóa title; không chỉ diễn đạt lại title bằng câu dài hơn.
 
 ## 3. TÍNH CỤ THỂ — TRÁNH CHUNG CHUNG
 
@@ -69,6 +69,8 @@ Lưu ý mở rộng: bất kỳ câu nào ở cuối slide có chức năng tóm
 
 3.13. Reaction over advice: khi RAW IDEA hỏi một cung phản ứng, nghĩ, để ý hoặc thay đổi thế nào trước một tình huống, lấy phản ứng đó làm chủ thể nội dung. Không tự chuyển thành hướng dẫn “nên tán/yêu/đối xử với cung này thế nào” trừ khi RAW IDEA yêu cầu advice. Advice nếu có chỉ là hệ quả phụ, không thay thế insight chính.
 
+3.14. RAW IDEA authority: RAW IDEA quyết định câu hỏi nội dung phải trả lời. Format, series, angle và layout chỉ quyết định cách trình bày câu trả lời; không được đổi chủ thể hoặc biến câu hỏi sang một chủ đề khác. Nếu RAW IDEA hỏi “họ phản hồi thế nào”, carousel phải mô tả phản ứng của họ; không được biến thành “người khác nên làm gì”, “điều gì là red flag” hoặc “ranh giới của họ” chỉ để khớp format.
+
 ## 4. PROGRESSION GIỮA CÁC SLIDE
 
 4.1. Mỗi slide phải tiến (advance). Slide sau phải đào sâu, leo thang, tương phản, reveal, reframe, cho thấy hệ quả, hoặc phơi bày mặt trái.
@@ -85,7 +87,9 @@ Lưu ý mở rộng: bất kỳ câu nào ở cuối slide có chức năng tóm
 
 4.7. Không phát triển POV/scene: nội dung hiện phục vụ carousel tĩnh, không phát triển luồng video. Không dựng mini-story, hội thoại hoặc POV như một format truyền tải. Mỗi slide ưu tiên insight, hành vi, tâm lý, mâu thuẫn, trigger và hệ quả. Ví dụ nếu có chỉ là chi tiết ngắn để làm rõ insight.
 
-4.8. Sentence rhythm: pha trộn câu ngắn và dài. Tránh nhiều câu giải thích cùng cấu trúc. Không dùng thoại như cách triển khai slide.
+4.8. Carousel rhythm: body ưu tiên 2–4 câu ngắn, đọc được theo từng nhịp mắt. Một câu chỉ nên mang một hành động hoặc một ý chính. Nếu một câu chứa đồng thời ví dụ + giải thích + kết luận, tách câu. Không biến body thành một đoạn văn dài chỉ vì còn dư ký tự. Pha trộn câu ngắn và vừa; tránh nhiều câu giải thích cùng cấu trúc. Không dùng thoại như cách triển khai slide.
+
+4.8a. One memorable beat per sentence: mỗi câu nên làm một việc rõ ràng như nêu hành vi, cho phản ứng, tạo tương phản hoặc chốt tension. Không nhồi nhiều beat vào cùng một câu.
 
 4.9. Chọn core insight trước, trục truyền tải sau: từ RAW IDEA + evidence, xác định trước một insight trung tâm vừa trả đúng câu hỏi gốc vừa được evidence hỗ trợ. Sau đó mới chọn trục giúp insight đó bộc lộ rõ nhất. Không chọn progression, angle hoặc số slide trước rồi tìm cách lấp evidence vào cấu trúc.
 
@@ -118,7 +122,7 @@ Progression Patterns — xoay vòng, không dùng một cấu trúc cho mọi cu
 
 Trước khi duyệt nội dung, hỏi:
 
-A. Có hành vi, trigger, phản ứng hoặc mâu thuẫn cụ thể không? B. Có chi tiết khiến người xem nhận ra mình/người quen không? C. Có đang giải thích lại điều hành vi/hệ quả đã thể hiện không? D. Đổi tên cung khác vào có vẫn đúng gần như nguyên vẹn không? E. Slide 2 có thực sự tiến từ slide 1 không? F. Slide 3 có payoff/reframe/hệ quả/mặt trái không? G. Đảo thứ tự slide có làm yếu mạch nội dung không? H. Có câu nào nghe như AI kết luận bài không? I. Headline có được body "trả" đầy đủ không? J. Có chi tiết nào chỉ để trang trí nhưng không phục vụ ý chính không? K. Core Insight Test: trước khi review câu chữ, viết insight trung tâm thành một câu không dùng văn phong carousel. Câu đó có trả đúng RAW IDEA, được evidence hỗ trợ và đủ đáng để người xem biết không? Nếu thiếu một trong ba, quay lại chọn insight; không sửa copy. L. So-what Test: sau khi đọc body, ngoài headline hoặc trait gốc, người xem vừa biết thêm điều gì? Nếu body chỉ giải thích lại cùng một trait bằng nhiều câu, coi như fail. Body phải làm insight sắc thêm bằng ít nhất một hành vi, chi tiết, distinction, tension hoặc tình huống cụ thể được evidence cho phép.
+A. Có hành vi, trigger, phản ứng hoặc mâu thuẫn cụ thể không? B. Có chi tiết khiến người xem nhận ra mình/người quen không? C. Có đang giải thích lại điều hành vi/hệ quả đã thể hiện không? D. Đổi tên cung khác vào có vẫn đúng gần như nguyên vẹn không? E. Slide 2 có thực sự tiến từ slide 1 không? F. Slide 3 có payoff/reframe/hệ quả/mặt trái không? G. Đảo thứ tự slide có làm yếu mạch nội dung không? H. Có câu nào nghe như AI kết luận bài không? I. Headline có được body "trả" đầy đủ không? J. Có chi tiết nào chỉ để trang trí nhưng không phục vụ ý chính không? K. Core Insight Test: trước khi review câu chữ, viết insight trung tâm thành một câu không dùng văn phong carousel. Câu đó có trả đúng RAW IDEA, được evidence hỗ trợ và đủ đáng để người xem biết không? Nếu thiếu một trong ba, quay lại chọn insight; không sửa copy. L. So-what Test: sau khi đọc body, ngoài headline hoặc trait gốc, người xem vừa biết thêm điều gì? Nếu body chỉ giải thích lại cùng một trait bằng nhiều câu, coi như fail. Body phải làm insight sắc thêm bằng ít nhất một hành vi, chi tiết, distinction, tension hoặc tình huống cụ thể được evidence cho phép. M. Title Identity Test: title có giúp người xem hiểu ngay carousel đang nói về điều gì không? Headline slide 1 có giống hệt title không? Body slide 1 có thêm tình huống hoặc bằng chứng cho title thay vì chỉ paraphrase lại không?
 
 ## 7. KHOẢNG TRỐNG CHƯA QUY ĐỊNH (cần bổ sung sau nếu áp dụng)
 
