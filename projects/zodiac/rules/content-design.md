@@ -53,7 +53,7 @@ Lưu ý mở rộng: bất kỳ câu nào ở cuối slide có chức năng tóm
 - Mục tiêu không phải định nghĩa một cung đầy đủ như sách giáo khoa, mà tạo ra một khoảnh khắc cụ thể người xem nhận ra được ở bản thân hoặc người quen.
 - Replaceability test (mức nâng cao của Delete Test): ngoài việc đổi tên cung, hỏi thêm liệu insight trung tâm có thể mô tả gần như bất kỳ ai mà không cần chỉnh sửa không. Nếu có, insight vẫn còn quá rộng — viết lại hành vi, trigger, hoặc hệ quả cho đến khi điểm chính đủ đặc thù để xứng đáng làm một slide.
 
-3.6. Concrete insight trước ví dụ: tính cụ thể phải đến từ một quan sát hành vi chính xác, không phải từ việc ép một giai thoại đời thường. Trước tiên xác định chính xác cung này để ý, nhớ, lặp lại, né tránh, kỳ vọng hoặc khó chịu vì điều gì; chỉ thêm ví dụ ngắn nếu nó làm insight rõ hơn.
+3.6. Concrete before abstract: từ evidence, ưu tiên tìm biểu hiện đời thường người đọc có thể hình dung ngay rồi mới rút insight. Body nên có hành vi, chi tiết hoặc tình huống cụ thể trước khi dùng khái niệm trừu tượng. Ví dụ dùng để làm trait nhìn thấy được, không dùng để thêm trait mới. Không ép thành giai thoại, POV, hội thoại hay mini-scene. Nếu body chủ yếu gồm các từ như “tín hiệu”, “cường độ”, “kết nối”, “sự tương xứng”, “nhịp”, “cảm giác được ghi nhận” mà thiếu hành vi cụ thể, viết lại.
 
 3.7. Không ép rập khuôn cung hoàng đạo: zodiac là khung sáng tạo, không phải bằng chứng đúng cho mọi người sinh dưới một cung. Giữ các claim ở mức quan sát, không mang tính tất định.
 
@@ -65,7 +65,7 @@ Lưu ý mở rộng: bất kỳ câu nào ở cuối slide có chức năng tóm
 
 3.11. Broad accessibility: khi dùng ví dụ, ưu tiên bối cảnh dễ hiểu ở nhiều độ tuổi, trừ khi chủ đề nhắm rõ vào một nhóm hẹp. Tránh thuật ngữ công việc/học thuật/niche không cần thiết.
 
-3.12. Evidence distance: mọi insight trung tâm, tension và payoff phải truy ngược được về evidence của package. Được cụ thể hóa evidence thành hành vi dễ nhận ra, nhưng không thêm động cơ, nỗi sợ, kỳ vọng, khuyết điểm hoặc hệ quả tâm lý mà evidence không hỗ trợ. Nếu một câu cần thêm một giả định mới để đúng, bỏ câu đó.
+3.12. Evidence distance: mọi insight trung tâm, tension và payoff phải truy ngược được về evidence của package. Evidence là biên của claim, không phải khuôn câu chữ: không chỉ paraphrase trait cho an toàn. Được cụ thể hóa evidence thành hành vi, tình huống, so sánh hoặc tension trực tiếp nằm trong logic của evidence, nhưng không thêm trait, động cơ, nỗi sợ, kỳ vọng, khuyết điểm hoặc hệ quả tâm lý mới. Nếu một câu cần thêm một giả định mới để đúng, bỏ câu đó.
 
 3.13. Reaction over advice: khi RAW IDEA hỏi một cung phản ứng, nghĩ, để ý hoặc thay đổi thế nào trước một tình huống, lấy phản ứng đó làm chủ thể nội dung. Không tự chuyển thành hướng dẫn “nên tán/yêu/đối xử với cung này thế nào” trừ khi RAW IDEA yêu cầu advice. Advice nếu có chỉ là hệ quả phụ, không thay thế insight chính.
 
@@ -93,7 +93,7 @@ Lưu ý mở rộng: bất kỳ câu nào ở cuối slide có chức năng tóm
 
 4.11. Transmission diversity test: trong cùng batch, nếu nhiều cung có thể giữ nguyên cấu trúc và chỉ thay trait/tình huống, cần đổi trục ít nhất một số cung. Mục tiêu là khác cả insight lẫn cách người xem khám phá insight đó.
 
-4.12. Progression must be earned: không tạo slide chỉ để hoàn thành progression. Mỗi bước tiến phải thêm thông tin được evidence hỗ trợ. Nếu evidence chỉ đủ cho hai bước có ý nghĩa, dùng hai slide thay vì kéo thành ba slide bằng diễn giải, suy luận hoặc một hidden cost tự tạo.
+4.12. Progression must be earned: không tạo slide chỉ để hoàn thành progression. Mỗi bước tiến phải thêm giá trị từ evidence. Có thể đào cùng một evidence qua các distinction khác nhau như biểu hiện → tương phản → ranh giới, miễn không sinh claim mới. Nếu chỉ còn cách lặp lại hoặc thêm suy luận để có slide tiếp theo, dừng ở số slide hiện tại.
 
 4.13. Angle is a lens, not a claim source: hidden_cost, contrast, red_flag, boundary và các editorial angle chỉ quyết định cách soi evidence, không cấp phép tạo claim mới. Nếu evidence không đủ cơ sở cho một mặt trái hoặc hệ quả, không ép angle thành một vấn đề tâm lý của cung.
 
@@ -118,7 +118,7 @@ Progression Patterns — xoay vòng, không dùng một cấu trúc cho mọi cu
 
 Trước khi duyệt nội dung, hỏi:
 
-A. Có hành vi, trigger, phản ứng hoặc mâu thuẫn cụ thể không? B. Có chi tiết khiến người xem nhận ra mình/người quen không? C. Có đang giải thích lại điều hành vi/hệ quả đã thể hiện không? D. Đổi tên cung khác vào có vẫn đúng gần như nguyên vẹn không? E. Slide 2 có thực sự tiến từ slide 1 không? F. Slide 3 có payoff/reframe/hệ quả/mặt trái không? G. Đảo thứ tự slide có làm yếu mạch nội dung không? H. Có câu nào nghe như AI kết luận bài không? I. Headline có được body "trả" đầy đủ không? J. Có chi tiết nào chỉ để trang trí nhưng không phục vụ ý chính không? K. Core Insight Test: trước khi review câu chữ, viết insight trung tâm thành một câu không dùng văn phong carousel. Câu đó có trả đúng RAW IDEA, được evidence hỗ trợ và đủ đáng để người xem biết không? Nếu thiếu một trong ba, quay lại chọn insight; không sửa copy.
+A. Có hành vi, trigger, phản ứng hoặc mâu thuẫn cụ thể không? B. Có chi tiết khiến người xem nhận ra mình/người quen không? C. Có đang giải thích lại điều hành vi/hệ quả đã thể hiện không? D. Đổi tên cung khác vào có vẫn đúng gần như nguyên vẹn không? E. Slide 2 có thực sự tiến từ slide 1 không? F. Slide 3 có payoff/reframe/hệ quả/mặt trái không? G. Đảo thứ tự slide có làm yếu mạch nội dung không? H. Có câu nào nghe như AI kết luận bài không? I. Headline có được body "trả" đầy đủ không? J. Có chi tiết nào chỉ để trang trí nhưng không phục vụ ý chính không? K. Core Insight Test: trước khi review câu chữ, viết insight trung tâm thành một câu không dùng văn phong carousel. Câu đó có trả đúng RAW IDEA, được evidence hỗ trợ và đủ đáng để người xem biết không? Nếu thiếu một trong ba, quay lại chọn insight; không sửa copy. L. So-what Test: sau khi đọc body, ngoài headline hoặc trait gốc, người xem vừa biết thêm điều gì? Nếu body chỉ giải thích lại cùng một trait bằng nhiều câu, coi như fail. Body phải làm insight sắc thêm bằng ít nhất một hành vi, chi tiết, distinction, tension hoặc tình huống cụ thể được evidence cho phép.
 
 ## 7. KHOẢNG TRỐNG CHƯA QUY ĐỊNH (cần bổ sung sau nếu áp dụng)
 
