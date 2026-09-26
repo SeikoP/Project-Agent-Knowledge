@@ -8,7 +8,7 @@ Canonical quality rules for reviewing and rewriting Zodiac TikTok content. Prefe
 
 ## 1. FORMAT & GIỚI HẠN
 
-1.1. Headline ≤55 ký tự; body mục tiêu 285–320 ký tự khi không có giới hạn riêng. Nếu package/OUTPUT_TEMPLATE quy định max_chars, max_lines hoặc độ dài khác, contract của package được ưu tiên. Không nhồi chữ cho đủ độ dài; ưu tiên cô đọng, giữ insight, tension, lý do, mâu thuẫn hoặc hệ quả quan trọng.
+1.1. Headline ≤55 ký tự; body mục tiêu mềm 285–320 ký tự khi package cho phép, không phải mức tối thiểu. OUTPUT_CONTRACT, OUTPUT_TEMPLATE hoặc SLIDE_OPTIONS của package quyết định giới hạn kỹ thuật như max_chars và max_lines cho từng block/layout; nếu hẹp hơn mốc chung thì tuân theo contract, không nhồi chữ để đạt 285. Ưu tiên cô đọng, giữ insight, tension, lý do, mâu thuẫn hoặc hệ quả quan trọng.
 
 1.2. Header viết sentence case, không viết ALL CAPS. Header phải nghe tự nhiên và nói thẳng ý chính.
 
