@@ -6,12 +6,13 @@ Kho hướng dẫn cho agent, được tổ chức theo nhiều dự án. Mỗi 
 
 1. Đọc AGENTS.md ở root.
 2. Xác định dự án theo yêu cầu hiện tại và repository code đang làm việc.
-3. Đọc projects/<project-id>/AGENTS.md tương ứng và làm theo thứ tự đọc trong đó.
+3. Đọc entrypoint tương ứng và làm theo thứ tự đọc trong đó. Writer Context có thể chỉ định entrypoint riêng cho một workflow.
 4. Chỉ áp dụng tài liệu của dự án đang làm. Nếu chưa xác định được dự án, hỏi trước khi dùng rule riêng.
 
 ## Dự án hiện có
 
-- Zodiac: projects/zodiac/AGENTS.md, hướng dẫn viết và review nội dung cùng rule biên tập.
+- Zodiac Series/Carousel: projects/zodiac/AGENTS.md, hướng dẫn viết và review nội dung cùng rule biên tập.
+- Zodiac video: projects/zodiac-video/AGENTS.md, entrypoint và rule đạo diễn riêng cho StoryGraph; không dùng entrypoint Series/Carousel.
 
 ## Thêm dự án
 

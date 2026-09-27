@@ -5,7 +5,7 @@ Repo này chứa hướng dẫn cho nhiều dự án.
 ## Thứ tự đọc bắt buộc
 
 1. Xác định dự án theo yêu cầu hiện tại và repository code đang làm việc.
-2. Mở projects/<project-id>/AGENTS.md của dự án đó và đọc các tài liệu được yêu cầu.
+2. Nếu yêu cầu hoặc Writer Context chỉ định một workflow entrypoint cụ thể, đọc entrypoint đó; nếu không, mở projects/<project-id>/AGENTS.md. Đọc tiếp các tài liệu mà entrypoint yêu cầu.
 3. Chỉ áp dụng hướng dẫn của dự án đang làm; không trộn rule giữa các thư mục dự án.
 4. Nếu chưa xác định rõ dự án, hỏi người dùng trước khi áp dụng hướng dẫn riêng của dự án.
 
