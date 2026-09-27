@@ -31,4 +31,15 @@
 - Nếu context có `current_story_status="fresh"`, biên tập toàn bộ `current_story`; nếu trạng thái khác, không dùng StoryGraph cũ làm nguồn.
 - Giữ trình tự preview nội dung/đạo diễn trong cuộc trò chuyện → chờ người dùng duyệt → mới trả JSON. Output v2 chỉ dùng khi ứng dụng đưa Writer Context v2 cũ.
 
-Các tag `pack:stage-worlds`, `pack:story-desk` và `pack:emotional-turns` chỉ nhóm asset theo chức năng. Chúng không phải art direction riêng; mọi nhóm vẫn theo cùng `chibi-object-theater`.
+Các tag `pack:*` chỉ nhóm asset theo chức năng, không phải nguồn xác định visual direction.
+
+
+## Art direction and production asset contract
+
+Production direction hiện hành là Storybook Expressive Chibi v1. Nguồn visual chuẩn duy nhất là [design/storybook-expressive-chibi-v1.md](design/storybook-expressive-chibi-v1.md); mọi con số dùng cho validation lấy từ [design/tokens.storybook-expressive-chibi.v1.json](design/tokens.storybook-expressive-chibi.v1.json). Contract metadata nằm tại [design/asset-metadata.v1.schema.json](design/asset-metadata.v1.schema.json). Rule đạo diễn video phải tuân theo nguồn chuẩn này.
+
+Các direction `chibi-object-theater` và `chibi-human-story` chỉ là legacy/historical, không dùng làm visual source-of-truth hoặc trộn vào catalog Storybook Expressive Chibi v1. SVG trong `design/references/` chỉ để đối chiếu, không phải runtime asset.
+
+Semantic category không tự suy ra runtime role. Đọc `runtime_compatibility` tường minh; effects và overlays không có mapping mặc định trong engine hiện tại. Chỉ expose khi mapping trực tiếp được hỗ trợ hoặc adapter đã đăng ký. `allowed_assets` trong Writer Context vẫn là authority duy nhất cho agent chọn asset.
+
+Chỉ mirror asset production được catalog app duyệt vào `projects/zodiac-video/assets/storybook-expressive-chibi/`. Mỗi lần cập nhật phải đồng bộ nguyên file được duyệt, metadata/direction version và catalog fingerprint; không thêm asset riêng từ repo Knowledge vào allowlist runtime.
