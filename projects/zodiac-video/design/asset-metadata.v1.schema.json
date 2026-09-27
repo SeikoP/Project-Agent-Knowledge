@@ -1,0 +1,917 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/SeikoP/Project-Agent-Knowledge/blob/main/projects/zodiac-video/design/asset-metadata.v1.schema.json",
+  "title": "Storybook Expressive Chibi production asset metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "metadata_schema_version",
+    "id",
+    "src",
+    "category",
+    "runtime_compatibility",
+    "scene_scope",
+    "scene_ids",
+    "tags",
+    "label",
+    "description",
+    "art_direction_id",
+    "art_direction_version",
+    "usage",
+    "depth_intent",
+    "origin",
+    "license"
+  ],
+  "properties": {
+    "metadata_schema_version": {
+      "const": "1.1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "src": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^assets/video/storybook-expressive-chibi/.+\\.(svg|png|webp)$"
+    },
+    "category": {
+      "enum": [
+        "backgrounds",
+        "characters",
+        "props",
+        "decorations",
+        "motifs",
+        "effects",
+        "overlays"
+      ]
+    },
+    "runtime_compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_id",
+        "status",
+        "role",
+        "subject_kind"
+      ],
+      "properties": {
+        "contract_id": {
+          "const": "zodiac-video-asset-catalog-v1"
+        },
+        "status": {
+          "enum": [
+            "direct",
+            "adapter_required",
+            "unsupported"
+          ]
+        },
+        "role": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "background",
+            "scenery",
+            "prop",
+            "motif",
+            "character",
+            null
+          ]
+        },
+        "subject_kind": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "environment",
+            "object_prop",
+            "symbol",
+            "human_character",
+            null
+          ]
+        },
+        "adapter_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "direct"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "role": {
+                "type": "string"
+              },
+              "subject_kind": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "adapter_required"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "adapter_id"
+            ],
+            "properties": {
+              "role": {
+                "type": "null"
+              },
+              "subject_kind": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "unsupported"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "role": {
+                "type": "null"
+              },
+              "subject_kind": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "scene_scope": {
+      "enum": [
+        "any",
+        "listed"
+      ]
+    },
+    "scene_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "label": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "art_direction_id": {
+      "const": "storybook-expressive-chibi"
+    },
+    "art_direction_version": {
+      "const": "1"
+    },
+    "usage": {
+      "enum": [
+        "interactive",
+        "environment",
+        "decorative",
+        "narrative",
+        "performance",
+        "effect",
+        "overlay"
+      ]
+    },
+    "depth_intent": {
+      "enum": [
+        "background",
+        "midground",
+        "interactive_zone",
+        "foreground",
+        "full_scene",
+        "none"
+      ]
+    },
+    "origin": {
+      "type": "string",
+      "minLength": 1
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "character_id": {
+      "enum": [
+        "male-01",
+        "male-02",
+        "female-01",
+        "female-02"
+      ]
+    },
+    "state_model": {
+      "enum": [
+        "composed-master",
+        "baked-state",
+        "static"
+      ]
+    },
+    "pose": {
+      "enum": [
+        "standing-neutral",
+        "sitting-neutral",
+        "talking",
+        "listening",
+        "gesturing",
+        "thinking",
+        "looking-away",
+        "leaning-in",
+        "reading",
+        "phone-use",
+        "pointing",
+        "holding-object",
+        "walking"
+      ]
+    },
+    "expression": {
+      "enum": [
+        "neutral",
+        "listening",
+        "talking",
+        "happy",
+        "curious",
+        "thinking",
+        "awkward",
+        "skeptical",
+        "surprised",
+        "annoyed",
+        "sincere"
+      ]
+    },
+    "state_components": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "composition_model",
+        "pose_components",
+        "expression_components",
+        "capabilities"
+      ],
+      "properties": {
+        "composition_model": {
+          "const": "identity-master + one pose component + one expression component"
+        },
+        "pose_components": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "state",
+              "component_id",
+              "channels"
+            ],
+            "properties": {
+              "state": {
+                "enum": [
+                  "standing-neutral",
+                  "sitting-neutral",
+                  "talking",
+                  "listening",
+                  "gesturing",
+                  "thinking",
+                  "looking-away",
+                  "leaning-in",
+                  "reading",
+                  "phone-use",
+                  "pointing",
+                  "holding-object",
+                  "walking"
+                ]
+              },
+              "component_id": {
+                "type": "string",
+                "pattern": "^#[A-Za-z_][A-Za-z0-9_-]*$"
+              },
+              "channels": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "enum": [
+                    "torso",
+                    "left_arm",
+                    "right_arm",
+                    "legs",
+                    "head",
+                    "contact",
+                    "held_object"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "expression_components": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "state",
+              "component_id",
+              "features"
+            ],
+            "properties": {
+              "state": {
+                "enum": [
+                  "neutral",
+                  "listening",
+                  "talking",
+                  "happy",
+                  "curious",
+                  "thinking",
+                  "awkward",
+                  "skeptical",
+                  "surprised",
+                  "annoyed",
+                  "sincere"
+                ]
+              },
+              "component_id": {
+                "type": "string",
+                "pattern": "^#[A-Za-z_][A-Za-z0-9_-]*$"
+              },
+              "features": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "enum": [
+                    "brows",
+                    "eyelids",
+                    "pupils",
+                    "mouth"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "capabilities": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "intensity",
+            "head_angle_degrees",
+            "head_pivot_component_id"
+          ],
+          "properties": {
+            "intensity": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "min",
+                "max",
+                "applies_to"
+              ],
+              "properties": {
+                "min": {
+                  "type": "number"
+                },
+                "max": {
+                  "type": "number"
+                },
+                "applies_to": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "enum": [
+                      "expression_amplitude",
+                      "declared_pose_motion_channels"
+                    ]
+                  }
+                }
+              }
+            },
+            "head_angle_degrees": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "min",
+                "max"
+              ],
+              "properties": {
+                "min": {
+                  "type": "number"
+                },
+                "max": {
+                  "type": "number"
+                }
+              }
+            },
+            "head_pivot_component_id": {
+              "type": "string",
+              "pattern": "^#[A-Za-z_][A-Za-z0-9_-]*$"
+            }
+          }
+        }
+      }
+    },
+    "anchors": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "x",
+          "y"
+        ],
+        "properties": {
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "depth_group": {
+      "type": "string",
+      "minLength": 1
+    },
+    "license_notes": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "scene_scope": {
+            "const": "any"
+          }
+        },
+        "required": [
+          "scene_scope"
+        ]
+      },
+      "then": {
+        "properties": {
+          "scene_ids": {
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "scene_scope": {
+            "const": "listed"
+          }
+        },
+        "required": [
+          "scene_scope"
+        ]
+      },
+      "then": {
+        "properties": {
+          "scene_ids": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "category": {
+            "const": "backgrounds"
+          }
+        },
+        "required": [
+          "category"
+        ]
+      },
+      "then": {
+        "properties": {
+          "runtime_compatibility": {
+            "properties": {
+              "status": {
+                "const": "direct"
+              },
+              "role": {
+                "enum": [
+                  "background",
+                  "scenery"
+                ]
+              },
+              "subject_kind": {
+                "const": "environment"
+              }
+            }
+          },
+          "usage": {
+            "const": "environment"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "category": {
+            "const": "characters"
+          }
+        },
+        "required": [
+          "category"
+        ]
+      },
+      "then": {
+        "properties": {
+          "runtime_compatibility": {
+            "properties": {
+              "status": {
+                "const": "direct"
+              },
+              "role": {
+                "const": "character"
+              },
+              "subject_kind": {
+                "const": "human_character"
+              }
+            }
+          },
+          "usage": {
+            "const": "performance"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "category": {
+            "const": "characters"
+          }
+        },
+        "required": [
+          "category"
+        ]
+      },
+      "then": {
+        "required": [
+          "character_id",
+          "state_model"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "category": {
+            "const": "props"
+          }
+        },
+        "required": [
+          "category"
+        ]
+      },
+      "then": {
+        "properties": {
+          "runtime_compatibility": {
+            "properties": {
+              "status": {
+                "const": "direct"
+              },
+              "role": {
+                "const": "prop"
+              },
+              "subject_kind": {
+                "const": "object_prop"
+              }
+            }
+          },
+          "usage": {
+            "enum": [
+              "interactive",
+              "environment",
+              "decorative"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "category": {
+            "const": "decorations"
+          }
+        },
+        "required": [
+          "category"
+        ]
+      },
+      "then": {
+        "properties": {
+          "runtime_compatibility": {
+            "properties": {
+              "status": {
+                "const": "direct"
+              },
+              "role": {
+                "const": "scenery"
+              },
+              "subject_kind": {
+                "const": "environment"
+              }
+            }
+          },
+          "usage": {
+            "const": "decorative"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "category": {
+            "const": "motifs"
+          }
+        },
+        "required": [
+          "category"
+        ]
+      },
+      "then": {
+        "properties": {
+          "runtime_compatibility": {
+            "properties": {
+              "status": {
+                "const": "direct"
+              },
+              "role": {
+                "const": "motif"
+              },
+              "subject_kind": {
+                "const": "symbol"
+              }
+            }
+          },
+          "usage": {
+            "const": "narrative"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "category": {
+            "const": "effects"
+          }
+        },
+        "required": [
+          "category"
+        ]
+      },
+      "then": {
+        "properties": {
+          "runtime_compatibility": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "adapter_required",
+                  "unsupported"
+                ]
+              },
+              "role": {
+                "type": "null"
+              },
+              "subject_kind": {
+                "type": "null"
+              }
+            }
+          },
+          "usage": {
+            "const": "effect"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "category": {
+            "const": "overlays"
+          }
+        },
+        "required": [
+          "category"
+        ]
+      },
+      "then": {
+        "properties": {
+          "runtime_compatibility": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "adapter_required",
+                  "unsupported"
+                ]
+              },
+              "role": {
+                "type": "null"
+              },
+              "subject_kind": {
+                "type": "null"
+              }
+            }
+          },
+          "usage": {
+            "const": "overlay"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "state_model": {
+            "const": "composed-master"
+          }
+        },
+        "required": [
+          "state_model"
+        ]
+      },
+      "then": {
+        "required": [
+          "state_components"
+        ],
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "pose"
+              ]
+            },
+            {
+              "required": [
+                "expression"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "state_model": {
+            "const": "baked-state"
+          }
+        },
+        "required": [
+          "state_model"
+        ]
+      },
+      "then": {
+        "required": [
+          "pose",
+          "expression"
+        ],
+        "not": {
+          "required": [
+            "state_components"
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "state_model": {
+            "const": "static"
+          }
+        },
+        "required": [
+          "state_model"
+        ]
+      },
+      "then": {
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "state_components"
+              ]
+            },
+            {
+              "required": [
+                "pose"
+              ]
+            },
+            {
+              "required": [
+                "expression"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "category": {
+            "not": {
+              "const": "characters"
+            }
+          }
+        },
+        "required": [
+          "category"
+        ]
+      },
+      "then": {
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "character_id"
+              ]
+            },
+            {
+              "required": [
+                "state_model"
+              ]
+            },
+            {
+              "required": [
+                "state_components"
+              ]
+            },
+            {
+              "required": [
+                "pose"
+              ]
+            },
+            {
+              "required": [
+                "expression"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
