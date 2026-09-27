@@ -21,3 +21,14 @@
 - Mỗi lần thêm, thay thế hoặc gỡ asset video ở app, cập nhật bản mirror tương ứng trong repo này cùng task và push thay đổi lên GitHub trước khi coi asset mới là khả dụng cho agent kết nối repo.
 - Dùng `agent_asset_path` trong Writer Context để mở SVG mirror. Nếu field đó chưa có, tra theo `src` trong `allowed_assets` và giữ phần đường dẫn sau `assets/video/` dưới `projects/zodiac-video/assets/`.
 - Khi chọn, chỉ trả ID nằm trong `allowed_assets`; mirror hoặc manifest cũ không được phép vượt qua catalog/fingerprint runtime.
+
+## Writer Context v3
+
+- Khi `video_story_writer_context.version` là `3`, hợp đồng output runtime duy nhất là `response_template.video_story_draft`; trả đúng một root `video_story_draft` với `version`, `idea_id`, hai fingerprint và `story`.
+- Chỉ viết các trường trong `story_draft_schema`: spine, beats, sequences/shots/reveals, continuity objects, asset needs và narration. App dựng StoryGraph đầy đủ sau khi validate; không gửi lại claim/evidence, premise, asset `src`, renderer, canvas, layout, audio, subtitle hoặc metadata.
+- Trong rule đạo diễn cũ, các đường dẫn bắt đầu `graph.` mô tả vị trí ngữ nghĩa trong StoryGraph; với context v3 hãy ánh xạ chúng theo `story_draft_schema` và trả `story.*`, không tạo thêm trường `graph`.
+- Chọn asset bằng ID từ `allowed_assets`. Với nhu cầu mới, dùng `status="open"` và `resolved_asset_id=null`; không tự đổi trạng thái asset need đã được app/người dùng xác nhận.
+- Nếu context có `current_story_status="fresh"`, biên tập toàn bộ `current_story`; nếu trạng thái khác, không dùng StoryGraph cũ làm nguồn.
+- Giữ trình tự preview nội dung/đạo diễn trong cuộc trò chuyện → chờ người dùng duyệt → mới trả JSON. Output v2 chỉ dùng khi ứng dụng đưa Writer Context v2 cũ.
+
+Các tag `pack:stage-worlds`, `pack:story-desk` và `pack:emotional-turns` chỉ nhóm asset theo chức năng. Chúng không phải art direction riêng; mọi nhóm vẫn theo cùng `chibi-object-theater`.
