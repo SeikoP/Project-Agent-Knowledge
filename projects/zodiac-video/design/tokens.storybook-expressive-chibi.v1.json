@@ -1,0 +1,190 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "token_version": "1",
+  "art_direction_id": "storybook-expressive-chibi",
+  "art_direction_version": "1",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "aspect_ratio": "9:16",
+    "reference_viewbox": "0 0 720 1280",
+    "reference_export_scale": 1.5
+  },
+  "colors": {
+    "ink": "#594651",
+    "wall_warm": "#E9D9BD",
+    "wall_warm_shadow": "#D9C3A4",
+    "window": "#9DB8AE",
+    "sage": "#C3D2B3",
+    "table": "#A66E52",
+    "shadow_warm": "#8A685B",
+    "paper": "#F5EAD3",
+    "highlight": "#FFFDF2",
+    "skin_light": "#EFC5A0",
+    "skin_highlight": "#FFF0D8",
+    "skin_shadow": "#C87970",
+    "hair_base": "#514044"
+  },
+  "character": {
+    "head_height_of_visible_figure": {
+      "min": 0.42,
+      "max": 0.48
+    },
+    "torso_height_in_head_units": {
+      "min": 0.9,
+      "max": 1.1
+    },
+    "leg_length_in_head_units": {
+      "min": 1,
+      "max": 1.25
+    },
+    "face_width_to_max_torso_width": {
+      "min": 1.45,
+      "max": 1.65
+    },
+    "eye": {
+      "sclera_rx": 18.5,
+      "sclera_ry": 23,
+      "max_expression_sclera_ry": 24.5,
+      "iris_r": 9.2,
+      "pupil_r": 5,
+      "highlight_r": 3
+    },
+    "blush": {
+      "rx": 13,
+      "ry": 6.5,
+      "max_opacity": 0.25
+    },
+    "freckle_radius": {
+      "min": 2,
+      "max": 2.4
+    },
+    "expressions": [
+      "neutral",
+      "listening",
+      "talking",
+      "happy",
+      "curious",
+      "thinking",
+      "awkward",
+      "skeptical",
+      "surprised",
+      "annoyed",
+      "sincere"
+    ],
+    "poses": [
+      "standing-neutral",
+      "sitting-neutral",
+      "talking",
+      "listening",
+      "gesturing",
+      "thinking",
+      "looking-away",
+      "leaning-in",
+      "reading",
+      "phone-use",
+      "pointing",
+      "holding-object",
+      "walking"
+    ],
+    "intensity": {
+      "min": 0,
+      "max": 1,
+      "typical_min": 0.25,
+      "typical_max": 0.7,
+      "peak_min": 0.8
+    }
+  },
+  "line": {
+    "coordinate_system": "720x1280 C1 reference source units",
+    "outer_character": 4.5,
+    "eye_outline": 4,
+    "eyebrow": 4.2,
+    "face_detail": {
+      "min": 3.4,
+      "max": 3.8
+    },
+    "linecap": "round",
+    "linejoin": "round"
+  },
+  "shading": {
+    "skin_gradient_start": "#FFF0D8",
+    "skin_gradient_end": "#C87970",
+    "skin_gradient_max_opacity": 0.55,
+    "paper_grain_opacity": {
+      "min": 0.12,
+      "max": 0.17
+    },
+    "direction": "single broad warm light; soft low-contrast shadow"
+  },
+  "portrait_composition": {
+    "suggested_side_safe_fraction": 0.07,
+    "suggested_top_safe_fraction": 0.07,
+    "suggested_bottom_caption_and_control_fraction": {
+      "min": 0.16,
+      "max": 0.18
+    },
+    "wide_group_height_fraction": {
+      "min": 0.4,
+      "max": 0.55
+    },
+    "medium_two_shot_height_fraction": {
+      "min": 0.55,
+      "max": 0.68
+    },
+    "medium_single_main_subject_height_fraction": {
+      "min": 0.55,
+      "max": 0.7
+    },
+    "medium_single_support_visual_area_max": 0.15,
+    "close_up_face_width_fraction": {
+      "min": 0.38,
+      "max": 0.55
+    },
+    "reaction_face_width_fraction": {
+      "min": 0.48,
+      "max": 0.65
+    },
+    "insert_prop_width_fraction": {
+      "min": 0.35,
+      "max": 0.6
+    },
+    "insert_prop_height_fraction": {
+      "min": 0.3,
+      "max": 0.5
+    }
+  },
+  "identities": {
+    "male-01": {
+      "skin": "#F2BD9B",
+      "hair": "#45323C",
+      "top": "#5C9F9C",
+      "accent": "#E6BC75",
+      "hair_construction": "wavy"
+    },
+    "male-02": {
+      "skin": "#D99F7F",
+      "hair": "#342D3A",
+      "top": "#6479A6",
+      "accent": "#EDB85F",
+      "hair_construction": "swept",
+      "signature": "glasses"
+    },
+    "female-01": {
+      "skin": "#F4C7A8",
+      "hair": "#734451",
+      "top": "#DF8375",
+      "accent": "#F1C77E",
+      "hair_construction": "bob",
+      "signature": "small gold hair clip"
+    },
+    "female-02": {
+      "skin": "#DCA483",
+      "hair": "#3B3946",
+      "top": "#87975E",
+      "accent": "#CF9BCA",
+      "hair_construction": "tied-up",
+      "signature": "muted lilac hair clip"
+    }
+  }
+}

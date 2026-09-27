@@ -41,3 +41,7 @@
 - Preview đạo diễn cần giúp người dùng đánh giá được logline, StorySpine, tiến triển beats, sequence/shot với hành động và camera, narration dự kiến, asset được chọn cùng lý do, asset còn thiếu cùng beat/shot liên quan, và payoff/callback.
 - Làm theo trạng thái và định dạng handoff trong Writer Context; không tự coi một preview là chấp thuận import.
 - Trước khi bàn giao StoryGraph, rà soát claim references, beat links, asset references, directing options và tính nhất quán giữa nội dung đã duyệt với StoryGraph.
+
+## Art direction
+
+Production assets use Storybook Expressive Chibi v1, defined once in [design/storybook-expressive-chibi-v1.md](../design/storybook-expressive-chibi-v1.md). The C1 SVGs in design/references are visual references only; they are not runtime assets and must not enter allowed_assets. A2/B2 are historical exploration. Existing chibi-object-theater and chibi-human-story packs are legacy directions. Select assets only from the current Writer Context allowed_assets; functional pack tags do not authorize assets or override art_direction_id/version.
