@@ -101,13 +101,6 @@
         "pose": 1,
         "expression": 1
       },
-      "intensity": {
-        "min": 0,
-        "max": 1,
-        "typical_min": 0.25,
-        "typical_max": 0.7,
-        "peak_min": 0.8
-      },
       "head_angle_degrees": {
         "min": -20,
         "max": 20
@@ -117,7 +110,7 @@
         "max": 10
       },
       "component_reference": "SVG fragment ID declared by the identity master",
-      "interpolation": "intensity scales the selected pose/expression performance; it does not scale character identity",
+      "interpolation": "intensity modulates declared expression amplitude and pose motion channels; it does not change identity or the selected base pose",
       "composition_order": [
         "identity master",
         "one body pose component",
@@ -136,13 +129,8 @@
         "base_pose"
       ],
       "head_angle_is_independent_of_intensity": true,
-      "head_angle_pivot": "identity-master head pivot",
-      "maximum_per_character_bounds": {
-        "min": -20,
-        "max": 20
-      },
-      "minimum_intensity": 0,
-      "maximum_intensity": 1
+      "head_angle_pivot": "head pivot component declared by the identity master",
+      "intensity_parameter_ref": "#/character/intensity"
     },
     "expression_intensity_profiles": {
       "neutral": {

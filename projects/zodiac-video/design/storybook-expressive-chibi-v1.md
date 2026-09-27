@@ -4,7 +4,7 @@ Status: approved art-direction foundation; production system specification v1
 Art direction ID: storybook-expressive-chibi
 Art direction version: 1
 Canonical demo: C1 in this document's references directory
-Canvas target: portrait 9:16; dimensions are in the token file
+Canvas target: portrait, as defined in the token file
 
 This document is the single visual source of truth for production video assets. Runtime Writer Context and its allowed_assets list remain the authority for which concrete assets a StoryGraph may select. This specification defines how approved production assets are made and described; it does not itself add demo references to the runtime catalog.
 
@@ -199,7 +199,7 @@ Do not:
 
 Migration and fingerprint rules:
 - Legacy graph/catalog directions are not auto-upgraded. An absent or legacy art-direction identity requires explicit migration.
-- Any graph/catalog/design fingerprint mismatch sets review required. Do not compile it as current or promote it to READY until a reviewer approves the new revision.
+- Any missing, unverifiable, or different graph/catalog/design fingerprint sets review required. Do not compile it as current or promote it to READY until a reviewer approves the new revision.
 - READY and otherwise approved outputs are immutable. Migration creates a separately identified graph/output revision; it never rewrites an approved package in place.
 - An asset whose art_direction_id or art_direction_version differs from the graph/catalog direction fails validation. Only an explicit migration record may authorize a new revision, with provenance and review.
 
