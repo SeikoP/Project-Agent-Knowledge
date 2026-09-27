@@ -4,50 +4,40 @@ Status: approved art-direction foundation; production system specification v1
 Art direction ID: storybook-expressive-chibi
 Art direction version: 1
 Canonical demo: C1 in this document's references directory
-Canvas target: portrait 1080 × 1920 (9:16)
+Canvas target: portrait 9:16; dimensions are in the token file
 
 This document is the single visual source of truth for production video assets. Runtime Writer Context and its allowed_assets list remain the authority for which concrete assets a StoryGraph may select. This specification defines how approved production assets are made and described; it does not itself add demo references to the runtime catalog.
 
 ## 1. Direction and references
 
-Storybook Expressive Chibi combines the scene depth, mature proportions, warm palette, and prop treatment of C1's Storybook base with slightly clearer eye, brow, and mouth acting. Characters remain storybook illustrators' characters: not stickers, mascots, fashion dolls, or children's cartoons.
+Storybook Expressive Chibi combines the scene depth, mature proportions, warm palette, and prop treatment of C1's Storybook base with clearer eye, brow, and mouth acting. Characters remain storybook illustrators' characters: not stickers, mascots, fashion dolls, or children's cartoons.
 
 C1 is the approved foundation, not a freeze of every SVG. The character masters, expression references, and camera plates under references/storybook-expressive-chibi-v1/C1/ are visual evidence for this system. They may be refined when production-quality masters are made, provided they follow these rules. They are demo compositions, not production assets and must never enter allowed_assets.
 
-A2 and B2 are historical exploration only. Do not import their distinctive eye scale, silhouette, color or rendering choices into production. Old chibi-object-theater and chibi-human-story assets are legacy directions; neither is the source for new assets. Functional pack tags do not define art direction.
+A2 and B2 are historical exploration only. Do not import their distinctive eye scale, silhouette, color, or rendering choices into production. Old chibi-object-theater and chibi-human-story assets are legacy directions; neither is the source for new assets. Functional pack tags do not define art direction.
 
-Use the machine-readable tokens in tokens.storybook-expressive-chibi.v1.json for numeric color and line values. If a value conflicts with this prose, the token file controls measurable drawing values and this document controls design intent.
+The token file is the numeric source of truth for measurable design values and validation thresholds. This document describes visual intent and operating rules; validators and compilers read numeric limits from tokens.storybook-expressive-chibi.v1.json.
 
 ## 2. Visual tokens and construction
 
-### Canvas and drawing units
-- Compose for 1080 × 1920 portrait. C1 demo source plates use viewBox 0 0 720 1280 and scale 1.5 to target. Production files may use another internal viewBox when their export is deterministic.
-- Keep art optically centered inside the shot-specific composition, not automatically centered in the canvas.
-- Core palette: ink #594651; warm wall #E9D9BD and #D9C3A4; window #9DB8AE; sage #C3D2B3; table #A66E52; soft shadow #8A685B; paper #F5EAD3; cream highlight #FFFDF2.
-- Skin is warm and varied per identity. Hair and clothing carry secondary identity colors; do not use color as the only identity signal.
-- C1 outline is rounded and warm dark ink, not pure black. On the 720 × 1280 reference grid, outer character outline is 4.5 units; eye outline 4; eyebrow 4.2; face/nose/mouth internal marks roughly 3.4–3.8. Prefer round caps and joins.
-- Use broad, quiet shading with one clear light direction. Skin shading may move from warm cream #FFF0D8 toward muted rose #C87970 at low opacity. Paper grain, when used, is sparse and subtle (roughly 0.12–0.17 opacity at source). Do not use grain to hide poor vector construction.
-- Highlights use warm cream. Shadows stay warm and low contrast. Avoid hard black shadows, glossy plastic shine, gradients on every object, and noisy texture.
+### Canvas and drawing
+Compose for the portrait canvas and reference grid defined in the token file. Production files may use another internal viewBox when export remains deterministic. Place each shot optically according to its composition profile, not automatically at canvas center.
+
+Use the palette, identity colors, line widths, character proportions, facial geometry, shading opacity, and highlight values in tokens.storybook-expressive-chibi.v1.json. The C1 outline is rounded and warm dark ink rather than pure black. Use broad, quiet shading with one clear light direction. Keep paper grain sparse and subtle. Do not use grain to hide poor vector construction. Shadows stay warm and low contrast; avoid hard black shadows, glossy plastic shine, gradients on every object, and noisy texture.
 
 ### Character proportions
-Measure against the supplied C1 identity references. The following ranges are construction targets, not independent style variants:
-- Head height is about 42–48% of the standing figure's visible height. Keep C1's mature small-body / large-head balance; do not push toward A2's oversized head.
-- Torso from shoulder to hip is about 0.9–1.1 head heights. Legs from hip to sole are about 1.0–1.25 head heights. Arms are short and rounded, reaching around hip to upper thigh at rest.
-- Face width is broad relative to the torso, about 1.45–1.65 times the maximum torso width. Keep the head silhouette soft and slightly varied by hairstyle; avoid a perfect circle.
-- Neck is short and usually partially hidden by clothing. Shoulder slopes and torso shape distinguish identities; limbs use simple tapered forms with rounded joints.
-- Hands are compact mitten-like forms with a thumb notch when visible. Add fingers only when the action needs them, at close enough scale to read.
-- Feet are low, softly flattened shapes, integrated with footwear; avoid detached bean-like feet.
-- Face construction stays inside each character's head silhouette. Ears are small, simple and aligned to the eye/nose axis. Nose is a small warm line or shape, never a large dot that competes with the eyes.
+Measure against the supplied C1 identity references. Numeric proportions are token-controlled. Keep C1's mature small-body / large-head balance; do not push toward A2's oversized head. Use a soft head silhouette that varies through hairstyle instead of a perfect circle. Keep the neck short and usually partially hidden by clothing. Shoulder slopes and torso shape distinguish identities; limbs use simple tapered forms with rounded joints.
+
+Hands are compact mitten-like forms with a thumb notch when visible. Add fingers only when the action needs them and the shot is close enough to read. Feet are low, softly flattened shapes integrated with footwear. Face construction stays inside the head silhouette. Ears are small and aligned to the eye/nose axis. The nose is a small warm line or shape, never a dot that competes with the eyes.
 
 ### Face and hair
-- Eyes use a compact almond/oval sclera with dark warm outline, iris, pupil, and one small cream highlight. C1 baseline on its source grid: sclera rx 18.5 / ry 23; iris r 9.2; pupil r 5; highlight r 3. Surprise/curiosity may raise sclera ry to 24.5, which is the ceiling for this direction. Do not materially enlarge the eyes.
-- Gaze is legible from iris/pupil placement. Eyelid arcs can cover the upper sclera for listening, skepticism, fatigue, or sincerity. Do not depend on eye size alone to carry emotion.
-- Brows are independent shapes/lines. Change angle, lift, asymmetry and distance from the lid to carry intent.
-- Mouth is a small, readable shape/line that varies among closed, soft smile, open speech, rounded surprise, pressed, and asymmetric states. Use expression scale appropriate to camera distance.
-- Blush is optional and restrained: soft warm ellipses around 13 × 6.5 source units at about 0.25 opacity. Freckles are sparse tiny marks, around 2–2.4 units. Neither is a default facial stamp.
-- Hair is built from a few connected, readable locks and a clear outer silhouette. Use mass and direction, not dozens of strands. Signature clips, glasses, or ties remain small and secondary.
-- Clothing uses clear large shapes, simple collars/necklines, and a limited number of seams. Do not add fabric texture unless the shot needs it.
-- Preserve recognizable face, hair silhouette, and signature details across camera distance, pose, expression, and lighting.
+Eyes use a compact almond or oval sclera with dark warm outline, iris, pupil, and one small cream highlight. Eye geometry and expression bounds come from the token file; do not materially enlarge the eyes. Gaze is legible from iris/pupil placement. Eyelids can cover the upper sclera for listening, skepticism, fatigue, or sincerity. Do not depend on eye size alone to carry emotion.
+
+Brows are independent shapes or lines. Change angle, lift, asymmetry, and distance from the lid to carry intent. Mouth is a small, readable shape or line that varies among closed, soft smile, open speech, rounded surprise, pressed, and asymmetric states. Use expression scale appropriate to camera distance.
+
+Blush and freckles are optional and restrained. Their geometry and opacity come from tokens; neither is a default facial stamp. Hair is built from a few connected, readable locks and a clear outer silhouette. Use mass and direction, not dozens of strands. Signature clips, glasses, or ties remain small and secondary.
+
+Clothing uses clear large shapes, simple collars/necklines, and a limited number of seams. Do not add fabric texture unless the shot needs it. Preserve recognizable face, hair silhouette, skin tone, outfit identity, and signature details across camera distance, pose, expression, and lighting.
 
 ## 3. Character identities
 
@@ -64,62 +54,48 @@ The palette details are recorded in the token file. Do not alter the identity to
 
 ## 4. Expression system
 
-The 11 C1 states below are canonical reusable expression recipes. They describe a face and performance, not 11 different character designs. Combine brow, lid, gaze, mouth, head tilt, and body gesture. Intensity 0.0–1.0 controls amplitude; 0.0 is neutral and 1.0 is the strongest readable form. Keep ordinary acting around 0.25–0.7. Use 0.8–1.0 only when story stakes support it.
+The C1 expression states are reusable face and performance recipes, not separate character designs. Combine brow, eyelid, gaze, mouth, head tilt, and body gesture while preserving identity landmarks. Numeric intensity profiles and angle bounds are defined in the token file; use intensity to modulate acting, not to scale or distort character identity.
 
-| Slug | Brows | Lid / eyes | Gaze | Mouth | Optional head / body | Intensity |
-|---|---|---|---|---|---|---|
-| neutral | relaxed, level | open at rest | forward or scene target | closed, soft | upright, still | 0.0–0.3 |
-| listening | inner brow slightly lifted | upper lid relaxed | toward speaker | closed, slight soft curve | slight lean toward speaker | 0.2–0.5 |
-| talking | asymmetric, small lift | attentive open | listener or action | small open speech shape | one restrained hand gesture | 0.25–0.65 |
-| happy | gently lifted | softly narrowed | toward companion | warm smile | shoulders release | 0.25–0.7 |
-| curious | one brow higher | modestly open, never enlarged past token cap | toward new information | small parted or tilted mouth | head tilt 4–10 degrees, lean in | 0.3–0.7 |
-| thinking | brows lightly drawn or one raised | upper lid lowered slightly | up, aside, or at object | small closed / asymmetric | hand to chin or pause | 0.25–0.6 |
-| awkward | brows lifted unevenly | glance aside | away then back | compressed or hesitant smile | shoulders tuck, small hand movement | 0.25–0.65 |
-| skeptical | one brow raised, other level | one lid slightly lowered | direct or side glance | one-sided, closed | slight backward lean | 0.3–0.75 |
-| surprised | brows lifted | open; sclera ry at most 24.5 source units | on cause of surprise | small rounded open shape | short recoil; avoid flailing | 0.35–0.8 |
-| annoyed | brows lower and draw inward | narrowed, not angry slits by default | at source of friction | pressed or small down curve | crossed arms or turned shoulder when useful | 0.25–0.75 |
-| sincere | brows softened, inner ends slightly raised | relaxed, steady | companion or meaningful object | gentle closed smile or small speech | open posture, small nod | 0.2–0.6 |
+| Slug | Brows | Lid / eyes | Gaze | Mouth | Optional head / body |
+|---|---|---|---|---|---|
+| neutral | relaxed, level | open at rest | forward or scene target | closed, soft | upright, still |
+| listening | inner brow slightly lifted | upper lid relaxed | toward speaker | closed, slight soft curve | slight lean toward speaker |
+| talking | asymmetric, small lift | attentive open | listener or action | small open speech shape | one restrained hand gesture |
+| happy | gently lifted | softly narrowed | toward companion | warm smile | shoulders release |
+| curious | one brow higher | modestly open within token bounds | toward new information | small parted or tilted mouth | token-bounded head tilt, lean in |
+| thinking | brows lightly drawn or one raised | upper lid lowered slightly | up, aside, or at object | small closed or asymmetric | hand to chin or pause |
+| awkward | brows lifted unevenly | glance aside | away then back | compressed or hesitant smile | shoulders tuck, small hand movement |
+| skeptical | one brow raised, other level | one lid slightly lowered | direct or side glance | one-sided, closed | slight backward lean |
+| surprised | brows lifted | open within token bounds | on cause of surprise | small rounded open shape | short recoil; avoid flailing |
+| annoyed | brows lower and draw inward | narrowed, not angry slits by default | at source of friction | pressed or small down curve | crossed arms or turned shoulder when useful |
+| sincere | brows softened, inner ends slightly raised | relaxed, steady | companion or meaningful object | gentle closed smile or small speech | open posture, small nod |
 
-Canonical expression SVG references are in references/storybook-expressive-chibi-v1/C1/expressions/. Treat their facial drawings as examples, not separate character identities. A production character may need small anatomy adjustments so a state remains readable, but identity landmarks stay fixed.
+Canonical expression SVG references are in references/storybook-expressive-chibi-v1/C1/expressions/. Treat their drawings as examples, not separate character identities. A production character may need small anatomy adjustments so a state remains readable, but identity landmarks stay fixed.
 
 ## 5. Pose vocabulary
 
-Pose changes body action; expression changes face and head acting. They can be combined except where physical action conflicts. Baseline vocabulary:
+Pose changes body action; expression changes face and head acting. They combine unless the physical action conflicts. The baseline vocabulary is defined in the token file and demonstrated by the C1 reference system.
 
-- standing-neutral
-- sitting-neutral
-- talking
-- listening
-- gesturing
-- thinking
-- looking-away
-- leaning-in
-- reading
-- phone-use
-- pointing
-- holding-object
-- walking
+Build poses from a stable skeleton: shoulder line, torso direction, hip direction, elbow/wrist position, support/contact points, and foot/seat relationship. Keep center of gravity plausible. For sitting, show contact with chair/bench and relation to table. For held objects, specify which hand and the contact points. Do not redraw the entire character to add a prop; preserve the identity master and attach or compose a hand/prop pose.
 
-Build poses from a stable skeleton: shoulder line, torso direction, hip direction, elbow/wrist position, support/contact points, and foot/seat relationship. Keep center of gravity plausible. For sitting, show contact with chair/bench and relation to table. For held objects, specify which hand and the contact points. Do not redraw the entire character to add a prop; preserve identity master and attach or compose a hand/prop pose.
-
-Create poses as composable components or deterministic variants in Phase 4. Do not export the full cross product of every character × pose × expression.
+Create poses as composable components or deterministic variants in Phase 4. Do not export the full cross product of every character, pose, and expression.
 
 ## 6. Camera and portrait composition
 
 Every camera type has its own composition. Recompose subject, props, and background for the shot; do not implement a camera test by cropping or uniformly scaling an existing full-scene plate.
 
-The ratios below are composition targets on 1080 × 1920, not platform UI guarantees. Reserve roughly 7% at each side, 7% at top, and 16–18% at bottom for controls/captions. Keep essential facial acting above the lower caption band. Allow shot-specific exceptions only when the action remains readable.
+The camera profiles in the token file are the only numeric source for canvas bounds, safe areas, subject scale, eye line, headroom, prop scale, spacing, overlap, and caption exclusions. These values guide validation and compilation. They are layout targets, not platform UI guarantees. Keep essential facial acting and story-critical objects clear of the caption band.
 
-| Shot type | Subject scale and placement | Eye line / head room | Secondary subject and props | Background / foreground |
-|---|---|---|---|---|
-| establishing / wide | Character group about 40–55% of frame height; scene should establish a place or relationship. | Eye line about 35–43%; head room 6–10%. Do not leave more than roughly 25% blank above heads without a story reason. | Keep table/chairs and one story-relevant object readable. | Show enough environment to locate the scene; purposeful foreground may frame the action. |
-| medium two-shot | Pair about 55–68% frame height; bodies and interaction fit. | Shared eye line around 34–42%; 5–8% head room. | Keep character spacing and the object between them clear; neither face should overlap. | Reduce background contrast behind faces. |
-| medium single | Main character about 55–70% frame height, occupying the visual center or intentional third. | Eye line 32–42%; 5–8% head room. | Supporting character may be absent, a partial OTS silhouette, or at most 10–15% of the visual area. No equal-size competing face. | Remove competing high-contrast props/decor. |
-| close-up | Compose face/head/shoulders specifically; face roughly 38–55% frame width, depending on expression. No full body. | Eye line 35–42%; 6–10% head room. | Show only a hand/prop if it supports the facial beat. | Use quiet value shapes; hair and ears stay inside the frame. |
-| reaction close-up | Reaction face about 48–65% frame width. | Direct gaze toward the offscreen cause or a defined eyeline; 5–9% head room. | Exclude other faces. Cause may appear as edge hint only. | Keep cause direction clear; use subdued focus falloff or value grouping, not fake lens blur. |
-| insert | Hero prop about 35–60% frame width and 30–50% frame height. | No face eye line; establish screen direction from adjacent shot. | Hand/contact can enter if it clarifies action. No unrelated prop cluster. | Table or surface establishes depth; background detail low. |
-| over-shoulder | Listener foreground shoulder about 15–25% width; speaker remains the clear focal plane. | Preserve speaker eye line from prior shot. | Keep only one readable face. | Foreground shoulder may frame but must not cover key hand/object. |
-| detail | One meaningful face feature, hand, or prop about 45–65% frame width. | Follow prior eyeline and screen direction. | One hero detail only. | Background is quiet and supports the detail's narrative meaning. |
+| Shot type | Composition intent |
+|---|---|
+| establishing / wide | Establish place and relationship. Use purposeful environment; avoid blank space above the group unless it serves the story. |
+| medium two-shot | Keep both characters and their relation readable. Preserve a shared eyeline and make the interactive object between them visible when the story uses it. |
+| medium single | Give one character visual priority. Omit the support character or reduce it to a non-competing partial/over-shoulder presence. |
+| close-up | Recompose around face, hair, and shoulders. Do not enlarge a full-body composition. Keep the acting readable against a quiet background. |
+| reaction close-up | Isolate the reacting face and make gaze direction point toward the offscreen cause. |
+| insert | Give one continuity prop the focal position. Show hand contact only when it clarifies action. |
+| over-shoulder | Use the foreground shoulder to establish point of view while keeping the speaker, hand, and relevant object clear. |
+| detail | Isolate one meaningful face feature, hand, or prop and preserve direction from the adjacent shot. |
 
 Maintain screen direction within a continuous exchange. A cut may change axis when the story motivates it and the new geography is clear. Put subtitles in a consistent dedicated band that avoids mouths, hands, and the active prop.
 
@@ -127,12 +103,12 @@ Maintain screen direction within a continuous exchange. A cut may change axis wh
 
 Backgrounds are authored as layers so characters and StoryGraph props can interact independently:
 
-1. background/base: wall, sky, broad light and color mass;
-2. environment-back: window, distant architecture, shelves, landscape;
-3. environment-mid: booth, chair backs, counter, plants;
-4. interactive-zone: table/surface, seat contact, usable object anchors;
-5. foreground: edge framing, nearby table edge, softly simplified occluder;
-6. lighting/atmosphere: broad warm light, window glow, sparse haze or texture.
+- background/base: wall, sky, broad light and color mass;
+- environment-back: window, distant architecture, shelves, landscape;
+- environment-mid: booth, chair backs, counter, plants;
+- interactive-zone: table/surface, seat contact, usable object anchors;
+- foreground: edge framing, nearby table edge, softly simplified occluder;
+- lighting/atmosphere: broad warm light, window glow, sparse haze or texture.
 
 Layers may be SVG groups, separate SVG assets, or renderer-native layers. Keep the implementation composable. Do not bake an interactive book, phone, cup, or other continuity object into a background. A scene may include fixed environment props, but their metadata must label them as environment/decorative and StoryGraph must not pretend they are independently movable.
 
@@ -169,64 +145,81 @@ assets/video/storybook-expressive-chibi/
   effects/
   overlays/
 
-Folders organize authored files; they do not grant an asset to an agent. Only a validated runtime catalog entry exposed through allowed_assets grants selection. Character folders may contain identity source, shared state components, and canonical manifests; prefer one identity master plus composable states over a flat set of all state combinations.
+Folders organize authored files; they do not grant an asset to an agent. Only a validated runtime catalog entry exposed through allowed_assets grants selection. Character folders may contain an identity master, declared state components, and a canonical manifest. Compose the selected pose and expression at render time; do not author a file for every state combination.
 
-Category meanings:
-- backgrounds: layered location/base/scene assemblies;
-- characters: stable human character identity and its composable pose/expression parts;
-- props: interactive or fixed object assets;
-- decorations: environment dressing with no interactive-story role;
-- motifs: story symbols with an explicit narrative meaning;
-- effects: reusable visual treatment definition or asset;
-- overlays: authored graphic layers such as title/chapter/caption plates.
+Semantic category describes what an asset is. runtime_compatibility describes how the current engine can consume it. Store them separately in asset-metadata.v1.schema.json. For the current asset-catalog contract, direct mappings are explicit:
 
-Runtime mapping must preserve current semantic roles where possible: backgrounds map to background or scenery; characters to character/human_character; props to prop/object_prop; decorations to scenery/environment; motifs to motif/symbol. Effects and overlays require explicit runtime mapping and validation in Phase 4. Motion timing/easing remains compiler data, not taxonomy metadata.
+| Semantic category | Current runtime compatibility |
+|---|---|
+| backgrounds | Direct role background or scenery; subject kind environment. |
+| characters | Direct role character; subject kind human_character. |
+| props | Direct role prop; subject kind object_prop. |
+| decorations | Direct role scenery; subject kind environment. |
+| motifs | Direct role motif; subject kind symbol. |
+| effects | Unsupported by default; role and subject kind are null. A registered adapter is required before runtime exposure. |
+| overlays | Unsupported by default; role and subject kind are null. A registered adapter is required before runtime exposure. |
+
+An adapter mapping must name a registered adapter and its target contract. Never infer runtime role from semantic category, filename, tags, or visual similarity. Do not encode effects as motifs or overlays as scenery by default. Motion timing/easing remains compiler data unless an explicit supported adapter contract says otherwise.
 
 ## 10. Asset metadata contract
 
-Use asset-metadata.v1.schema.json as the proposed production manifest contract. Every asset records stable identity, relative source path, library category, runtime role and subject kind, compatible scene IDs, semantic tags, human-readable label/description, art-direction ID/version, usage, depth intent, origin, and license.
+Use asset-metadata.v1.schema.json as the proposed production manifest contract. Every asset records stable identity, relative source path, semantic category, an explicit runtime_compatibility object, compatible scene IDs, tags, label/description, art-direction ID/version, usage, depth intent, origin, and license. Semantic category is not a runtime role.
 
-Character identity masters record character_id plus supported_poses and supported_expressions. An individually baked state may also carry pose and expression. StoryGraph placement selects one of the declared supported states; it must not change character identity. Interactive props record usage=interactive. Fixed environment and decorative assets declare their actual use.
+For each character identity master, state_components declares:
+- pose_components: unique pose state plus SVG component_id and affected body channels;
+- expression_components: unique expression state plus SVG component_id and affected face features;
+- capabilities: the intensity range and the channels it may affect, plus head-angle bounds and a component_id for the head pivot.
 
-The catalog is the allowlist. The design reference directory is excluded. Validate paths under assets/video/storybook-expressive-chibi, reject traversal and missing files, and compute catalog fingerprints over manifest plus bytes. Scene compatibility is checked against the runtime scene registry. A metadata label or matching tag never makes an unlisted asset selectable.
+The renderer composes the identity master, one selected pose component, and one selected expression component. Intensity modulates expression amplitude and declared pose motion channels; it never changes identity, proportions, palette, or the selected base pose. head_angle rotates the declared head group around its pivot and is independent of intensity. Numeric ranges come only from the token file. This composes states on demand and does not require a pre-rendered SVG for every combination. A baked-state asset remains possible only when pose and expression are explicit.
+
+The runtime validator checks unique state names, that every declared component_id and head pivot exists in the source SVG, that state values are in the token vocabulary, and that requested intensity/angle stays inside both the token and character capability bounds. Cross-file checks also validate source paths, scene compatibility, art-direction identity, registered adapters, and catalog membership.
+
+The catalog is the allowlist. The design reference directory is excluded. Validate paths under assets/video/storybook-expressive-chibi, reject traversal and missing files, and compute the catalog fingerprint from the canonical manifest and referenced asset bytes. Persist the graph's art-direction ID/version, source catalog fingerprint, and design-token fingerprint. The design-token fingerprint covers the exact token file bytes. Any mismatch from the values used to create the graph sets review required. A label or matching tag never makes an unlisted asset selectable.
 
 ## 11. Consistency rules
 
 Do:
-- preserve face, hair silhouette, skin tone, accessory and outfit identity across all states;
-- follow the token file for colors and line weights;
+- preserve face, hair silhouette, skin tone, accessory, and outfit identity across all states;
+- follow the token file for measurable colors, proportions, line values, state bounds, and camera thresholds;
 - compose shots for one action and one focal point;
 - keep story-critical props independent and reusable;
-- show believable contact between character, seat, table, hand and object;
+- show believable contact between character, seat, table, hand, and object;
 - use lighting and background detail to guide attention;
 - make motifs earn their screen time.
 
 Do not:
-- use A2's giant eyes, sticker outlines, mascot heads or B2's older standalone choices unless represented by this approved C1 system;
+- use A2's giant eyes, sticker outlines, mascot heads, or standalone B2 choices unless represented by the approved C1 system;
 - vary identity colors or facial landmarks per expression;
-- use a single full-scene illustration as every camera distance;
+- use one full-scene illustration for every camera distance;
 - bake continuity objects into scenery;
 - add decorative clutter to hide empty staging;
-- treat effects/motifs as generic cute filler;
-- add a new character or prop to production without the correct art-direction metadata and runtime catalog approval.
+- treat effects or motifs as generic cute filler;
+- infer a runtime role from semantic category;
+- permit an asset with a different art_direction_id or art_direction_version through normal validation.
+
+Migration and fingerprint rules:
+- Legacy graph/catalog directions are not auto-upgraded. An absent or legacy art-direction identity requires explicit migration.
+- Any graph/catalog/design fingerprint mismatch sets review required. Do not compile it as current or promote it to READY until a reviewer approves the new revision.
+- READY and otherwise approved outputs are immutable. Migration creates a separately identified graph/output revision; it never rewrites an approved package in place.
+- An asset whose art_direction_id or art_direction_version differs from the graph/catalog direction fails validation. Only an explicit migration record may authorize a new revision, with provenance and review.
 
 ## 12. Phase 4 implementation work
 
-No application code or production catalog is changed in Phase 3. Phase 4 will need the following, after this specification is reviewed:
+No application code or production catalog is changed in Phase 3.1. Phase 4 will need the following, after review:
 
-1. Introduce stable catalog art_direction_id=storybook-expressive-chibi and art_direction_version=1; add validated category and metadata fields while retaining runtime role/subject mappings used by current StoryGraph.
-2. Migrate the app's current chibi-human-story ID and old Knowledge pack direction chibi-object-theater to the new versioned direction. Do not mix legacy entries into the new allowlist. Rebuild/approve the catalog mirror and Writer Context from approved production assets.
-3. Add a typed character performance object to the renderable placement contract: character asset ID, pose, expression, intensity, optional head_angle, plus any held-object anchor. Validate requested state against the character manifest. Keep identity refs and evidence fields intact; this is a visual/compiler change, not a narrative/pacing change.
-4. Resolve identity master + pose/expression components deterministically in the renderer. Keep camera compositions as independently authored shot layouts. Do not pre-bake every character × pose × expression combination.
-5. Extend catalog lint to validate schema/version, role-category-subject combinations, character state vocabulary, scene compatibility, safe source paths, asset existence, SVG safety, art-direction mixing, and catalog/render fingerprints. Return actionable field paths on failure.
-6. During migration, invalidate or require review for existing StoryGraphs whose catalog/design fingerprints reference either legacy direction. Never silently rewrite an approved graph or READY output.
-7. Keep Writer Context's allowed_assets as the only agent-selectable set. Add semantic descriptions and supported character states there only when approved assets are in the catalog.
+1. Introduce stable catalog art_direction_id=storybook-expressive-chibi and art_direction_version=1. Keep semantic category separate from runtime_compatibility; validate direct mappings against roles the engine actually supports.
+2. Migrate the app's current chibi-human-story ID and the old Knowledge pack direction chibi-object-theater through an explicit migration. Never auto-upgrade a legacy graph/catalog, mix legacy assets into the new allowlist, or rewrite approved output.
+3. Add a typed character performance object to the renderable placement contract: character asset ID, pose, expression, intensity, optional head_angle, plus any held-object anchor. Validate it against the identity master's declared state_components.
+4. Resolve identity master plus one pose and one expression component deterministically in the renderer. Preserve separate, independently authored camera compositions. Do not bake the full state cross product.
+5. Add lint for semantic category, runtime_compatibility status/mapping, schema version, registered adapters, state component references, scene compatibility, safe paths, missing assets, SVG safety, direction mixing, and catalog/design fingerprints.
+6. Persist graph/catalog/design fingerprints. Any mismatch sets review required. Explicit migration creates a new provenance-linked revision. READY and approved output stays immutable.
+7. Keep Writer Context allowed_assets as the sole agent-selectable set. Expose an asset only if runtime compatibility is direct or a registered adapter is approved and available.
 
 ## 13. Phase 4 starter production asset plan
 
 This is a scoped first library, not a commitment to create every pose/expression export as a separate SVG:
 
-- Characters: four identity masters with matching expression/performance system; shared pose construction for the 13 vocabulary items; initially implement the common neutral, listening, talking, thinking, gesturing, reading, phone-use, leaning-in, and holding-object states where needed. Expression recipes cover the 11 states in section 4. Compose on demand instead of exporting the full cross-product.
+- Characters: four identity masters with matching expression/performance system; shared pose construction for the baseline vocabulary; initially implement the common neutral, listening, talking, thinking, gesturing, reading, phone-use, leaning-in, and holding-object states where needed. Expression recipes follow the canonical states in section 4. Compose on demand instead of exporting the full cross-product.
 - Backgrounds: cafe interior daylight, cafe window/rain, home desk, bedroom/living room, and neutral indoor conversation scene. Each uses reusable depth layers and explicit interaction anchors.
 - Props: book, phone, cup, drink glass, coffee pot, laptop, headphones, shoulder bag, note/paper, pen, keys, watch, flower, gift box, chair, table, lamp, window, menu, plate/food. Mark movable story props interactive and furniture/location dressing environment.
 - Decorations: wall art, plant, shelf objects, pendant lamp, window dressing, menu lettering and restrained cafe/home set dressing.
@@ -238,14 +231,14 @@ Build a small representative slice per category first, validate character consis
 
 ## 14. Open implementation decisions
 
-- Confirm the app-side versioned catalog and character performance contract against the live VideoStory/renderer implementation before Phase 4. The proposed manifest does not replace Writer Context's current response schema or allowed_assets.
-- Decide exact layering file format and whether the character compositor emits SVG fragments or deterministic standalone SVG. Keep both decisions behind the existing renderer boundary.
-- Define any runtime role for effects/overlays only when real assets and compiler behavior require it; do not widen the runtime enum speculatively.
-- Re-measure proportions against approved canonical C1 masters during production cleanup. Reference SVGs are the visual baseline, not a promise that every demo coordinate is final.
+- Confirm the proposed catalog and character performance contract against the live VideoStory/renderer before Phase 4. This metadata contract does not replace Writer Context's response schema or allowed_assets.
+- Decide whether the compositor resolves in-file SVG fragments or a deterministic standalone SVG, behind the existing renderer boundary.
+- Add effects/overlays to runtime selection only through an explicit registered adapter or a deliberate engine contract change. Their semantic categories do not imply a runtime role.
+- Re-measure C1 masters during production cleanup. Numeric bounds remain in the token file; the references are visual evidence, not a promise that every demo coordinate is final.
 
 ## References
 
 - Character identity, expression, and camera references are under references/storybook-expressive-chibi-v1/C1/.
 - Numeric tokens: tokens.storybook-expressive-chibi.v1.json.
-- Proposed manifest schema: asset-metadata.v1.schema.json.
+- Proposed manifest schema: asset-metadata.v1.schema.json (metadata contract 1.1).
 - Video writing/directing rules point here from ../rules/video-direction.md.

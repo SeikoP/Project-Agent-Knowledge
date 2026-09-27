@@ -42,6 +42,12 @@
 - Làm theo trạng thái và định dạng handoff trong Writer Context; không tự coi một preview là chấp thuận import.
 - Trước khi bàn giao StoryGraph, rà soát claim references, beat links, asset references, directing options và tính nhất quán giữa nội dung đã duyệt với StoryGraph.
 
-## Art direction
+## Art direction and asset contract
 
-Production assets use Storybook Expressive Chibi v1, defined once in [design/storybook-expressive-chibi-v1.md](../design/storybook-expressive-chibi-v1.md). The C1 SVGs in design/references are visual references only; they are not runtime assets and must not enter allowed_assets. A2/B2 are historical exploration. Existing chibi-object-theater and chibi-human-story packs are legacy directions. Select assets only from the current Writer Context allowed_assets; functional pack tags do not authorize assets or override art_direction_id/version.
+Production direction is Storybook Expressive Chibi v1, defined in [design/storybook-expressive-chibi-v1.md](../design/storybook-expressive-chibi-v1.md). C1 files under design/references are visual references only and must not be exposed as runtime assets.
+
+Semantic category is separate from runtime compatibility. Read runtime_compatibility from the asset metadata schema; never infer a role from category, filename, tags, or appearance. Effects and overlays are unsupported by the current asset catalog by default and have no default role/subject mapping. Expose one only after a registered adapter or deliberate engine contract supports it. The Writer Context allowed_assets list remains the runtime allowlist.
+
+A character identity master declares pose_components, expression_components, intensity bounds and affected channels, plus head-angle bounds and a head pivot. Compose one declared pose component and one expression component per shot. Intensity modulates expression amplitude and declared pose motion channels but does not change identity or base pose. Apply head_angle around the declared pivot independently of intensity. Do not require cross-product SVG exports.
+
+Use the numeric camera/composition thresholds from tokens.storybook-expressive-chibi.v1.json. An asset whose art_direction_id or art_direction_version differs from the graph/catalog direction fails validation. Legacy graph/catalog directions are never auto-upgraded. Any graph, catalog, or design fingerprint mismatch requires review. READY and approved output must not be rewritten in place; an explicit migration creates a provenance-linked revision and requires review.
