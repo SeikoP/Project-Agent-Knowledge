@@ -1,129 +1,95 @@
-# ZODIAC CONTENT MEMORY — v2
+# ZODIAC CONTENT MEMORY — v3
 
-## PURPOSE
+## Mục đích và thứ tự ưu tiên
 
-Canonical quality rules for reviewing and rewriting Zodiac TikTok content. Prefer recognisable human situations over generic horoscope descriptions.
+Đây là nguồn duy nhất cho rule biên tập dùng chung của Zodiac. Đọc `KNOWLEDGE_CONTEXT` và `EDITORIAL_CONTEXT` của package trước khi chọn claim. Writer Context chỉ mang quy trình, dữ liệu và contract của package; không thay thế rule này.
 
-Đây là nguồn duy nhất cho các rule biên tập dùng chung của dự án Zodiac. Writer Context chỉ mang quy trình làm việc và dữ liệu/contract riêng của package; không chép hoặc tóm tắt rule biên tập trong Writer Context.
+Workflow bắt buộc:
 
-## 1. FORMAT & GIỚI HẠN
+1. RAW IDEA / câu hỏi nội dung
+2. Ranh giới evidence
+3. Core insight
+4. Distinction và memorable point
+5. Progression
+6. Naturalness và recognition
+7. Prose rhythm
+8. Độ dài và format
+9. Final validation
 
-1.1. Headline ≤55 ký tự. Với carousel dạng headline + body, body ưu tiên vùng 225–240 ký tự khi package cho phép; đây là vùng mục tiêu mềm, không phải mức tối thiểu. OUTPUT_CONTRACT, OUTPUT_TEMPLATE hoặc SLIDE_OPTIONS quyết định trần kỹ thuật như max_chars/max_lines cho từng block; nếu contract cho phép khoảng 242 ký tự thì vẫn ưu tiên dừng trong 225–240 và chỉ dùng phần dư khi thật sự cần. Không nhồi chữ để đủ độ dài. Ưu tiên insight, tension, hành vi hoặc chi tiết đáng nhớ.
+Mục 1–6 là editorial gates và phải qua trước khi viết title hay body. Gate fail thì quay về gate sớm nhất chưa đạt; không cứu bằng câu dài hơn, ví dụ thêm, hoặc paraphrase evidence. Contract của package quyết định schema, block ID, số slide và giới hạn kỹ thuật khi khác hướng dẫn chung. Contract không được nới evidence boundary hay ép tạo claim. Nếu content type bắt buộc (như `red_flag`, `boundary_check` hoặc `hot_take`) đổi câu hỏi hoặc đòi claim evidence không hỗ trợ, báo package conflict để đổi scope/contract; không tự đổi RAW IDEA, bịa nội dung hoặc âm thầm phá contract.
 
-1.2. Header viết sentence case, không viết ALL CAPS. Header phải nghe tự nhiên và nói thẳng ý chính.
+## 1. RAW IDEA — giữ đúng câu hỏi
 
-1.3. Không dùng gạch ngang/dash làm công cụ cấu trúc câu trong copy carousel. Dùng cấu trúc câu và dấu câu tiếng Việt thông thường.
+Ghi lại RAW IDEA và xác định rõ người, hành vi hoặc phản ứng mà câu hỏi yêu cầu trả lời. RAW IDEA quyết định nội dung phải nói gì. Khi câu hỏi hỏi một cung nghĩ, phản hồi, để ý hoặc thay đổi thế nào, lấy phản ứng đó làm trọng tâm; không đổi thành lời khuyên người khác nên làm gì, red flag, ranh giới hay chủ đề khác nếu RAW IDEA không hỏi.
 
-1.4. Một slide = một ý rõ ràng. Nếu slide không tóm được thành một điểm cụ thể, viết lại.
+Format, series, angle, headline và layout chỉ định cách trình bày; chúng không đổi chủ thể, không cấp thêm claim và không phải nguồn evidence. `hidden_cost`, `contrast`, `red_flag`, `boundary` hay một format tương tự chỉ dùng được khi RAW IDEA và evidence hỗ trợ cách nhìn đó.
 
-## 2. GIỌNG VĂN & CỤM TỪ CẤM
+## 2. Ranh giới evidence — claim phải truy ngược được
 
-2.1. Có quan điểm rõ ràng. Tránh hedging lặp lại như "có thể", "đôi khi", "theo cách riêng". Nhưng quan điểm mạnh không được biến thành tuyên bố tuyệt đối ("luôn", "100%", "không bao giờ").
+Mọi insight, distinction, trigger, tension, payoff và hệ quả phải được hỗ trợ bởi context/evidence của package. Evidence đặt biên cho claim, không bắt buộc giữ nguyên câu chữ của nguồn. Không thêm motive, fear, consequence, trạng thái tâm lý, preference hay hành vi cụ thể nếu package không hỗ trợ; không biến một diễn giải chiêm tinh thành sự thật đúng với mọi người thuộc cung đó. Tránh tuyệt đối hóa, nhưng cũng không lặp disclaimer hoặc hedge để né việc đưa ra nhận xét.
 
-Cách dung hòa 2 chiều này: diễn đạt qua tình huống cụ thể ("X thường làm Y khi Z") thay vì qua tuyên bố tính cách trừu tượng ("X luôn là người..."). Tình huống cụ thể tự nhiên vừa dứt khoát vừa không tất định.
+- **Concretization** là diễn đạt một ý evidence đã có bằng từ ngữ hoặc hành vi đời thường dễ hình dung hơn, không đổi nghĩa và không khẳng định nguyên nhân, tần suất hay kết quả mới. Có thể dùng một hành vi quen thuộc để giải nghĩa một khái niệm như “quan tâm”, nhưng không được khẳng định đó là cách một cung nhất định thường làm hoặc muốn nếu package không nói vậy.
+- **Claim expansion** là biến chi tiết minh họa thành sự thật về cung, hoặc thêm motive, fear, điều kiện, tần suất, phản ứng hay hệ quả chưa có trong evidence. Bỏ chi tiết đó nếu không truy ngược được về package.
 
-2.2. Không kết thúc slide bằng câu đúc kết kiểu AI: "Điều đó cho thấy…", "Đây chính là cách…", "Qua đó có thể thấy…", "Sự kết hợp này khiến…", "Điều quan trọng là…". Kết bằng hành động, thoại, hệ quả, reveal, tension, hoặc callback thay vào đó.
+Ví dụ: evidence nói Cự Giải đón nhận sự chăm sóc, quan tâm và gần gũi. Viết “dễ đón nhận sự quan tâm và gần gũi” chỉ nhắc lại evidence, chưa tạo insight. “Sợ bị bỏ rơi nên cần được nhắn mỗi ngày” thêm motive và yêu cầu cụ thể, nên vượt evidence. Một cách nói đời thường chỉ được dùng để làm rõ “quan tâm”, không được gán thành sở thích riêng của Cự Giải nếu evidence không có.
 
-Lưu ý mở rộng: bất kỳ câu nào ở cuối slide có chức năng tóm tắt/đúc kết ý nghĩa vừa kể — dù không trùng đúng cụm từ mẫu ở trên — vẫn vi phạm tinh thần rule này. Không chỉ chặn từ, chặn cả dạng câu. Không kết bằng tóm tắt tính cách hay bài học đạo lý.
+## 3. Core insight — tìm điều đáng nói nhất
 
-2.3. Tránh ngôn ngữ giải thích/scaffolding khi một câu trực tiếp là đủ. Các cụm như "điểm khó là", "đây là lúc", "với họ", "vì thế", "điều này" không nên trở thành khung câu theo thói quen. Bắt đầu từ quan sát thực tế khi có thể.
+Trước prose, viết một câu nội bộ trả lời: **Điều đáng nói nhất mà evidence này cho phép nói về RAW IDEA là gì?** Câu đó phải trả lời đúng câu hỏi và làm rõ một khác biệt có ý nghĩa. Đặt nó cạnh mệnh đề evidence: nếu cả hai chỉ nói cùng một điều ở cùng mức cụ thể nhưng đổi từ, đó là paraphrase, chưa phải insight.
 
-2.4. Ưu tiên tiếng Việt tự nhiên. Từ chối các cụm nén/khái niệm nghe như AI viết dù đúng ngữ pháp. Ưu tiên cách nói một người Việt thực sự sẽ nói. Tránh các cấu trúc như "quan tâm đi kèm chỉnh sửa", "phản xạ phân tích", "cơ chế quan tâm" trừ khi cụm từ đó thực sự tự nhiên trong ngữ cảnh.
+Nếu bỏ tên cung mà câu chỉ còn là phân tích tính cách chung, hoặc thay tên cung khác vào mà nhận xét vẫn đúng gần như nguyên vẹn, insight còn rộng. Thu hẹp bằng khác biệt/hành vi được evidence hỗ trợ; nếu chỉ có thể làm rõ bằng claim mới thì dừng và ghi rõ evidence chưa đủ.
 
-2.4a. Giọng kể trực tiếp: ưu tiên cách nói thẳng, đời thường, ít giải thích. Viết như một người đang chỉ ra một hành vi vừa quan sát được, không như người đang phân tích tính cách cung hoàng đạo. Ưu tiên động từ, hành động và tình huống cụ thể hơn danh từ trừu tượng. Nếu có thể nói ngắn và tự nhiên hơn mà không mất ý, chọn bản ngắn. Không cố làm câu văn đẹp, cân đối hoặc học thuật.\n\n2.4b. Tránh từ ngữ đo lường máy móc khi nói về cảm xúc hoặc tương tác giữa người với người. Các cụm như “cùng mức”, “mức cảm xúc”, “độ tương xứng” chỉ dùng khi thật sự tự nhiên trong câu; mặc định ưu tiên cách nói đời thường như “nhiệt tình hơn”, “hờ hững hơn”, “đáp lại có cảm xúc”, “chỉ trả lời cho xong”, hoặc mô tả trực tiếp hành vi tạo ra khoảng chênh. Nếu một cụm đúng nghĩa nhưng nghe như đang chấm điểm cảm xúc, viết lại.
+Một slide = một ý rõ. Không dựng cả body từ `nêu preference → giải thích preference → paraphrase preference`.
 
-2.5. Headline phải mang claim/hook thật sự. Tránh headline dạng meta: "Lời đồn về…", "Thực tế…", "Góc nhìn khác…", "Sự thật về…", "Khía cạnh…".
+## 4. Distinction và memorable point — qua trước khi viết body
 
-2.5a. Title = headline slide 1. Viết title trước để định vị rõ nội dung người xem đang xem, sau đó dùng nguyên title làm headline slide 1 nếu OUTPUT_TEMPLATE yêu cầu block headline. Không nghĩ headline 1 trước rồi sao chép ngược thành title. Title không bắt buộc phải là hook mạnh; clarity đứng trước hook. Title/headline 1 phải nói rõ chủ đề hoặc insight chính, đủ cụ thể để người xem hiểu nội dung ngay từ slide đầu. Body slide 1 mở rộng, chứng minh hoặc cụ thể hóa title; không chỉ diễn đạt lại title bằng câu dài hơn.
+Insight phải chỉ ra một phân biệt đáng kể trong câu hỏi: có thể là `A khác B`, một điều kiện, giới hạn, đối lập, tension hoặc cách hiểu khác. Không bắt buộc dùng các mẫu câu trên; không ép tạo đối lập nếu evidence không hỗ trợ hai phía.
 
-## 3. TÍNH CỤ THỂ — TRÁNH CHUNG CHUNG
+Trước khi viết body, ghi một **memorable point** để trả lời: **Lướt qua slide này, người xem còn nhớ nhận xét nào?** Điểm này phải ngắn, cụ thể, đứng riêng được và chỉ ra khác biệt đáng nhớ, không chỉ lặp lại mệnh đề evidence bằng câu gọn hoặc bóng bẩy hơn. Có thể nén/reframe một distinction đã được hỗ trợ; không cần thêm fact mới. Đây là neo biên tập, không phải slogan/template bắt buộc hay giấy phép phóng đại. Chỉ giữ một điểm nhớ chính cho mỗi slide.
 
-3.1. Làm cho quan sát được (observable). Một trait nên thể hiện qua hành vi, suy nghĩ, phản ứng, lựa chọn, mâu thuẫn hoặc tình huống cụ thể. Không dựng POV, hội thoại hoặc mini-scene; nội dung hiện tập trung vào carousel tĩnh.
+Áp dụng Delete Test: bỏ tên cung thì hành vi/nhận xét vẫn phải đáng tin như một điều có thể gặp ở người thật. Áp dụng Replaceability Test trong batch: nếu một cung khác có thể dùng nguyên insight và memorable point, hãy tìm khác biệt được evidence hỗ trợ; không thêm stereotype để làm các cung trông khác nhau.
 
-3.2. Recognition trigger: mỗi slide cần một insight người xem có thể nhận ra ở chính họ hoặc người quen. Recognition có thể đến từ tâm lý, hành vi, mâu thuẫn, phản ứng, hoặc tình huống — không bắt buộc phải có ví dụ đời thường.
+## 5. Progression — mỗi slide phải đưa ý tiến lên
 
-3.3. Ví dụ là tùy chọn. Chỉ dùng ví dụ khi nó làm sắc nét ý chính. Ưu tiên một ví dụ ngắn, dễ hiểu rộng rãi; không dựng ví dụ thành POV, hội thoại hoặc mini-scene.
+Phác mỗi slide thành một beat trước khi viết: mỗi beat phải thêm một phân biệt, biểu hiện, điều kiện, reframe hoặc hệ quả mới được evidence hỗ trợ. Nếu đổi thứ tự slide mà trải nghiệm gần như không đổi, hoặc hai slide chỉ paraphrase nhau, progression chưa đạt.
 
-3.4. Không giải thích lại insight. Khi hành vi, mâu thuẫn hoặc hệ quả đã chứng minh được ý, không thêm câu tóm tắt ý nghĩa của nó.
+Không mặc định slide cuối phải khen, chê, tạo twist hay nêu “mặt trái”. Tension và payoff mạnh phải được evidence trả giá. Không ép đủ slide khi evidence không có thêm beat. Nếu package cho phép đổi số slide, dừng ở số beat đã kiếm được; nếu contract khóa số slide, báo conflict để đổi scope/contract thay vì lặp ý hoặc bịa progression. Không áp một progression pattern cho mọi cung; chỉ xoay trục khi evidence cho phép.
 
-3.5. Cụ thể hoá trait chung chung (gộp Delete Test + Ban generic trait expansion + Recognition > textbook completeness):
+Trong cùng batch, so insight, hành vi và payoff giữa các cung; không chấp nhận bản đổi tên cung. Giữ nhất quán mức độ hài hước, nghiêm túc hoặc ấm áp, trừ khi chủ ý tạo tương phản rõ.
 
-- Delete Test: xóa tên cung ra khỏi body. Câu chuyện vẫn phải đọc như một tình huống con người đáng tin. Nếu chỉ còn là phân tích tính cách, coi như fail.
-- Không xây slide bằng cách nêu một trait rộng rồi dành cả body để giải thích nó. Các claim như "Xử Nữ thích phân tích", "Cự Giải nhạy cảm", "Sư Tử bảo vệ bạn bè" chỉ là giả thuyết khởi đầu, chưa phải nội dung hoàn chỉnh — phải thu hẹp thành một hành vi có trigger và hệ quả cụ thể.
-- Mục tiêu không phải định nghĩa một cung đầy đủ như sách giáo khoa, mà tạo ra một khoảnh khắc cụ thể người xem nhận ra được ở bản thân hoặc người quen.
-- Replaceability test (mức nâng cao của Delete Test): ngoài việc đổi tên cung, hỏi thêm liệu insight trung tâm có thể mô tả gần như bất kỳ ai mà không cần chỉnh sửa không. Nếu có, insight vẫn còn quá rộng — viết lại hành vi, trigger, hoặc hệ quả cho đến khi điểm chính đủ đặc thù để xứng đáng làm một slide.
+## 6. Naturalness và recognition — đời thường mà không bịa
 
-3.6. Concrete before abstract: từ evidence, ưu tiên tìm biểu hiện đời thường người đọc có thể hình dung ngay rồi mới rút insight. Body nên có hành vi, chi tiết hoặc tình huống cụ thể trước khi dùng khái niệm trừu tượng. Ví dụ dùng để làm trait nhìn thấy được, không dùng để thêm trait mới. Không ép thành giai thoại, POV, hội thoại hay mini-scene. Nếu body chủ yếu gồm các từ như “tín hiệu”, “cường độ”, “kết nối”, “sự tương xứng”, “nhịp”, “cảm giác được ghi nhận” mà thiếu hành vi cụ thể, viết lại.
+Mỗi slide cần một hành vi, phản ứng, tình huống hoặc distinction đủ quen để người xem nhận ra mình/người quen. Recognition không bắt buộc là scene hay ví dụ; một khác biệt được nói tự nhiên cũng có thể tạo nhận diện. Nếu không có trigger nào vừa quen vừa nằm trong evidence, gate chưa qua.
 
-3.7. Không ép rập khuôn cung hoàng đạo: zodiac là khung sáng tạo, không phải bằng chứng đúng cho mọi người sinh dưới một cung. Giữ các claim ở mức quan sát, không mang tính tất định.
+Nói như người đang nhận xét một hành vi quen thuộc, không như người phân tích tính cách cung. Ưu tiên động từ và điều người ta làm/nhận ra trước danh từ trừu tượng. Từ như “trọng tâm”, “kết nối”, “có sức nặng”, “được đón nhận” không bị cấm; viết lại khi chúng đang thay cho một quan sát trực tiếp hơn. Không mở rộng mức cụ thể chỉ để câu nghe đời thường.
 
-3.8. Không dùng các cụm đệm kiểu “được mô tả là”, “thường được cho là”, “theo mô tả về cung” trong slide hoặc caption. Nếu evidence/package đã cho phép một trait, viết thẳng trait đó qua hành vi, phản ứng hoặc tình huống cụ thể; giữ tính không tất định bằng cách tránh tuyệt đối hóa, không bằng cách lặp disclaimer trong câu.
+Concrete before abstract: bắt đầu từ biểu hiện có thể hình dung rồi mới dùng khái niệm nếu cần. Chi tiết phải observable và đáng tin khi bỏ tên cung. Ví dụ là tùy chọn; nếu dùng, chọn chi tiết dễ hiểu rộng rãi, chỉ làm sáng rõ insight và không dựng POV, hội thoại hay mini-scene. Không dùng disclaimer kiểu “được mô tả là/theo cung này” để thay thế cách viết claim có giới hạn.
 
-3.9. Novelty budget: mỗi slide chỉ cần một chi tiết đáng nhớ chính. Không dồn nhiều ví dụ, ẩn dụ, twist, hay trait chỉ để copy trông giàu có.
+## 7. Prose rhythm — chỉ viết sau khi gates đạt
 
-3.10. Không dùng cliché rỗng. Các cụm như "quan tâm theo cách riêng", "trân trọng mối quan hệ", "luôn ở bên khi cần", "có chiều sâu cảm xúc" chỉ được giữ khi có hành vi, trigger hoặc hệ quả cụ thể chứng minh.
+Thiết kế title trước body để định vị rõ nội dung; dùng nguyên title làm headline slide 1 khi contract yêu cầu block headline. Clarity đứng trước hook. Headline là claim/hook thật, không phải nhãn meta. Body slide 1 phải chứng minh hoặc cụ thể hóa title, không kéo dài title bằng cách paraphrase.
 
-3.11. Broad accessibility: khi dùng ví dụ, ưu tiên bối cảnh dễ hiểu ở nhiều độ tuổi, trừ khi chủ đề nhắm rõ vào một nhóm hẹp. Tránh thuật ngữ công việc/học thuật/niche không cần thiết.
+Giữ nhịp đọc chậm: ưu tiên 3–4 câu ngắn khi contract và evidence cho phép; mỗi câu làm một việc như nêu hành vi, tạo phân biệt, cho phản ứng hoặc chốt tension. Không nhồi nhiều beat vào một câu. Tránh câu scaffolding/giải thích khi có thể nói thẳng. Không kết slide bằng câu AI tóm tắt, bài học, hoặc giải thích lại điều vừa kể; kết ở một nhận xét, hành vi hay tension đã được evidence hỗ trợ. Không dùng thoại hoặc scene làm phương tiện triển khai.
 
-3.12. Evidence distance: mọi insight trung tâm, tension và payoff phải truy ngược được về evidence của package. Evidence là biên của claim, không phải khuôn câu chữ: không chỉ paraphrase trait cho an toàn. Được cụ thể hóa evidence thành hành vi, tình huống, so sánh hoặc tension trực tiếp nằm trong logic của evidence, nhưng không thêm trait, động cơ, nỗi sợ, kỳ vọng, khuyết điểm hoặc hệ quả tâm lý mới. Nếu một câu cần thêm một giả định mới để đúng, bỏ câu đó.
+## 8. Độ dài và format — theo contract package
 
-3.13. Reaction over advice: khi RAW IDEA hỏi một cung phản ứng, nghĩ, để ý hoặc thay đổi thế nào trước một tình huống, lấy phản ứng đó làm chủ thể nội dung. Không tự chuyển thành hướng dẫn “nên tán/yêu/đối xử với cung này thế nào” trừ khi RAW IDEA yêu cầu advice. Advice nếu có chỉ là hệ quả phụ, không thay thế insight chính.
+Giới hạn chung chỉ là hướng dẫn mặc định: headline tối đa 55 ký tự; body ưu tiên 225–240 ký tự khi package cho phép, không phải mức tối thiểu. Không nhồi chữ để đủ độ dài. `OUTPUT_CONTRACT`, `OUTPUT_TEMPLATE`, `SLIDE_OPTIONS` và các contract package khác quyết định trần, số dòng, số slide, thứ tự và block ID. Contract override giới hạn kỹ thuật chung khi có xung đột; nội dung vẫn phải qua các editorial gates.
 
-3.14. RAW IDEA authority: RAW IDEA quyết định câu hỏi nội dung phải trả lời. Format, series, angle và layout chỉ quyết định cách trình bày câu trả lời; không được đổi chủ thể hoặc biến câu hỏi sang một chủ đề khác. Nếu RAW IDEA hỏi “họ phản hồi thế nào”, carousel phải mô tả phản ứng của họ; không được biến thành “người khác nên làm gì”, “điều gì là red flag” hoặc “ranh giới của họ” chỉ để khớp format.
+Header dùng sentence case, không ALL CAPS. Không dùng dash làm công cụ cấu trúc câu trong carousel. Tránh cliché rỗng, thuật ngữ niche và nhiều ví dụ/ẩn dụ/twist trên cùng slide. Giữ câu chữ dễ hiểu với nhiều độ tuổi, trừ khi package nhắm rõ nhóm hẹp.
 
-## 4. PROGRESSION GIỮA CÁC SLIDE
+## 9. Final validation — phát hiện, không cứu gate fail
 
-4.1. Mỗi slide phải tiến (advance). Slide sau phải đào sâu, leo thang, tương phản, reveal, reframe, cho thấy hệ quả, hoặc phơi bày mặt trái.
+Trước khi gửi, xác nhận:
 
-4.2. Progression Test: nếu 3 slide có thể đảo thứ tự mà không thay đổi trải nghiệm, progression đang yếu.
+- RAW IDEA được trả lời đúng; reaction không bị đổi thành advice và angle không tạo claim.
+- Core insight hơn paraphrase; distinction và memorable point có ý nghĩa, đứng riêng và truy được về evidence.
+- Từng slide có recognition anchor tự nhiên; không có claim expansion, POV/scene hoặc nội dung tất định.
+- Mỗi slide thêm một beat; số slide do evidence kiếm được và vẫn khớp contract. Contract không thể đạt bằng nội dung có căn cứ thì dừng và báo conflict.
+- Title khớp headline slide 1 theo contract; body không lặp title/preference; nhịp, độ dài và format hợp contract.
+- Batch không lặp insight/hành vi/payoff bằng cách đổi tên cung; tone vẫn nhất quán.
 
-4.3. Slide 3 không mặc định là khen. Có thể cho thấy ma sát, cái giá, mâu thuẫn, ranh giới, mặt trái, hoặc hệ quả gây tranh cãi.
+Nếu một mục fail, quay lại gate sớm nhất liên quan. Không dùng chỉnh prose, kéo dài câu hoặc thêm ví dụ để che lỗi insight, evidence hay progression.
 
-4.4. Behavioral thread xuyên slide: khi carousel theo một chủ đề, các slide nên phát triển một mạch hành vi nhận diện được, thay vì ba mô tả tính cách cạnh nhau. Cấu trúc gợi ý: để ý/nhớ điều gì đó → phản ứng khi nó lặp lại → hé lộ giới hạn, cái giá, hoặc hệ quả.
+## Chưa quy định
 
-4.5. Causal continuity: hành vi, phản ứng và payoff phải liên kết và có cảm giác là hệ quả của nhau, không phải ba fact horoscope rời rạc.
-
-4.6. Earn the strong line: headline/payoff mạnh phải được body chứng minh. Không dùng sự khiêu khích hoặc phóng đại khi hành vi, lý do hay hệ quả trong body không đủ trả cho câu hook.
-
-4.7. Không phát triển POV/scene: nội dung hiện phục vụ carousel tĩnh, không phát triển luồng video. Không dựng mini-story, hội thoại hoặc POV như một format truyền tải. Mỗi slide ưu tiên insight, hành vi, tâm lý, mâu thuẫn, trigger và hệ quả. Ví dụ nếu có chỉ là chi tiết ngắn để làm rõ insight.
-
-4.8. Carousel rhythm: mặc định dùng nhịp đọc chậm. Body ưu tiên 3–4 câu ngắn, mỗi câu tạo một điểm dừng rõ cho mắt. Một câu chỉ nên mang một hành động hoặc một ý chính. Có thể dùng câu rất ngắn để tách các chi tiết cụ thể trước khi đi đến phản ứng hoặc tension. Nếu một câu chứa đồng thời ví dụ + giải thích + kết luận, tách câu. Không gom nhiều hành động vào một câu để tiết kiệm ký tự và không biến body thành đoạn văn liên tục. Không dùng thoại như cách triển khai slide.
-
-4.8a. One memorable beat per sentence: mỗi câu nên làm một việc rõ ràng như nêu hành vi, cho phản ứng, tạo tương phản hoặc chốt tension. Không nhồi nhiều beat vào cùng một câu.
-
-4.9. Chọn core insight trước, trục truyền tải sau: từ RAW IDEA + evidence, xác định trước một insight trung tâm vừa trả đúng câu hỏi gốc vừa được evidence hỗ trợ. Sau đó mới chọn trục giúp insight đó bộc lộ rõ nhất. Không chọn progression, angle hoặc số slide trước rồi tìm cách lấp evidence vào cấu trúc.
-
-4.10. Xoay trục giữa các nội dung: không biến bất kỳ progression nào thành công thức mặc định. Có thể dùng độ thân thiết tăng dần; nguyên nhân → biểu hiện → cái giá; ấn tượng bên ngoài → điều kiện mở lòng → ranh giới; hành vi nhỏ → dấu hiệu rõ hơn → hệ quả; hoặc một trục khác phù hợp insight. Đây là gợi ý, không phải danh sách bắt buộc.
-
-4.11. Transmission diversity test: trong cùng batch, nếu nhiều cung có thể giữ nguyên cấu trúc và chỉ thay trait/tình huống, cần đổi trục ít nhất một số cung. Mục tiêu là khác cả insight lẫn cách người xem khám phá insight đó.
-
-4.12. Progression must be earned: không tạo slide chỉ để hoàn thành progression. Mỗi bước tiến phải thêm giá trị từ evidence. Có thể đào cùng một evidence qua các distinction khác nhau như biểu hiện → tương phản → ranh giới, miễn không sinh claim mới. Nếu chỉ còn cách lặp lại hoặc thêm suy luận để có slide tiếp theo, dừng ở số slide hiện tại.
-
-4.13. Angle is a lens, not a claim source: hidden_cost, contrast, red_flag, boundary và các editorial angle chỉ quyết định cách soi evidence, không cấp phép tạo claim mới. Nếu evidence không đủ cơ sở cho một mặt trái hoặc hệ quả, không ép angle thành một vấn đề tâm lý của cung.
-
-Progression Patterns — xoay vòng, không dùng một cấu trúc cho mọi cung:
-
-- Định kiến → Chứng minh ngược → Mặt trái
-- Hành vi nhỏ → Hành vi rõ hơn → Hệ quả
-- Dễ thương → Quá mức → Khó chịu
-- Hiểu lầm → Reveal → Reframe
-- Setup → Escalation → Payoff
-- Điểm mạnh → Cái giá → Ranh giới
-- Bạn nghĩ A → Thực ra B → Nhưng B cũng có vấn đề
-- Tình huống → Phản ứng → Câu chốt
-
-## 5. NHẤT QUÁN TRONG BATCH 12 CUNG
-
-5.1. Cross-sign duplication check: trong một batch 12 cung, tình huống, hành vi, và payoff không được chỉ là bản đổi tên của nhau.
-
-5.2. Tone continuity: trong cùng một batch 12 cung, giữ nhất quán mức độ giễu/nghiêm túc/ấm áp — trừ khi có chủ đích tạo tương phản rõ ràng giữa các cung.
-
-## 6. FINAL REVIEW CHECKLIST
-
-Trước khi duyệt nội dung, hỏi:
-
-A. Có hành vi, trigger, phản ứng hoặc mâu thuẫn cụ thể không? B. Có chi tiết khiến người xem nhận ra mình/người quen không? C. Có đang giải thích lại điều hành vi/hệ quả đã thể hiện không? D. Đổi tên cung khác vào có vẫn đúng gần như nguyên vẹn không? E. Slide 2 có thực sự tiến từ slide 1 không? F. Slide 3 có payoff/reframe/hệ quả/mặt trái không? G. Đảo thứ tự slide có làm yếu mạch nội dung không? H. Có câu nào nghe như AI kết luận bài không? I. Headline có được body "trả" đầy đủ không? J. Có chi tiết nào chỉ để trang trí nhưng không phục vụ ý chính không? K. Core Insight Test: trước khi review câu chữ, viết insight trung tâm thành một câu không dùng văn phong carousel. Câu đó có trả đúng RAW IDEA, được evidence hỗ trợ và đủ đáng để người xem biết không? Nếu thiếu một trong ba, quay lại chọn insight; không sửa copy. L. So-what Test: sau khi đọc body, ngoài headline hoặc trait gốc, người xem vừa biết thêm điều gì? Nếu body chỉ giải thích lại cùng một trait bằng nhiều câu, coi như fail. Body phải làm insight sắc thêm bằng ít nhất một hành vi, chi tiết, distinction, tension hoặc tình huống cụ thể được evidence cho phép. M. Title Identity Test: title có giúp người xem hiểu ngay carousel đang nói về điều gì không? Headline slide 1 có giống hệt title không? Body slide 1 có thêm tình huống hoặc bằng chứng cho title thay vì chỉ paraphrase lại không?
-
-## 7. KHOẢNG TRỐNG CHƯA QUY ĐỊNH (cần bổ sung sau nếu áp dụng)
-
-Hashtag, CTA, emoji trong caption/slide: chưa có quy định. Nếu content thực tế có dùng, cần thêm mục riêng quy định có/không dùng và giới hạn cụ thể.
+Hashtag, CTA và emoji trong caption/slide chưa có rule chung. Không tự suy diễn thành giới hạn bắt buộc.
