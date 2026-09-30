@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <defs>
+    <linearGradient id="cafe-wall" x2="0" y2="1">
+      <stop stop-color="#26334E"/>
+      <stop offset=".58" stop-color="#516477"/>
+      <stop offset="1" stop-color="#E8BB78"/>
+    </linearGradient>
+    <linearGradient id="window-glass" x2="0" y2="1">
+      <stop stop-color="#5F8290"/>
+      <stop offset="1" stop-color="#344A5E"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#cafe-wall)"/>
+  <path d="M0 0h1080v370H0z" fill="#26334E" opacity=".22"/>
+  <path d="M78 210h924v720H78z" fill="#F4D8AB" stroke="#463447" stroke-width="26"/>
+  <path d="M112 244h856v650H112z" fill="url(#window-glass)"/>
+  <path d="M540 245v649M112 590h856" fill="none" stroke="#E8BB78" stroke-width="22"/>
+  <path d="M150 335q115-98 214 0v255H150zM730 298q134-91 214 0v292H730z" fill="#26334E" opacity=".46"/>
+  <path d="M165 360h190m-190 68h148m458-92h170m-170 66h125" fill="none" stroke="#A9D6DF" stroke-width="15" stroke-linecap="round" opacity=".55"/>
+  <g fill="none" stroke="#A9D6DF" stroke-width="13" stroke-linecap="round" opacity=".65">
+    <path d="M214 284l-18 90m93-107-18 86m445-54-18 91m166-75-18 91m-53 212-18 90m-538-50-18 90"/>
+  </g>
+  <path d="M0 1000q195-68 390 0t390 0q150-52 300 0v460H0z" fill="#354657" opacity=".55"/>
+  <path d="M0 1120q150-74 310 0v225H0zM770 1105q160-82 310 0v240H770z" fill="#A96755" stroke="#463447" stroke-width="22"/>
+  <path d="M0 1320h1080v110H0z" fill="#E8BB78" stroke="#463447" stroke-width="20"/>
+  <path d="M0 1405h1080v515H0z" fill="#B57F5E"/>
+  <path d="M0 1405h1080" stroke="#463447" stroke-width="24"/>
+  <path d="M62 1480h956M110 1550h860" stroke="#FFF4DE" stroke-width="8" opacity=".16"/>
+  <path d="M810 175h150" stroke="#463447" stroke-width="18" stroke-linecap="round"/>
+  <path d="M885 184v110" stroke="#463447" stroke-width="14"/>
+  <path d="M830 310q55-78 110 0z" fill="#F2C45C" stroke="#463447" stroke-width="14"/>
+  <circle cx="885" cy="325" r="8" fill="#FFF4DE"/>
+</svg>

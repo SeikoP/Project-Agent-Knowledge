@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <ellipse cx="202" cy="374" rx="92" ry="13" fill="#332B37" opacity=".12"/>
+  <path d="M161 282l-4 66q0 16 16 18l27-1 4-81zM214 284l4 64q1 17 17 17l27-3-8-83z" fill="#435064" stroke="#463447" stroke-width="9" stroke-linejoin="round"/>
+  <path d="M166 349q-22 5-24 18 0 10 13 11h55q12-2 8-13l-14-18zM237 350q-18 4-15 17l10 11h57q13-1 7-14l-18-18z" fill="#FFF4DE" stroke="#463447" stroke-width="9" stroke-linejoin="round"/>
+  <path d="M136 202q-30 15-37 41l-4 35q-2 14 10 18 12 3 16-11l12-29 28-25m92-30q34 10 42 37l9 22q5 14-7 20-12 5-18-8l-18-27-36-17" fill="#D69B61" stroke="#463447" stroke-width="11" stroke-linecap="round"/>
+  <path d="M132 201q21-29 68-31h21q48 3 65 35l-7 89q-36 23-75 23-42 0-78-26z" fill="#D69B61" stroke="#463447" stroke-width="11" stroke-linejoin="round"/>
+  <path d="M174 192h46v107l-23-20-23 20z" fill="#FFF4DE" stroke="#463447" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M139 211q29 10 36 1v80q-18 2-36-12m113-68q-25 10-32 1v80q18 2 32-12" fill="#E8BB78" stroke="#463447" stroke-width="7" stroke-linejoin="round"/>
+  <circle cx="146" cy="126" r="19" fill="#F1C6A0" stroke="#463447" stroke-width="8"/><circle cx="255" cy="126" r="19" fill="#F1C6A0" stroke="#463447" stroke-width="8"/>
+  <path d="M137 117q-2-65 63-77 71-13 88 54 9 40-8 81-18 38-68 43-48 0-68-39-12-25-7-62z" fill="#F1C6A0" stroke="#463447" stroke-width="10"/>
+  <path d="M126 135q-11-83 58-104 72-18 105 40 11 19 10 47l-25-27-10-19-14 15-15-24-15 23-12-19-17 26-16-15-19 35-27 22z" fill="#332B37" stroke="#463447" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M163 130q15 6 28 1m34-7q14-8 27-2" fill="none" stroke="#463447" stroke-width="7" stroke-linecap="round"/>
+  <ellipse cx="180" cy="147" rx="6" ry="8" fill="#332B37"/><ellipse cx="245" cy="145" rx="6" ry="8" fill="#332B37"/>
+  <path d="M207 149l-4 14 10 1m-16 17q12-2 23 2" fill="none" stroke="#463447" stroke-width="7" stroke-linecap="round"/>
+  <path d="M294 254q17-12 31 2l12 17-25 20-18-19q-10-11 0-20z" fill="#F2C45C" stroke="#463447" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M291 194q41-35 61-1" fill="none" stroke="#A9D6DF" stroke-width="8" stroke-linecap="round" opacity=".85"/>
+</svg>

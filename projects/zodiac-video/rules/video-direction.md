@@ -2,7 +2,7 @@
 
 ## Mục tiêu
 
-Đạo diễn một video ngắn có mạch truyện rõ, hình ảnh kể chuyện và tiến triển nhân quả từ idea cùng evidence được cung cấp. Agent chịu trách nhiệm cho cả narrative và directing: StorySpine, beats, sequences, shots, narration, asset choice, continuity và reveal. Không gọi Gemini hoặc yêu cầu ứng dụng tự sinh StoryGraph.
+Đạo diễn một video ngắn có mạch truyện rõ, hình ảnh kể chuyện và tiến triển nhân quả từ idea cùng evidence được cung cấp. Agent xây dựng `StoryOutline`, `ScenePlan[]` rồi `VisualScene[]`; ứng dụng kiểm tra draft và dựng StoryGraph đầy đủ. Không gọi Gemini hoặc yêu cầu ứng dụng tự sinh nội dung thay cho draft đã được duyệt.
 
 ## Thứ bậc nguồn
 
@@ -21,26 +21,47 @@
 
 ## Đạo diễn hình ảnh
 
-- Kể bằng hành động nhìn thấy được, bố cục, chuyển động camera, thay đổi khoảng cách, đạo cụ, ánh sáng và reveal. Mỗi shot cần có chức năng rõ như setup, escalation, reaction, transition, turn hoặc payoff.
-- Cho phép một beat trải qua nhiều shot và một shot thể hiện nhiều beat nếu quan hệ vẫn rõ. Dùng sequence để tạo nhịp hoặc bối cảnh; dùng continuity để giữ vật thể có ý nghĩa xuyên cảnh.
-- Không dùng POV-scene, khung chat, bong bóng tin nhắn hoặc hội thoại làm cấu trúc video. `graph.messages` phải rỗng; không chọn layout hoặc scene kiểu chat/POV.
-- Chỉ chọn theme, layout, scene, variant và motion có trong `directing_options`. Canvas, renderer và domain do ứng dụng quản lý.
-- Chọn asset từ `allowed_assets` theo `role`, `label`, `description`, `tags` và `scene_ids`. Khai báo đúng cặp `id`/`src` trong `graph.assets`, rồi tham chiếu ID đó ở sequence, shot hoặc reveal cần dùng. Không tự bịa đường dẫn/ID, không thêm asset ngoài allowlist và không đưa asset vào chỉ để lấp khung hình.
-- Asset là đạo cụ hoặc hình tượng thị giác, không thay thế claim, evidence hay nội dung kể chuyện. Giữ cách dùng và vị trí tương đối nhất quán khi asset đóng vai trò continuity.
+- Làm theo đúng thứ tự `StoryOutline → ScenePlan[] → VisualScene[]`. Mỗi ScenePlan có đúng một VisualScene với `scene_plan_id` tương ứng. Scene N+1 phải có lý do hình ảnh bắt nguồn từ diễn biến trước.
+- VisualScene mô tả environment/stage, actor, acting intent, interaction, gaze/focus, story object và state, camera purpose/profile, composition intent, treatment intent, typography role. Nó không chứa tọa độ, scale, transform, SVG component ID, reveal part hay renderer implementation.
+- Chọn environment và asset ID chỉ từ `asset_catalog.scenes` và `allowed_assets`. Ghi `background_asset_id`, `set_dressing_asset_ids`, character master `asset_id`, và continuity object ID; không tự viết `src` hoặc đường dẫn.
+- Chọn một character master ổn định cho mỗi actor. Dùng pose/expression nằm trong `supported_poses`/`supported_expressions`; mô tả acting cụ thể, chọn `gaze_target_id`, interaction và focus tới actor/object đang hiện.
+- Story object dùng `continuity_id` đã khai báo trong `continuity_objects`; giữ nguyên asset identity. Khi đổi state, relation hoặc actor anchor, đặt `transition_from` đúng state trước và nêu `transition_reason`. Không tạo ID mới để giả vờ vật thể mới xuất hiện.
+- `sequence_id` giữ nguyên khi tiếp tục cùng bối cảnh và background; đổi ID khi câu chuyện chuyển sang environment/background khác. Tọa độ và lớp dựng sẽ do ứng dụng suy ra từ composition intent.
+- Camera, composition, treatment hay chữ thay đổi riêng lẻ không phải visual progression. Phải có thay đổi acting/gaze/interaction/object state hoặc stage mà câu chuyện yêu cầu.
+- Không dùng POV-scene, khung chat, bong bóng tin nhắn hoặc hội thoại làm cấu trúc video. Writer Context v5 không có trường messages; không tự thêm trường đó.
+- Chỉ đạo dựa trên `allowed_assets` và các enum trong `visual_contract`/`directing_options`. Không yêu cầu writer chọn thời lượng, reveal timing, chuyển động part hoặc tọa độ.
+- Asset là đạo cụ hoặc hình tượng thị giác, không thay thế claim, evidence hay nội dung kể chuyện. Vật thể giữ state và vị trí tương đối nhất quán khi đóng vai continuity.
+
+## Art direction và typography
+
+- Production art direction là `storybook-expressive-chibi@1`. Catalog và `allowed_assets` là authority; giữ identity người chibi, silhouette, expression và shape language theo direction này. Không chuyển sang direction khác trong cùng graph.
+- Đạo cụ và phong cảnh luôn vô tri: không gắn mặt, tay, chân, biểu cảm hoặc vai diễn cho ly, thẻ giấy, đồ ăn, bàn ghế hay vật dụng. Chọn asset semantic đúng mục đích và scene compatibility.
+- Nhân vật là nhân vật hư cấu cho tình huống; không khẳng định họ đại diện mọi người thuộc cung đó. Biểu cảm và lựa chọn cần thể hiện cá tính qua hành động cụ thể, không qua ký hiệu cung hay lời giảng giải.
+- Dùng `typography_role` để chỉ định `none`, `narration`, `emphasis` hoặc `verdict`; nội dung narration phải tham chiếu ID đã khai báo. Không thêm caption riêng ngoài nội dung đã duyệt.
+- Dùng treatment intent `normal`, `bold_comic`, `paper_layer`, `dramatic` hoặc `editorial_verdict` nếu nó phục vụ nhịp đó. Đây là chỉ thị semantic, không phải yêu cầu tự tạo CSS/asset mới.
+- Khi trình bày preview, giải thích ngắn acting, interaction, gaze/focus, object continuity, camera/composition và vai trò chữ. Giữ `ScenePlan → VisualScene → allowed_assets` nhất quán; không thêm lời thoại, audio hoặc nội dung ngoài claim/evidence.
+
+## Kể chuyện từ nét tính cách
+
+- Lấy idea/evidence đã chọn làm điểm xuất phát, rồi dựng một tình huống hư cấu khiến nét tính cách hoặc đặc trưng của cung tạo ra hành động, lựa chọn và hệ quả nhìn thấy được. Không kể nguồn gốc cung, không tóm tắt ý nghĩa cung, không biến video thành bài giải thích claim.
+- Mỗi câu chuyện cần có mong muốn cụ thể, trở ngại do cách hành xử tạo ra, leo thang có nguyên nhân, khoảnh khắc nhận ra hoặc lựa chọn làm đổi hướng, và payoff gọi lại một chi tiết đã gieo. Không lặp cùng một ý bằng caption khác.
+- Dùng source claim và evidence để giới hạn điều được kết luận. Để nhân vật/tình huống hư cấu nằm ở `story_device`; chỉ nối takeaway với claim bằng ngôn ngữ có điều kiện như “có thể”, không khái quát cho mọi người thuộc cung đó.
+- Ưu tiên kể bằng biểu cảm, cử chỉ, thay đổi khoảng cách, đạo cụ và nhịp dừng. Caption phải làm câu chuyện tiến lên; không đọc lại nội dung nguồn hoặc kể thay hành động đang thấy.
 
 ## Khi thư viện thiếu asset
 
 - Nếu câu chuyện cần một hình chưa có trong `allowed_assets` (ví dụ cây bút), không bịa `id`/`src`, không chọn asset không liên quan chỉ để lấp chỗ trống và không âm thầm bỏ một chi tiết thiết yếu.
-- Thêm một mục vào `graph.asset_needs` cho từng nhu cầu hình ảnh chưa được đáp ứng. Ghi rõ `id`, `role`, `label`, `description` và `purpose`; dùng `role` thuộc enum của StoryGraph.
-- Liên kết nhu cầu với ít nhất một beat hoặc shot liên quan bằng `beat_refs`/`shot_refs`. Ghi `scene_id` khi đã biết. Chỉ đưa ID asset thật trong `candidate_asset_ids`; để danh sách rỗng nếu không có lựa chọn gần đúng.
+- Thêm một mục vào `story.asset_needs` cho từng nhu cầu hình ảnh chưa được đáp ứng. Ghi rõ `id`, `role`, `label`, `description` và `purpose`; dùng `role` thuộc schema do Writer Context cung cấp.
+- Liên kết nhu cầu với ít nhất một beat hoặc VisualScene liên quan bằng `beat_refs`/`shot_refs`; dùng `VisualScene.id` trong `shot_refs`. Ghi `scene_id` khi đã biết. Chỉ đưa ID asset thật trong `candidate_asset_ids`; để danh sách rỗng nếu không có lựa chọn gần đúng.
 - Đặt `status` là `open` và `resolved_asset_id` là `null`. Đặt `required=true` nếu câu chuyện phụ thuộc vào asset đó; chỉ dùng `required=false` khi người dùng có thể bỏ chi tiết mà mạch truyện vẫn hợp lý. Không tự đánh dấu đã thay thế hoặc đã bỏ.
 - Trong preview, nêu rõ asset nào còn thiếu, nó phục vụ beat/shot nào và vì sao asset hiện có không phù hợp. Người dùng sẽ chọn asset thay thế, xác nhận bỏ nhu cầu tùy chọn hoặc chuyển brief sang thiết kế; chỉ phản ánh quyết định đã duyệt vào StoryGraph sau đó.
 
 ## Chuẩn preview và rà soát
 
-- Preview đạo diễn cần giúp người dùng đánh giá được logline, StorySpine, tiến triển beats, sequence/shot với hành động và camera, narration dự kiến, asset được chọn cùng lý do, asset còn thiếu cùng beat/shot liên quan, và payoff/callback.
+- Preview đạo diễn cần giúp người dùng đánh giá được StoryOutline, causal ScenePlan, VisualScene theo thứ tự, character acting/identity, object continuity, camera/composition, narration role, asset được chọn, asset còn thiếu và payoff/callback.
 - Làm theo trạng thái và định dạng handoff trong Writer Context; không tự coi một preview là chấp thuận import.
-- Trước khi bàn giao StoryGraph, rà soát claim references, beat links, asset references, directing options và tính nhất quán giữa nội dung đã duyệt với StoryGraph.
+- Trả đúng envelope trong `response_template` của Writer Context. Với context v5, trả một root `video_story_draft` gồm `version`, `idea_id`, hai fingerprint và `story`; không gửi StoryGraph đã dựng.
+- Trước khi bàn giao, rà soát claim references, causal state, mapping một-một ScenePlan/VisualScene, asset references, directing options, fingerprint và tính nhất quán với nội dung đã duyệt.
 
 ## Art direction and asset contract
 

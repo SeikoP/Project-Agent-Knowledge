@@ -22,24 +22,21 @@
 - Dùng `agent_asset_path` trong Writer Context để mở SVG mirror. Nếu field đó chưa có, tra theo `src` trong `allowed_assets` và giữ phần đường dẫn sau `assets/video/` dưới `projects/zodiac-video/assets/`.
 - Khi chọn, chỉ trả ID nằm trong `allowed_assets`; mirror hoặc manifest cũ không được phép vượt qua catalog/fingerprint runtime.
 
-## Writer Context v3
+## Writer Context v5
 
-- Khi `video_story_writer_context.version` là `3`, hợp đồng output runtime duy nhất là `response_template.video_story_draft`; trả đúng một root `video_story_draft` với `version`, `idea_id`, hai fingerprint và `story`.
-- Chỉ viết các trường trong `story_draft_schema`: spine, beats, sequences/shots/reveals, continuity objects, asset needs và narration. App dựng StoryGraph đầy đủ sau khi validate; không gửi lại claim/evidence, premise, asset `src`, renderer, canvas, layout, audio, subtitle hoặc metadata.
-- Trong rule đạo diễn cũ, các đường dẫn bắt đầu `graph.` mô tả vị trí ngữ nghĩa trong StoryGraph; với context v3 hãy ánh xạ chúng theo `story_draft_schema` và trả `story.*`, không tạo thêm trường `graph`.
+- Khi `video_story_writer_context.version` là `5`, hợp đồng output runtime duy nhất là `response_template.video_story_draft`; trả đúng một root `video_story_draft` với `version`, `idea_id`, `source_fingerprint`, `asset_catalog_fingerprint` và `story`.
+- Chỉ viết các trường trong `story_draft_schema`: `story_outline`, `scene_plans`, `visual_scenes`, `continuity_objects`, `asset_needs` và `narration`. App dựng StoryGraph đầy đủ sau khi validate; không gửi lại claim/evidence, asset `src`, renderer, canvas, layout, audio, subtitle hoặc metadata.
+- Các đường dẫn ngữ nghĩa trong rule được ánh xạ vào `story.*` theo `story_draft_schema`; không tự tạo trường `graph`.
 - Chọn asset bằng ID từ `allowed_assets`. Với nhu cầu mới, dùng `status="open"` và `resolved_asset_id=null`; không tự đổi trạng thái asset need đã được app/người dùng xác nhận.
 - Nếu context có `current_story_status="fresh"`, biên tập toàn bộ `current_story`; nếu trạng thái khác, không dùng StoryGraph cũ làm nguồn.
-- Giữ trình tự preview nội dung/đạo diễn trong cuộc trò chuyện → chờ người dùng duyệt → mới trả JSON. Output v2 chỉ dùng khi ứng dụng đưa Writer Context v2 cũ.
+- Giữ trình tự preview nội dung/đạo diễn trong cuộc trò chuyện → chờ người dùng duyệt → mới trả JSON. Chỉ dùng hợp đồng cũ khi Writer Context hiện tại chỉ rõ phiên bản đó.
 
-Các tag `pack:*` chỉ nhóm asset theo chức năng, không phải nguồn xác định visual direction.
-
+Các tag `pack:human-cast`, `pack:scene` và `pack:props` chỉ nhóm asset theo chức năng, không xác định art direction. Chúng mô tả pack `chibi-human-story` đã lưu trong Knowledge repo; pack này và `chibi-object-theater` đều là legacy/historical, không dùng làm visual source-of-truth hoặc trộn vào catalog Storybook Expressive Chibi v1. SVG trong `design/references/` chỉ để đối chiếu, không phải runtime asset.
 
 ## Art direction and production asset contract
 
 Production direction hiện hành là Storybook Expressive Chibi v1. Nguồn visual chuẩn duy nhất là [design/storybook-expressive-chibi-v1.md](design/storybook-expressive-chibi-v1.md); mọi con số dùng cho validation lấy từ [design/tokens.storybook-expressive-chibi.v1.json](design/tokens.storybook-expressive-chibi.v1.json). Contract metadata nằm tại [design/asset-metadata.v1.schema.json](design/asset-metadata.v1.schema.json). Rule đạo diễn video phải tuân theo nguồn chuẩn này.
 
-Các direction `chibi-object-theater` và `chibi-human-story` chỉ là legacy/historical, không dùng làm visual source-of-truth hoặc trộn vào catalog Storybook Expressive Chibi v1. SVG trong `design/references/` chỉ để đối chiếu, không phải runtime asset.
-
 Semantic category không tự suy ra runtime role. Đọc `runtime_compatibility` tường minh; effects và overlays không có mapping mặc định trong engine hiện tại. Chỉ expose khi mapping trực tiếp được hỗ trợ hoặc adapter đã đăng ký. `allowed_assets` trong Writer Context vẫn là authority duy nhất cho agent chọn asset.
 
-Chỉ mirror asset production được catalog app duyệt vào `projects/zodiac-video/assets/storybook-expressive-chibi/`. Mỗi lần cập nhật phải đồng bộ nguyên file được duyệt, metadata/direction version và catalog fingerprint; không thêm asset riêng từ repo Knowledge vào allowlist runtime.
+Chỉ mirror asset production được catalog app duyệt vào `projects/zodiac-video/assets/storybook-expressive-chibi/`. Các thư mục legacy không phải runtime assets và không được đưa vào allowlist. Mỗi lần cập nhật phải đồng bộ nguyên file được duyệt, metadata/direction version và catalog fingerprint.
