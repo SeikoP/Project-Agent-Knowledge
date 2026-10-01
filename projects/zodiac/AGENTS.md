@@ -2,29 +2,29 @@
 
 Thư mục này chứa hướng dẫn riêng cho thiết kế nội dung của Zodiac Controversy Factory.
 
-## Tài liệu bắt buộc khi viết hoặc review nội dung
+## Nguồn rule duy nhất
 
-Đọc toàn bộ `rules/content-design.md` và `rules/content-calibration.md` trước khi viết hoặc review nội dung Zodiac. `content-design.md` là nguồn rule biên tập; `content-calibration.md` là bộ ví dụ SAI/ĐÚNG để calibrate mức độ cụ thể và giọng đời thường. Không dùng ví dụ calibration như template để copy skeleton. Không dùng bản Google Drive, phần tóm tắt trong Writer Context hoặc trí nhớ của agent thay cho hai tài liệu này.
+Đọc toàn bộ `rules/content-design.md` trước khi viết hoặc review nội dung Zodiac. Đây là **nguồn rule biên tập duy nhất**.
 
-## Nguồn context và contract
+Writer Context chỉ mang dữ liệu/evidence/contract của package. Không coi `VIRAL_OVERLAY`, `EDITORIAL_DESIGN`, prompt export, bản Google Drive hoặc trí nhớ của agent là một bộ rule thứ hai.
 
-Khi Writer Context đã có schema mới, dùng các lớp theo thứ tự quyền hạn sau:
+## Authority của dữ liệu package
 
-1. `KNOWLEDGE_CONTEXT`: quyết định điều gì được phép claim.
-2. `EDITORIAL_DESIGN`: quyết định điểm nào đáng nói, beat nào được chọn và progression nào cần giữ.
-3. `VIRAL_OVERLAY` nếu có: chỉ tối ưu attention, recognition, shareability, headline direction và nhịp diễn đạt. Đây là soft guidance, không phải nguồn fact và không được override hai lớp trên.
-4. `OUTPUT_CONTRACT`, `OUTPUT_TEMPLATE` và `SLIDE_OPTIONS`: quyết định schema, block ID, thứ tự, giới hạn renderer và số slide.
+- `KNOWLEDGE_CONTEXT`: biên claim/fact của package.
+- `EDITORIAL_DESIGN`: beat và điểm biên tập đã chọn trong biên claim đó.
+- `VIRAL_OVERLAY` hoặc `VIRAL_FOCUS`: anchor riêng của package để tối ưu cách nói; không phải rule và không phải nguồn fact.
+- `OUTPUT_CONTRACT` / `SLIDE_OPTIONS`: cấu trúc kỹ thuật.
 
-`RAW_IDEA` là provenance/original intent. Khi package có `EDITORIAL_DESIGN.planning.shared_question`, dùng shared question đã được evidence validate làm câu hỏi chung của batch; không ép wording hẹp hoặc không được hỗ trợ trong RAW IDEA lên từng subject.
+`RAW_IDEA` là provenance. Khi có `EDITORIAL_DESIGN.planning.shared_question`, dùng shared question đã validate làm câu hỏi viết.
 
-Contract của package quyết định yêu cầu kỹ thuật khi khác với hướng dẫn độ dài chung trong rule biên tập. Contract không được nới evidence boundary hoặc tạo thêm claim.
+## Output protocol
 
-Khi trả kết quả từ Writer Context, tạo preview trước nếu context yêu cầu approval flow. Chỉ sau khi được duyệt rõ ràng mới xuất JSON theo `response_contract.exact_package_ids`. JSON cuối không thêm Markdown fence, lời dẫn, ghi chú hay nội dung sau object; kiểm tra cú pháp trước khi gửi.
+Nếu Writer Context yêu cầu preview, tạo preview trước và dừng chờ duyệt. Chỉ sau khi được duyệt rõ ràng mới xuất JSON đúng `response_contract.exact_package_ids`.
 
 ## Compatibility
 
-Concept/package cũ có thể được dùng lại nếu pipeline hiện tại regenerate được `KNOWLEDGE_CONTEXT`, `EDITORIAL_DESIGN` và output contract từ evidence hiện tại. Không dùng Writer Context cũ như authority khi schema mới đã tồn tại.
+Concept cũ chỉ nên dùng sau khi regenerate Writer Context bằng pipeline hiện tại. Không dùng Writer Context cũ làm authority nếu schema mới đã tồn tại.
 
 ## Khi thiếu nguồn
 
-Nếu không truy cập được file rule chuẩn hoặc context package/evidence bắt buộc, dừng và báo rõ nguồn nào đang thiếu. Không viết dựa trên trí nhớ hoặc bản sao cũ.
+Nếu không đọc được `rules/content-design.md` hoặc thiếu context/evidence bắt buộc của package, dừng và báo rõ phần thiếu.
