@@ -1,14 +1,15 @@
-# ZODIAC CONTENT MEMORY — v7
+# ZODIAC CONTENT MEMORY — v8
 
 ## Mục đích và thứ tự ưu tiên
 
 Đây là nguồn duy nhất cho rule biên tập dùng chung của Zodiac.
 
-Ba lớp có quyền quyết định nội dung:
+Bốn lớp có quyền quyết định nội dung và trải nghiệm:
 
 1. `KNOWLEDGE_CONTEXT` đặt biên claim.
-2. `EDITORIAL_DESIGN` chọn insight, distinction, memorable point và progression nằm trong biên đó.
-3. `OUTPUT_CONTRACT` / `OUTPUT_TEMPLATE` / `SLIDE_OPTIONS` quyết định cấu trúc kỹ thuật.
+2. `EDITORIAL_DESIGN` chọn insight, distinction và memorable point nằm trong biên đó.
+3. `EXPERIENCE_PLAN`, nếu package có, phân vai trải nghiệm cho các narrative beat đã tồn tại; nó không được tạo fact hay tăng narrative depth.
+4. `OUTPUT_CONTRACT` / `OUTPUT_TEMPLATE` / `SLIDE_OPTIONS` quyết định cấu trúc kỹ thuật, content slot và giới hạn render.
 
 `VIRAL_OVERLAY`/`VIRAL_FOCUS`, nếu có, chỉ là dữ liệu anchor riêng của package. Mọi nguyên tắc viral/human-touch nằm trong file này; Writer Context không được mang một bộ rule prose thứ hai.
 
@@ -19,13 +20,14 @@ Workflow bắt buộc:
 3. Core insight
 4. Distinction và memorable point
 5. Narrative capacity và progression
+5a. Viewer experience / ExperiencePlan nếu package có
 6. Naturalness và recognition
 7. Viral overlay nếu có
 8. Prose rhythm
 9. Độ dài và format
 10. Final validation
 
-Mục 1–7 là editorial gates và phải qua trước khi viết body. Gate fail thì quay về gate sớm nhất chưa đạt; không cứu bằng câu dài hơn, ví dụ thêm, slang, clickbait hoặc paraphrase evidence.
+Mục 1–7, gồm gate 5a, là editorial gates và phải qua trước khi viết body. Gate fail thì quay về gate sớm nhất chưa đạt; không cứu bằng câu dài hơn, ví dụ thêm, slang, clickbait hoặc paraphrase evidence.
 
 Contract của package quyết định schema, block ID, số slide và giới hạn kỹ thuật. Contract không được nới evidence boundary hay ép tạo claim. Nếu content type bắt buộc đổi câu hỏi hoặc đòi claim evidence không hỗ trợ, báo package conflict; không tự bịa nội dung hoặc âm thầm phá contract.
 
@@ -109,6 +111,50 @@ Không mặc định slide cuối phải khen, chê, twist, takeaway hay “mặ
 
 Nếu contract kỹ thuật khóa số slide nhiều hơn **narrative capacity**, báo conflict thay vì lặp ý hoặc bịa progression. Nếu contract cho phép thay đổi, chọn số slide theo NarrativePlan rồi mới chọn PresentationPlan/layout.
 
+## 5a. Viewer experience — fact là nguyên liệu, không phải toàn bộ trải nghiệm
+
+Sau NarrativePlan, nếu package có `EXPERIENCE_PLAN`, tách rõ:
+
+- **Narrative beat** trả lời: có thông tin/nhịp biên tập nào thật sự đáng tồn tại?
+- **Experience role** trả lời: ở lần vuốt này người xem đang làm gì hoặc nhận được payoff gì?
+- **Composition** trả lời: slide cần những content slot semantic nào để thực hiện experience role đó?
+- **Layout recipe** chỉ trả lời: các slot được đặt ở đâu và có bao nhiêu không gian.
+
+ExperiencePlan đứng **sau NarrativePlan**. Nó không được tăng `narrative_depth`, thêm narrative index, tạo proposition mới hoặc đổi evidence trace để làm concept “viral hơn”. Nếu narrative chỉ có hai beat thì một mode lý tưởng ba nhịp phải rút còn hai nhịp; không bịa `reframe`, `payoff` hay `twist` để đủ công thức.
+
+Một experience progression tốt làm cảm giác sau mỗi lần vuốt thay đổi, ví dụ `setup → reveal → reframe`, `scene → reveal → meaning`, `question → clue → payoff`, hoặc một chuỗi tương đương được package hỗ trợ. Nhưng **không bắt buộc gamification**. Khi evidence hẹp hoặc không có clue/distinction đủ mạnh, `direct_fact` là fallback hợp lệ và tốt hơn việc ép A/B, quiz hay hiểu-lầm giả.
+
+Các experience mode chỉ được dùng khi dữ liệu hiện có đủ điều kiện. Đặc biệt:
+
+- `overlooked_signal` cần recognition anchor/concretization đủ cụ thể;
+- `recognition_scene` cần observation hoặc micro-behavior có thể hình dung mà không bịa scene fact;
+- `zoom_in` cần chi tiết cụ thể để foreground;
+- `clue_trail` cần nhiều beat/source trace thật sự cùng trả lời một shared question;
+- `supported_distinction` cần distinction được evidence hỗ trợ trực tiếp.
+
+Không tạo distractor, misconception, motive hoặc contrast chỉ để làm người xem đoán.
+
+### Headline là công cụ trình bày, không phải cấu trúc bắt buộc của slide
+
+`title` là identity/metadata của cả post. Visual headline chỉ tồn tại khi composition/OUTPUT_CONTRACT của slide có headline slot.
+
+- Nếu slide 1 có headline slot và contract yêu cầu, có thể dùng chính title làm headline slide 1.
+- Nếu slide 1 là `scene_text`, `statement_only`, `reveal_support` hoặc composition không có headline slot, **không tự chèn headline** chỉ để hiển thị title.
+- Một slide có thể chỉ có body, callout, hai body hoặc các primitive hợp lệ khác nếu contract chỉ định như vậy.
+- Writer không được đổi composition hoặc block type; Writer chỉ điền text vào exact content slot/block contract.
+
+Một slide vẫn cần một ý/narrative purpose rõ, nhưng không cần một dòng “headline” riêng để chứng minh điều đó.
+
+### Viewer Journey Test
+
+Trước prose, hỏi với từng slide: **sau lần vuốt này, trải nghiệm người xem thay đổi ở đâu?**
+
+Nếu nhiều slide liên tiếp chỉ cùng làm một việc kiểu “đọc thêm một câu mô tả”, ExperiencePlan chưa tạo giá trị dù text không trùng nguyên văn. Ngược lại, không được tạo khác biệt trải nghiệm bằng claim mới.
+
+Nếu bỏ một slide mà viewer journey và narrative meaning không mất bước nào, slide đó có khả năng dư. Delete Test cho experience không thay thế Delete Test/evidence validation; nó chỉ kiểm tra presentation value.
+
+Adaptive-fit `continuation` là ngoại lệ: continuation có thể dùng lại cùng narrative index vì nó chỉ tạo thêm không gian cho cùng beat, không phải một experience stage/fact mới.
+
 ## 6. Naturalness và recognition — ưu tiên micro-behavior
 
 Nói như một người đang nhận xét hành vi quen thuộc, không như báo cáo phân tích tính cách. Ưu tiên chi tiết **có thể nhìn thấy, nghe thấy hoặc hình dung thành một hành động nhỏ**.
@@ -159,7 +205,7 @@ Concrete before abstract. Source boilerplate như tên website, “theo chiêm t
 
 ## 7. Viral Focus và plugin phân tích — công cụ, không phải nguồn rule
 
-`VIRAL_FOCUS`, nếu có trong Writer Context, chỉ mang **anchor riêng của package** như recognition anchor và headline anchor. Nó không chứa rule prose.
+`VIRAL_FOCUS`, nếu có trong Writer Context, chỉ mang **anchor/guidance riêng của package** như recognition anchor, headline anchor, viewer job, open loop hoặc payoff anchor được derive từ EditorialDesign/ExperiencePlan. Nó không chứa rule prose và không cấp thêm claim.
 
 Plugin phân tích content viral có thể được dùng như **phương pháp làm việc** trước khi viết: Quan sát → Phân tích → tìm điểm đặc biệt → Delete/A-B test → đúc kết hướng trình bày. Plugin không phải nguồn rule thứ hai. Mọi đề xuất từ plugin phải quay về file này để kiểm tra evidence boundary trước khi dùng.
 
@@ -179,9 +225,9 @@ Viral analysis từ performance thật có thể cập nhật pattern library, n
 
 ## 8. Prose rhythm — viết sau khi gates đạt
 
-Thiết kế title trước body để định vị rõ nội dung; dùng nguyên title làm headline slide 1 khi contract yêu cầu. Clarity đứng trước hook.
+Thiết kế title trước body để định vị rõ **toàn post**. Title là post identity/metadata; chỉ dùng nguyên title làm visual headline slide 1 khi composition/contract có headline slot và yêu cầu slot đó. Không thêm headline block chỉ để chứa title. Clarity đứng trước hook.
 
-Body slide 1 phải cụ thể hóa title, không paraphrase title. Không áp cùng một skeleton câu cho mọi cung. Nếu 2 câu đã đủ thì dừng; 3–4 câu chỉ dùng khi mỗi câu thực sự thêm một việc.
+Nếu slide 1 có headline, phần còn lại của slide phải cụ thể hóa chứ không paraphrase headline/title. Nếu slide 1 không có headline, block mở đầu phải thực hiện đúng experience role đã được plan chọn thay vì lặp title bằng một câu khác. Không áp cùng một skeleton câu cho mọi cung. Nếu 2 câu đã đủ thì dừng; 3–4 câu chỉ dùng khi mỗi câu thực sự thêm một việc.
 
 Tránh cấu trúc lặp `claim → giải thích → tổng kết` trên mọi slide. Không kết bằng câu AI tóm tắt hoặc moral. Kết ở observation/distinction đã được evidence hỗ trợ.
 
@@ -197,14 +243,15 @@ Giới hạn ký tự của block là **hard fit cap của geometry**, không ph
 
 Thứ tự ưu tiên:
 
-1. Nếu đang dùng recipe nén do auto-presentation, ưu tiên đổi sang recipe ít nén hơn trước.
-2. Nếu beat vẫn bị bó bởi geometry hiện tại và việc rút ngắn sẽ làm mất micro-behavior/distinction đáng giá, có thể tách **tối đa một support slide trong một lần fit**.
-3. Support slide phải nối trực tiếp với cùng narrative beat/evidence trace; nó chỉ được concretize, foreground hoặc tiếp tục phần chi tiết đã được support, không thêm claim mới.
-4. Không tách slide chỉ để đạt quota 225–240 ký tự. Nếu câu ngắn đã đủ rõ và mạnh thì giữ ngắn.
-5. Một support slide phải có chức năng khác slide nguồn; cấm chia một câu/paraphrase thành hai slide.
-6. Standalone adaptive fit mặc định không vượt 5 slide. Nếu vẫn không fit sau một lần tách, ưu tiên đổi layout hoặc rút prose thay vì tiếp tục sinh slide.
+1. Giữ nguyên evidence trace, NarrativePlan và ExperiencePlan trước khi tối ưu geometry.
+2. Với presentation v2, ưu tiên composition/recipe roomier **tương thích cùng experience role**. Không đổi sang `header-body` chỉ vì recipe đó rộng hơn nếu việc đó làm mất semantic composition.
+3. Nếu một single-beat slide vẫn bị bó bởi geometry và việc rút ngắn sẽ làm mất micro-behavior/distinction đáng giá, có thể thêm **tối đa một continuation/support slide trong một lần fit**. Continuation dùng cùng narrative index/evidence trace và không được trở thành `reframe`, `payoff` hay claim mới.
+4. Với legacy v1 multi-beat recipe, có thể giữ behavior decompress hiện hành để tương thích, miễn beat order và evidence trace không đổi.
+5. Fit pressure đánh giá vùng prose thực sự cần không gian; không coi một callout ngắn có chủ đích là lý do kéo dài body.
+6. Không tách slide chỉ để đạt quota 225–240 ký tự. Nếu câu ngắn đã đủ rõ và mạnh thì giữ ngắn.
+7. Cấm chia một câu/paraphrase thành hai slide. Standalone adaptive fit mặc định không vượt 5 slide; nếu vẫn không fit sau một lần tách, ưu tiên đổi layout/composition hoặc rút prose.
 
-Khi `SLIDE_OPTIONS` có cả base count và base+1 do fit, Writer được chọn base+1 trong preview nếu chất lượng rõ ràng tốt hơn. JSON cuối phải dùng đúng một option đã chọn và giữ nguyên block contract của option đó.
+Khi `SLIDE_OPTIONS` có cả base count và base+1 do fit, Writer được chọn base+1 trong preview nếu chất lượng rõ ràng tốt hơn. JSON cuối phải dùng đúng một option đã chọn và giữ nguyên block contract của option đó. Nếu fit bắt đầu từ một package-specific manual layout, quay lại base phải phục hồi đúng base layout đó thay vì làm mất override.
 
 Header dùng sentence case, không ALL CAPS. Không dùng dash làm công cụ cấu trúc câu trong carousel. Tránh cliché rỗng, thuật ngữ niche và nhiều twist trên cùng slide.
 
@@ -217,8 +264,10 @@ Trước khi gửi, xác nhận:
 - EditorialDesign không chứa source boilerplate hoặc instruction meta thay cho insight.
 - Nếu chỉ có một evidence beat, không bịa thêm claim để “đủ insight”; concretization chỉ được tạo thêm narrative beat trong cùng claim boundary.
 - Nếu có nhiều evidence beat, NarrativePlan giữ được khác biệt thật giữa chúng và mọi narrative beat đều truy được về source evidence.
+- ExperiencePlan không tạo thêm narrative beat/fact; mỗi experience stage truy về narrative index hợp lệ, trừ fit continuation dùng lại cùng index có trace rõ.
+- Composition thực hiện đúng experience role; layout chỉ đổi geometry. Không ép mọi slide về headline + body.
 - Viral Focus/plugin chỉ thay đổi cách foreground, minh họa và gây chú ý; không thay đổi claim.
-- Title rõ nội dung; body không lặp title hoặc preference bằng nhiều câu khác nhau.
+- Title rõ nội dung ở cấp post; visual headline chỉ xuất hiện khi contract có headline slot. Block đầu không lặp title/preference bằng nhiều câu khác nhau.
 - Mỗi slide có reality anchor đủ cụ thể; ưu tiên micro-behavior vượt qua Camera Test. Behavioral illustration được phép suy một bước gần từ evidence nhưng không thêm motive/cause/outcome/frequency hoặc biến thành relationship abstraction.
 - Batch không lặp cùng skeleton chỉ đổi tên cung.
 - Số slide khớp NarrativePlan/contract; adaptive fit chỉ được thêm support slide có trace rõ ràng, không còn bắt buộc khớp 1:1 với số evidence beat.
