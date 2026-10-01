@@ -1,4 +1,4 @@
-# ZODIAC CONTENT MEMORY — v6
+# ZODIAC CONTENT MEMORY — v7
 
 ## Mục đích và thứ tự ưu tiên
 
@@ -18,7 +18,7 @@ Workflow bắt buộc:
 2. Ranh giới evidence
 3. Core insight
 4. Distinction và memorable point
-5. Progression
+5. Narrative capacity và progression
 6. Naturalness và recognition
 7. Viral overlay nếu có
 8. Prose rhythm
@@ -72,13 +72,42 @@ Trước khi viết body, mỗi slide có một **memorable point**: người xe
 
 Áp dụng Delete Test và Replaceability Test để phát hiện nội dung quá generic, nhưng không dùng hai test này để ép tạo claim mới.
 
-## 5. Progression — mỗi slide phải đưa ý tiến lên
+## 5. Narrative capacity và progression — evidence beat không đồng nghĩa slide
 
-Mỗi slide map vào một evidence/editorial beat. Hai slide chỉ được tồn tại khi có hai beat độc lập. Nếu đổi thứ tự slide mà trải nghiệm gần như không đổi, hoặc hai slide chỉ paraphrase nhau, progression chưa đạt.
+Tách rõ ba lớp:
 
-Không mặc định slide cuối phải khen, chê, twist, takeaway hay “mặt trái”. Layout chỉ quy định cấu trúc; nó không được tạo narrative conclusion mà evidence không support.
+- **Evidence beat** là proposition/claim độc lập được Knowledge hỗ trợ.
+- **Narrative beat** là một nhịp biên tập có chức năng riêng trong cách kể, và phải chỉ rõ nó truy về evidence beat nào.
+- **Slide** là cách PresentationPlan bố trí một hoặc nhiều narrative beat.
 
-Nếu package cho phép đổi số slide, dừng ở số beat thực. Nếu contract khóa số slide nhiều hơn evidence, báo conflict thay vì lặp ý hoặc bịa progression.
+Không dùng số lượng evidence beat làm số slide một cách 1:1. Một evidence beat có thể hỗ trợ hơn một narrative beat khi phần mở rộng chỉ là **concretization** hoặc cách foreground cùng claim, không thêm fact mới. Ví dụ một beat “lắng nghe, chăm sóc và để ý cảm xúc” có thể sinh hai nhịp: (1) observation nêu đặc điểm; (2) micro-behavior hiện thực hóa đặc điểm đó. Cả hai vẫn phải trỏ về cùng evidence beat.
+
+Ngược lại, không được tách một proposition thành nhiều slide chỉ bằng paraphrase. Mỗi narrative beat phải có **editorial function** khác nhau, ví dụ:
+
+- `observation`: nêu điều evidence cho phép nói;
+- `concretization`: hiện thực hóa bằng micro-behavior một bước gần;
+- `distinction`: đưa lớp evidence thứ hai hoặc relation được hỗ trợ;
+- `supported_explanation`, `trigger`, `response`, `correction`: chỉ dùng khi chính evidence/content kind hỗ trợ.
+
+`concretization` không được thêm motive, cause, consequence, frequency, outcome, preference hoặc hành vi xa evidence. Nó phải vượt Camera Test và vẫn đứng vững nếu bỏ mọi diễn giải tâm lý.
+
+### Standalone viability
+
+Bài đăng lẻ một cung cần **ít nhất 3 narrative beat có giá trị**. Đây là yêu cầu về độ sâu kể chuyện, không phải yêu cầu phải có 3 evidence proposition.
+
+- 3+ evidence beat độc lập có thể tạo 3+ narrative beat trực tiếp.
+- 2 evidence beat có thể vẫn đủ standalone nếu planner tạo được beat thứ ba bằng concretization hoặc một relation được evidence hỗ trợ.
+- 1 evidence beat thường chỉ đủ 1–2 narrative beat; không được bịa nhịp thứ ba để giữ standalone.
+
+Với concept phạm vi 12 cung: nếu sau NarrativePlan có bất kỳ subject nào vẫn không đạt 3 narrative beat, ưu tiên route concept đó sang `carousel_12` để mỗi cung dùng một observation cô đọng. Không route sang carousel chỉ vì `evidence_count < 3`; phải thử NarrativePlan trước.
+
+### Progression test
+
+Nếu đổi thứ tự các narrative beat mà trải nghiệm gần như không đổi, hoặc hai nhịp chỉ paraphrase nhau, progression chưa đạt. Một progression hợp lệ phải có cảm giác đi từ nhận ra → thấy rõ hơn → thêm lớp khác, hoặc một chuỗi semantic tương đương do content kind yêu cầu.
+
+Không mặc định slide cuối phải khen, chê, twist, takeaway hay “mặt trái”. Layout chỉ bố trí narrative; nó không được tạo conclusion mà evidence không support.
+
+Nếu contract kỹ thuật khóa số slide nhiều hơn **narrative capacity**, báo conflict thay vì lặp ý hoặc bịa progression. Nếu contract cho phép thay đổi, chọn số slide theo NarrativePlan rồi mới chọn PresentationPlan/layout.
 
 ## 6. Naturalness và recognition — ưu tiên micro-behavior
 
@@ -171,13 +200,13 @@ Trước khi gửi, xác nhận:
 - RAW IDEA được giữ đúng provenance; shared question không ép premise hẹp lên subject không support.
 - Mọi claim truy được về Knowledge.
 - EditorialDesign không chứa source boilerplate hoặc instruction meta thay cho insight.
-- Nếu có một beat duy nhất, không bịa thêm beat để “đủ insight”.
-- Nếu có nhiều beat, progression giữ được khác biệt thật giữa chúng.
+- Nếu chỉ có một evidence beat, không bịa thêm claim để “đủ insight”; concretization chỉ được tạo thêm narrative beat trong cùng claim boundary.
+- Nếu có nhiều evidence beat, NarrativePlan giữ được khác biệt thật giữa chúng và mọi narrative beat đều truy được về source evidence.
 - Viral Focus/plugin chỉ thay đổi cách foreground, minh họa và gây chú ý; không thay đổi claim.
 - Title rõ nội dung; body không lặp title hoặc preference bằng nhiều câu khác nhau.
 - Mỗi slide có reality anchor đủ cụ thể; ưu tiên micro-behavior vượt qua Camera Test. Behavioral illustration được phép suy một bước gần từ evidence nhưng không thêm motive/cause/outcome/frequency hoặc biến thành relationship abstraction.
 - Batch không lặp cùng skeleton chỉ đổi tên cung.
-- Số slide khớp số beat/contract.
+- Số slide khớp NarrativePlan/contract; không còn bắt buộc khớp 1:1 với số evidence beat.
 - JSON cuối khớp response contract sau approval flow.
 
 Nếu một mục fail, quay lại gate sớm nhất liên quan. Không dùng chỉnh prose, kéo dài câu, slang, clickbait hoặc ví dụ để che lỗi insight, evidence hay progression.
