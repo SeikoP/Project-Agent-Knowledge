@@ -1,4 +1,4 @@
-# ZODIAC CONTENT MEMORY — v5
+# ZODIAC CONTENT MEMORY — v6
 
 ## Mục đích và thứ tự ưu tiên
 
@@ -80,27 +80,51 @@ Không mặc định slide cuối phải khen, chê, twist, takeaway hay “mặ
 
 Nếu package cho phép đổi số slide, dừng ở số beat thực. Nếu contract khóa số slide nhiều hơn evidence, báo conflict thay vì lặp ý hoặc bịa progression.
 
-## 6. Naturalness và recognition — đời thường mà không bịa
+## 6. Naturalness và recognition — ưu tiên micro-behavior
 
-Nói như một người đang nhận xét hành vi quen thuộc, không như báo cáo phân tích tính cách. Ưu tiên động từ và cách nói có thể hình dung.
+Nói như một người đang nhận xét hành vi quen thuộc, không như báo cáo phân tích tính cách. Ưu tiên chi tiết **có thể nhìn thấy, nghe thấy hoặc hình dung thành một hành động nhỏ**.
 
-Recognition không bắt buộc POV hoặc hội thoại. Mỗi slide nên có ít nhất một **reality anchor**: một hành vi, cách nói hoặc distinction đủ cụ thể để người đọc hình dung.
+Mỗi slide nên có ít nhất một **reality anchor**. Reality anchor tốt nhất thường là một **micro-behavior**: hành vi nhỏ, cụ thể, dễ nhận ra, cùng bản chất với proposition evidence.
 
-Có ba mức cần phân biệt:
+Có bốn mức cần phân biệt:
 
-1. **Claim được support** — có thể gán trực tiếp cho subject.
-2. **Minh họa hành vi** — được phép cụ thể hơn evidence để người đọc hình dung, nhưng phải viết như ví dụ/kiểu tình huống chung, không khẳng định đó là hành vi cố định của subject.
-3. **Claim expansion** — lấy chính ví dụ minh họa rồi gán thành trait/hành vi thường có của subject; không được phép nếu Knowledge không support.
+1. **Evidence restatement** — đúng nhưng chỉ lặp lại trait bằng câu khác; an toàn nhưng thường nhạt.
+2. **Micro-behavior illustration** — suy một bước gần từ evidence sang hành vi quan sát được; đây là vùng ưu tiên.
+3. **Abstract inference** — suy từ evidence sang ngôn ngữ quan hệ/tâm lý rộng hơn; có thể hợp logic nhưng thường làm câu chung chung, “AI” và khó nhận ra.
+4. **Claim expansion** — thêm motive, cause, frequency, outcome, ability hoặc hành vi xa evidence rồi khẳng định nó là trait của subject; không được phép.
 
-Ví dụ với evidence “Cự Giải lắng nghe, chăm sóc và quan tâm đến cảm xúc”:
+### Micro-behavior illustration được phép đi xa tới đâu
 
-- Quá trừu tượng: “Cự Giải xây kết nối cảm xúc bằng sự quan tâm sâu sắc.”
-- **Minh họa tốt:** “Dễ hình dung là kiểu nhớ điều người kia vừa kể rồi hỏi lại xem họ có ổn không.”
-- Vượt claim boundary: “Cự Giải sẽ nhớ từng điều bạn kể rồi tối về nhắn hỏi bạn có ổn không.”
+Được phép thêm **một bước hiện thực hóa** nếu cả ba điều đúng:
 
-Câu giữa sống động hơn vì có hành động và tình huống, nhưng nó không biến hành động đó thành một trait đã được chứng minh của Cự Giải.
+- hành vi là biểu hiện tự nhiên, gần nghĩa của evidence;
+- hành vi không cần thêm motive, nguyên nhân hay kết quả để đứng vững;
+- câu được viết như một minh họa/kiểu hành vi, không như quy luật chắc chắn của cung.
 
-Ưu tiên **behavioral illustration** khi prose đang quá trừu tượng. Có thể dùng “kiểu…”, “chẳng hạn…”, “dễ hình dung là…”, hoặc mô tả một hành vi chung mà không gắn certainty/frequency cho cung. Không cần kèm disclaimer trong content cuối nếu ngữ pháp đã thể hiện rõ đó là minh họa.
+Ví dụ evidence: `lắng nghe, chăm sóc và quan tâm đến cảm xúc`
+
+- Quá sát nguồn: “Cự Giải có cảm tình thường lắng nghe kỹ và để ý cảm xúc của người kia.”
+- Chấp nhận: “Kiểu người kia kể một chuyện, họ không chỉ nghe chuyện gì đã xảy ra mà còn để ý xem chuyện đó làm người kia vui hay khó chịu.”
+- **Ưu tiên:** “Kiểu nhớ một chuyện người kia từng kể, rồi lần sau còn hỏi lại xem chuyện đó ổn chưa.”
+
+Câu cuối thêm continuity và follow-up chưa có nguyên văn trong evidence, nhưng vẫn là một hiện thực hóa gần của “lắng nghe + chăm sóc + để ý cảm xúc”. Nó được phép vì không thêm motive, verdict hay outcome.
+
+Ngược lại, không phải suy một bước nào cũng hữu ích. Với evidence `trò chuyện chân thành, tiếp cận từ tốn`, các câu như “không đẩy mọi thứ quá nhanh”, “để mối quan hệ tiến từng chút”, “biết chừa khoảng riêng” có thể hợp logic nhưng dễ chuyển sang **relationship abstraction**. Nếu không tìm được micro-behavior thật sự rõ, giữ câu ngắn và sát evidence còn tốt hơn kéo sang loại diễn giải này.
+
+### Camera Test
+
+Trước khi giữ một illustration, hỏi: **nếu quay thành một cảnh ngắn, có thấy hành vi cụ thể gì không?**
+
+- “nhớ chuyện đã kể rồi hỏi lại” → có.
+- “dành sự chú ý và khen một điểm vừa nhận ra” → có.
+- “không đẩy mối quan hệ quá nhanh” → quá khái quát.
+- “tạo kết nối sâu sắc” → trừu tượng.
+
+Camera Test không yêu cầu phải viết scene/POV. Nó chỉ dùng để kiểm tra mức độ cụ thể.
+
+### Không biến illustration thành template
+
+Micro-behavior phải sinh từ evidence của từng subject. Không áp cùng kiểu “nhớ rồi hỏi lại”, “khen đúng lúc”, “cho khoảng riêng” cho nhiều cung chỉ vì chúng nghe đời thường.
 
 Concrete before abstract. Source boilerplate như tên website, “theo chiêm tinh”, “không phải kết luận thực nghiệm” không phải memorable point và không đưa vào prose trừ khi người dùng hỏi về chất lượng nguồn.
 
@@ -151,7 +175,7 @@ Trước khi gửi, xác nhận:
 - Nếu có nhiều beat, progression giữ được khác biệt thật giữa chúng.
 - Viral Focus/plugin chỉ thay đổi cách foreground, minh họa và gây chú ý; không thay đổi claim.
 - Title rõ nội dung; body không lặp title hoặc preference bằng nhiều câu khác nhau.
-- Mỗi slide có reality anchor đủ cụ thể; behavioral illustration được phép sống động hơn evidence nhưng không được gán thành trait/frequency/certainty của subject.
+- Mỗi slide có reality anchor đủ cụ thể; ưu tiên micro-behavior vượt qua Camera Test. Behavioral illustration được phép suy một bước gần từ evidence nhưng không thêm motive/cause/outcome/frequency hoặc biến thành relationship abstraction.
 - Batch không lặp cùng skeleton chỉ đổi tên cung.
 - Số slide khớp số beat/contract.
 - JSON cuối khớp response contract sau approval flow.
@@ -165,19 +189,37 @@ Hashtag, CTA và emoji trong caption/slide chưa có rule chung. Không tự suy
 
 ## Calibration nhanh — dùng khi câu vẫn “đúng mà nhạt”
 
-### Evidence → prose
+### Cự Giải · evidence: lắng nghe, chăm sóc, để ý cảm xúc
 
-Evidence: `chủ động thể hiện sự chú ý và lời khen`
+- **Không ưu tiên:** “Cự Giải có cảm tình thường lắng nghe kỹ và để ý xem người kia đang cảm thấy thế nào.”  
+  Đúng nhưng chỉ restate evidence.
 
-- Quá trừu tượng: “Sư Tử tạo sức hút bằng năng lượng chủ động và sự ghi nhận.”
-- Claim expansion: “Sư Tử thích ai là khen từ quần áo tới cách nói chuyện.”
-- Đúng claim nhưng còn khô: “Sư Tử khá chủ động trong việc dành sự chú ý và lời khen cho người kia.”
-- Có hình ảnh hơn mà vẫn an toàn: “Nó gần với kiểu chủ động để người kia biết mình đang chú ý, rồi lời khen cũng xuất hiện khá tự nhiên.”
+- **Chấp nhận:** “Kiểu người kia kể một chuyện, họ không chỉ nghe chuyện gì đã xảy ra mà còn để ý xem chuyện đó làm người kia vui hay khó chịu.”  
+  Có hành vi để hình dung nhưng vẫn còn khá mô tả.
 
-Evidence: `trò chuyện chân thành, tiếp cận từ tốn`
+- **Ưu tiên:** “Kiểu nhớ một chuyện người kia từng kể, rồi lần sau còn hỏi lại xem chuyện đó ổn chưa.”  
+  Có micro-behavior, continuity và follow-up; recognition mạnh hơn nhưng vẫn cùng bản chất evidence.
 
-- Quá trừu tượng: “Xử Nữ ưu tiên kết nối có chiều sâu và nhịp độ an toàn.”
-- Claim expansion: “Xử Nữ thường nhắn ít nhưng câu nào cũng suy nghĩ kỹ.”
-- Có hình ảnh hơn mà vẫn an toàn: “Dễ hình dung là một cuộc nói chuyện không cần lao vào quá nhanh, nhưng điều nói ra vẫn đủ thật để người kia biết mình đang nghiêm túc với cuộc trò chuyện.”
+### Sư Tử · evidence: chủ động chú ý và lời khen
 
-Các ví dụ trên calibrate **mức cụ thể**, không phải template. Không copy cùng skeleton cho batch.
+Các hướng “để người kia biết mình đang được chú ý”, “lời khen bật ra khi nhận thấy một điểm hay”, hoặc “người kia cảm nhận rõ mình được để ý hơn” đều **chấp nhận được**, nhưng chưa mặc định là mức tốt nhất. Writer nên tiếp tục tìm micro-behavior cụ thể hơn nếu evidence cho phép, thay vì dừng ở một câu mô tả chung.
+
+### Xử Nữ · evidence: chân thành, tiếp cận từ tốn, tôn trọng riêng tư
+
+Không tự động biến `từ tốn` thành:
+- “không đẩy mọi thứ quá nhanh”;
+- “để mối quan hệ tiến từng chút”;
+- “giữ khoảng cách”;
+- “chừa khoảng riêng cho nhau”.
+
+Các câu này dễ trượt sang relationship abstraction hoặc đổi semantic. Nếu chưa tìm được micro-behavior tốt, dùng observation ngắn, cụ thể và sát evidence; không bắt buộc phải có illustration dài.
+
+### Nguyên tắc rút ra
+
+**Độ hay không tỷ lệ với độ xa evidence. Độ hay tăng khi câu chuyển evidence thành một micro-behavior có thể nhận ra.**
+
+Ưu tiên theo thứ tự:
+
+`micro-behavior cụ thể` → `behavioral illustration chung` → `evidence restatement` → tránh `abstract relational inference`.
+
+Các ví dụ calibrate mức cụ thể, không phải template câu.
