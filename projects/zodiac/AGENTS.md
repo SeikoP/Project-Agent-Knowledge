@@ -4,7 +4,7 @@ Thư mục này chứa hướng dẫn riêng cho thiết kế nội dung của Z
 
 ## Tài liệu bắt buộc khi viết hoặc review nội dung
 
-Đọc toàn bộ `rules/content-design.md` trước khi viết hoặc review nội dung Zodiac. Đây là nguồn duy nhất cho rule biên tập dùng chung của Zodiac. Không dùng bản Google Drive, phần tóm tắt trong Writer Context hoặc trí nhớ của agent thay cho tài liệu này.
+Đọc toàn bộ `rules/content-design.md` và `rules/content-calibration.md` trước khi viết hoặc review nội dung Zodiac. `content-design.md` là nguồn rule biên tập; `content-calibration.md` là bộ ví dụ SAI/ĐÚNG để calibrate mức độ cụ thể và giọng đời thường. Không dùng ví dụ calibration như template để copy skeleton. Không dùng bản Google Drive, phần tóm tắt trong Writer Context hoặc trí nhớ của agent thay cho hai tài liệu này.
 
 ## Nguồn context và contract
 
