@@ -84,9 +84,9 @@ Nếu package cho phép đổi số slide, dừng ở số beat thực. Nếu co
 
 Nói như một người đang nhận xét hành vi quen thuộc, không như báo cáo phân tích tính cách. Ưu tiên động từ và cách nói có thể hình dung.
 
-Recognition không bắt buộc scene, POV, hội thoại hoặc ví dụ. Một distinction được nói tự nhiên cũng đủ. Không mở rộng mức cụ thể chỉ để nghe “đời”.
+Recognition không bắt buộc scene, POV hoặc hội thoại. **Ví dụ/diễn giải thực tế được khuyến khích khi nó chỉ làm rõ proposition đã có**, đặc biệt khi câu đang quá trừu tượng; không được biến ví dụ thành hành vi điển hình mới của cung. Mỗi slide nên có ít nhất một `reality anchor`: một cách nói, biểu hiện hoặc distinction đủ cụ thể để người đọc hình dung, nhưng vẫn truy ngược được về evidence. Nếu evidence không cho phép cụ thể hơn, giữ observation hẹp thay vì bịa scene.
 
-Concrete before abstract. Source boilerplate như tên website, “theo chiêm tinh”, “không phải kết luận thực nghiệm” không phải memorable point và không được đưa vào EditorialDesign/prose trừ khi người dùng đang hỏi về chất lượng nguồn.
+Concrete before abstract. Source boilerplate như tên website, “theo chiêm tinh”, “không phải kết luận thực nghiệm” không phải memorable point và không được đưa vào EditorialDesign/prose trừ khi người dùng đang hỏi về chất lượng nguồn. Dùng `rules/content-calibration.md` để calibrate ranh giới giữa concretization hợp lệ, câu quá trừu tượng và claim expansion.
 
 ## 7. Viral Overlay — tối ưu sức hút, không mở rộng claim
 
@@ -135,6 +135,7 @@ Trước khi gửi, xác nhận:
 - Nếu có nhiều beat, progression giữ được khác biệt thật giữa chúng.
 - Viral Overlay chỉ thay đổi cách gây chú ý/nhận diện, không thay đổi claim.
 - Title rõ nội dung; body không lặp title hoặc preference bằng nhiều câu khác nhau.
+- Mỗi slide có reality anchor đủ cụ thể; nếu dùng ví dụ, ví dụ chỉ giải nghĩa evidence chứ không trở thành trait mới.
 - Batch không lặp cùng skeleton chỉ đổi tên cung.
 - Số slide khớp số beat/contract.
 - JSON cuối khớp response contract sau approval flow.
