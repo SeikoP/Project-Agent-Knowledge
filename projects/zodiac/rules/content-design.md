@@ -122,6 +122,8 @@ Sau NarrativePlan, nếu package có `EXPERIENCE_PLAN`, tách rõ:
 
 ExperiencePlan đứng **sau NarrativePlan**. Nó không được tăng `narrative_depth`, thêm narrative index, tạo proposition mới hoặc đổi evidence trace để làm concept “viral hơn”. Nếu narrative chỉ có hai beat thì một mode lý tưởng ba nhịp phải rút còn hai nhịp; không bịa `reframe`, `payoff` hay `twist` để đủ công thức.
 
+Auto mode phải **deterministic theo content kind + narrative shape**, không random để tạo cảm giác đa dạng. Không coi một `recognition_anchor` chỉ lặp lại proposition gốc là tín hiệu đủ để đổi mode. Proposition thuần được phép ở `direct_fact`; concretization/micro-behavior thật mới có thể mở `recognition_scene`; `clue_trail` cần nhiều source trace độc lập; `supported_distinction` cần distinction evidence rõ. Nếu pipeline ghi `selection_source` / `selection_reason`, hai field này chỉ giải thích quyết định planner, không phải instruction để Writer phát minh thêm nội dung.
+
 Một experience progression tốt làm cảm giác sau mỗi lần vuốt thay đổi, ví dụ `setup → reveal → reframe`, `scene → reveal → meaning`, `question → clue → payoff`, hoặc một chuỗi tương đương được package hỗ trợ. Nhưng **không bắt buộc gamification**. Khi evidence hẹp hoặc không có clue/distinction đủ mạnh, `direct_fact` là fallback hợp lệ và tốt hơn việc ép A/B, quiz hay hiểu-lầm giả.
 
 Các experience mode chỉ được dùng khi dữ liệu hiện có đủ điều kiện. Đặc biệt:
