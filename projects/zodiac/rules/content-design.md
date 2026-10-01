@@ -1,4 +1,4 @@
-# ZODIAC CONTENT MEMORY — v4
+# ZODIAC CONTENT MEMORY — v5
 
 ## Mục đích và thứ tự ưu tiên
 
@@ -10,7 +10,7 @@ Ba lớp có quyền quyết định nội dung:
 2. `EDITORIAL_DESIGN` chọn insight, distinction, memorable point và progression nằm trong biên đó.
 3. `OUTPUT_CONTRACT` / `OUTPUT_TEMPLATE` / `SLIDE_OPTIONS` quyết định cấu trúc kỹ thuật.
 
-`VIRAL_OVERLAY`, nếu có, là lớp tối ưu mềm nằm giữa EditorialDesign và prose. Nó có thể định hướng attention, recognition, shareability, headline direction, tone hoặc pattern interrupt; nó không phải nguồn evidence, không được tạo fact và không được override `KNOWLEDGE_CONTEXT` hay `EDITORIAL_DESIGN`.
+`VIRAL_OVERLAY`/`VIRAL_FOCUS`, nếu có, chỉ là dữ liệu anchor riêng của package. Mọi nguyên tắc viral/human-touch nằm trong file này; Writer Context không được mang một bộ rule prose thứ hai.
 
 Workflow bắt buộc:
 
@@ -84,9 +84,25 @@ Nếu package cho phép đổi số slide, dừng ở số beat thực. Nếu co
 
 Nói như một người đang nhận xét hành vi quen thuộc, không như báo cáo phân tích tính cách. Ưu tiên động từ và cách nói có thể hình dung.
 
-Recognition không bắt buộc scene, POV hoặc hội thoại. **Ví dụ/diễn giải thực tế được khuyến khích khi nó chỉ làm rõ proposition đã có**, đặc biệt khi câu đang quá trừu tượng; không được biến ví dụ thành hành vi điển hình mới của cung. Mỗi slide nên có ít nhất một `reality anchor`: một cách nói, biểu hiện hoặc distinction đủ cụ thể để người đọc hình dung, nhưng vẫn truy ngược được về evidence. Nếu evidence không cho phép cụ thể hơn, giữ observation hẹp thay vì bịa scene.
+Recognition không bắt buộc POV hoặc hội thoại. Mỗi slide nên có ít nhất một **reality anchor**: một hành vi, cách nói hoặc distinction đủ cụ thể để người đọc hình dung.
 
-Concrete before abstract. Source boilerplate như tên website, “theo chiêm tinh”, “không phải kết luận thực nghiệm” không phải memorable point và không được đưa vào EditorialDesign/prose trừ khi người dùng đang hỏi về chất lượng nguồn. Dùng `rules/content-calibration.md` để calibrate ranh giới giữa concretization hợp lệ, câu quá trừu tượng và claim expansion.
+Có ba mức cần phân biệt:
+
+1. **Claim được support** — có thể gán trực tiếp cho subject.
+2. **Minh họa hành vi** — được phép cụ thể hơn evidence để người đọc hình dung, nhưng phải viết như ví dụ/kiểu tình huống chung, không khẳng định đó là hành vi cố định của subject.
+3. **Claim expansion** — lấy chính ví dụ minh họa rồi gán thành trait/hành vi thường có của subject; không được phép nếu Knowledge không support.
+
+Ví dụ với evidence “Cự Giải lắng nghe, chăm sóc và quan tâm đến cảm xúc”:
+
+- Quá trừu tượng: “Cự Giải xây kết nối cảm xúc bằng sự quan tâm sâu sắc.”
+- **Minh họa tốt:** “Dễ hình dung là kiểu nhớ điều người kia vừa kể rồi hỏi lại xem họ có ổn không.”
+- Vượt claim boundary: “Cự Giải sẽ nhớ từng điều bạn kể rồi tối về nhắn hỏi bạn có ổn không.”
+
+Câu giữa sống động hơn vì có hành động và tình huống, nhưng nó không biến hành động đó thành một trait đã được chứng minh của Cự Giải.
+
+Ưu tiên **behavioral illustration** khi prose đang quá trừu tượng. Có thể dùng “kiểu…”, “chẳng hạn…”, “dễ hình dung là…”, hoặc mô tả một hành vi chung mà không gắn certainty/frequency cho cung. Không cần kèm disclaimer trong content cuối nếu ngữ pháp đã thể hiện rõ đó là minh họa.
+
+Concrete before abstract. Source boilerplate như tên website, “theo chiêm tinh”, “không phải kết luận thực nghiệm” không phải memorable point và không đưa vào prose trừ khi người dùng hỏi về chất lượng nguồn.
 
 ## 7. Viral Overlay — tối ưu sức hút, không mở rộng claim
 
@@ -102,7 +118,7 @@ Nó có thể chứa các hướng như:
 - `pattern_interrupt`: cách tránh mở bài quá quen;
 - `avoid_patterns`: clickbait, consequence giả, stereotype hoặc cấu trúc AI cần tránh.
 
-Overlay không được thêm fact, motive, cause, consequence, frequency, outcome, scene hay certainty mới. Nếu một headline “viral” chỉ hấp dẫn khi thêm claim không có trong evidence thì bỏ headline đó.
+Overlay không được thêm fact, motive, cause, consequence, frequency, outcome hay certainty mới. Nó **được phép gợi ý minh họa hành vi** theo mục 6, miễn minh họa không bị viết thành trait của subject. Nếu một headline chỉ hấp dẫn khi biến minh họa thành claim mới thì bỏ headline đó.
 
 Không dùng quota slang, emoji, filler, curiosity gap hay “hook score”. Các từ như “thật ra”, “mà”, “hay ở chỗ”, “cơ mà”, “kiểu” chỉ dùng khi tự nhiên với câu.
 
@@ -135,7 +151,7 @@ Trước khi gửi, xác nhận:
 - Nếu có nhiều beat, progression giữ được khác biệt thật giữa chúng.
 - Viral Overlay chỉ thay đổi cách gây chú ý/nhận diện, không thay đổi claim.
 - Title rõ nội dung; body không lặp title hoặc preference bằng nhiều câu khác nhau.
-- Mỗi slide có reality anchor đủ cụ thể; nếu dùng ví dụ, ví dụ chỉ giải nghĩa evidence chứ không trở thành trait mới.
+- Mỗi slide có reality anchor đủ cụ thể; behavioral illustration được phép sống động hơn evidence nhưng không được gán thành trait/frequency/certainty của subject.
 - Batch không lặp cùng skeleton chỉ đổi tên cung.
 - Số slide khớp số beat/contract.
 - JSON cuối khớp response contract sau approval flow.
@@ -145,3 +161,23 @@ Nếu một mục fail, quay lại gate sớm nhất liên quan. Không dùng ch
 ## Chưa quy định
 
 Hashtag, CTA và emoji trong caption/slide chưa có rule chung. Không tự suy diễn thành giới hạn bắt buộc.
+
+
+## Calibration nhanh — dùng khi câu vẫn “đúng mà nhạt”
+
+### Evidence → prose
+
+Evidence: `chủ động thể hiện sự chú ý và lời khen`
+
+- Quá trừu tượng: “Sư Tử tạo sức hút bằng năng lượng chủ động và sự ghi nhận.”
+- Claim expansion: “Sư Tử thích ai là khen từ quần áo tới cách nói chuyện.”
+- Đúng claim nhưng còn khô: “Sư Tử khá chủ động trong việc dành sự chú ý và lời khen cho người kia.”
+- Có hình ảnh hơn mà vẫn an toàn: “Nó gần với kiểu chủ động để người kia biết mình đang chú ý, rồi lời khen cũng xuất hiện khá tự nhiên.”
+
+Evidence: `trò chuyện chân thành, tiếp cận từ tốn`
+
+- Quá trừu tượng: “Xử Nữ ưu tiên kết nối có chiều sâu và nhịp độ an toàn.”
+- Claim expansion: “Xử Nữ thường nhắn ít nhưng câu nào cũng suy nghĩ kỹ.”
+- Có hình ảnh hơn mà vẫn an toàn: “Dễ hình dung là một cuộc nói chuyện không cần lao vào quá nhanh, nhưng điều nói ra vẫn đủ thật để người kia biết mình đang nghiêm túc với cuộc trò chuyện.”
+
+Các ví dụ trên calibrate **mức cụ thể**, không phải template. Không copy cùng skeleton cho batch.
