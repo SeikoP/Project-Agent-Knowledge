@@ -1,4 +1,4 @@
-# ZODIAC CONTENT MEMORY — v4
+# ZODIAC CONTENT MEMORY — v5
 
 ## Mục đích và thứ tự ưu tiên
 
@@ -10,7 +10,7 @@ Ba lớp có quyền quyết định nội dung:
 2. `EDITORIAL_DESIGN` chọn insight, distinction, memorable point và progression nằm trong biên đó.
 3. `OUTPUT_CONTRACT` / `OUTPUT_TEMPLATE` / `SLIDE_OPTIONS` quyết định cấu trúc kỹ thuật.
 
-`VIRAL_OVERLAY`, nếu có, là lớp tối ưu mềm nằm giữa EditorialDesign và prose. Nó có thể định hướng attention, recognition, shareability, headline direction, tone hoặc pattern interrupt; nó không phải nguồn evidence, không được tạo fact và không được override `KNOWLEDGE_CONTEXT` hay `EDITORIAL_DESIGN`.
+`VIRAL_OVERLAY`/`VIRAL_FOCUS`, nếu có, chỉ là dữ liệu anchor riêng của package. Mọi nguyên tắc viral/human-touch nằm trong file này; Writer Context không được mang một bộ rule prose thứ hai.
 
 Workflow bắt buộc:
 
@@ -84,27 +84,43 @@ Nếu package cho phép đổi số slide, dừng ở số beat thực. Nếu co
 
 Nói như một người đang nhận xét hành vi quen thuộc, không như báo cáo phân tích tính cách. Ưu tiên động từ và cách nói có thể hình dung.
 
-Recognition không bắt buộc scene, POV, hội thoại hoặc ví dụ. Một distinction được nói tự nhiên cũng đủ. Không mở rộng mức cụ thể chỉ để nghe “đời”.
+Recognition không bắt buộc POV hoặc hội thoại. Mỗi slide nên có ít nhất một **reality anchor**: một hành vi, cách nói hoặc distinction đủ cụ thể để người đọc hình dung.
 
-Concrete before abstract. Source boilerplate như tên website, “theo chiêm tinh”, “không phải kết luận thực nghiệm” không phải memorable point và không được đưa vào EditorialDesign/prose trừ khi người dùng đang hỏi về chất lượng nguồn.
+Có ba mức cần phân biệt:
 
-## 7. Viral Overlay — tối ưu sức hút, không mở rộng claim
+1. **Claim được support** — có thể gán trực tiếp cho subject.
+2. **Minh họa hành vi** — được phép cụ thể hơn evidence để người đọc hình dung, nhưng phải viết như ví dụ/kiểu tình huống chung, không khẳng định đó là hành vi cố định của subject.
+3. **Claim expansion** — lấy chính ví dụ minh họa rồi gán thành trait/hành vi thường có của subject; không được phép nếu Knowledge không support.
 
-`VIRAL_OVERLAY` là tùy chọn và chỉ chạy sau khi EditorialDesign đã hợp lệ.
+Ví dụ với evidence “Cự Giải lắng nghe, chăm sóc và quan tâm đến cảm xúc”:
 
-Nó có thể chứa các hướng như:
+- Quá trừu tượng: “Cự Giải xây kết nối cảm xúc bằng sự quan tâm sâu sắc.”
+- **Minh họa tốt:** “Dễ hình dung là kiểu nhớ điều người kia vừa kể rồi hỏi lại xem họ có ổn không.”
+- Vượt claim boundary: “Cự Giải sẽ nhớ từng điều bạn kể rồi tối về nhắn hỏi bạn có ổn không.”
 
-- `attention_strategy`: thứ gì khiến người xem dừng lại;
-- `recognition_strategy`: điểm nào dễ khiến người xem nhận ra mình/người quen;
-- `share_reason`: vì sao người xem có thể muốn tag/chia sẻ;
-- `headline_direction`: hướng headline rõ và đáng xem hơn;
-- `tone_direction`: nhịp nói phù hợp;
-- `pattern_interrupt`: cách tránh mở bài quá quen;
-- `avoid_patterns`: clickbait, consequence giả, stereotype hoặc cấu trúc AI cần tránh.
+Câu giữa sống động hơn vì có hành động và tình huống, nhưng nó không biến hành động đó thành một trait đã được chứng minh của Cự Giải.
 
-Overlay không được thêm fact, motive, cause, consequence, frequency, outcome, scene hay certainty mới. Nếu một headline “viral” chỉ hấp dẫn khi thêm claim không có trong evidence thì bỏ headline đó.
+Ưu tiên **behavioral illustration** khi prose đang quá trừu tượng. Có thể dùng “kiểu…”, “chẳng hạn…”, “dễ hình dung là…”, hoặc mô tả một hành vi chung mà không gắn certainty/frequency cho cung. Không cần kèm disclaimer trong content cuối nếu ngữ pháp đã thể hiện rõ đó là minh họa.
 
-Không dùng quota slang, emoji, filler, curiosity gap hay “hook score”. Các từ như “thật ra”, “mà”, “hay ở chỗ”, “cơ mà”, “kiểu” chỉ dùng khi tự nhiên với câu.
+Concrete before abstract. Source boilerplate như tên website, “theo chiêm tinh”, “không phải kết luận thực nghiệm” không phải memorable point và không đưa vào prose trừ khi người dùng hỏi về chất lượng nguồn.
+
+## 7. Viral Focus và plugin phân tích — công cụ, không phải nguồn rule
+
+`VIRAL_FOCUS`, nếu có trong Writer Context, chỉ mang **anchor riêng của package** như recognition anchor và headline anchor. Nó không chứa rule prose.
+
+Plugin phân tích content viral có thể được dùng như **phương pháp làm việc** trước khi viết: Quan sát → Phân tích → tìm điểm đặc biệt → Delete/A-B test → đúc kết hướng trình bày. Plugin không phải nguồn rule thứ hai. Mọi đề xuất từ plugin phải quay về file này để kiểm tra evidence boundary trước khi dùng.
+
+Được phép dùng plugin để tìm:
+- chi tiết nào nên foreground để người xem dừng lại;
+- recognition anchor nào có tính đời thường nhất;
+- cách headline rõ hơn hoặc có pattern interrupt;
+- behavioral illustration nào làm evidence dễ hình dung hơn.
+
+Không được dùng plugin để cấp thêm fact, motive, cause, consequence, frequency, outcome hay certainty về cung.
+
+Nếu một câu hấp dẫn hơn nhờ **minh họa hành vi**, áp dụng ranh giới ở mục 6: giữ ví dụ dưới dạng “kiểu…”, “dễ hình dung là…”, “chẳng hạn…”, hoặc một tình huống minh họa không gán thành trait của subject.
+
+Không dùng quota slang, emoji, filler, curiosity gap hay hook score. Tự nhiên quan trọng hơn việc “trông viral”.
 
 Viral analysis từ performance thật có thể cập nhật pattern library, nhưng pattern chỉ tối ưu cách trình bày; pattern không bao giờ trở thành evidence về cung.
 
@@ -133,8 +149,9 @@ Trước khi gửi, xác nhận:
 - EditorialDesign không chứa source boilerplate hoặc instruction meta thay cho insight.
 - Nếu có một beat duy nhất, không bịa thêm beat để “đủ insight”.
 - Nếu có nhiều beat, progression giữ được khác biệt thật giữa chúng.
-- Viral Overlay chỉ thay đổi cách gây chú ý/nhận diện, không thay đổi claim.
+- Viral Focus/plugin chỉ thay đổi cách foreground, minh họa và gây chú ý; không thay đổi claim.
 - Title rõ nội dung; body không lặp title hoặc preference bằng nhiều câu khác nhau.
+- Mỗi slide có reality anchor đủ cụ thể; behavioral illustration được phép sống động hơn evidence nhưng không được gán thành trait/frequency/certainty của subject.
 - Batch không lặp cùng skeleton chỉ đổi tên cung.
 - Số slide khớp số beat/contract.
 - JSON cuối khớp response contract sau approval flow.
@@ -144,3 +161,23 @@ Nếu một mục fail, quay lại gate sớm nhất liên quan. Không dùng ch
 ## Chưa quy định
 
 Hashtag, CTA và emoji trong caption/slide chưa có rule chung. Không tự suy diễn thành giới hạn bắt buộc.
+
+
+## Calibration nhanh — dùng khi câu vẫn “đúng mà nhạt”
+
+### Evidence → prose
+
+Evidence: `chủ động thể hiện sự chú ý và lời khen`
+
+- Quá trừu tượng: “Sư Tử tạo sức hút bằng năng lượng chủ động và sự ghi nhận.”
+- Claim expansion: “Sư Tử thích ai là khen từ quần áo tới cách nói chuyện.”
+- Đúng claim nhưng còn khô: “Sư Tử khá chủ động trong việc dành sự chú ý và lời khen cho người kia.”
+- Có hình ảnh hơn mà vẫn an toàn: “Nó gần với kiểu chủ động để người kia biết mình đang chú ý, rồi lời khen cũng xuất hiện khá tự nhiên.”
+
+Evidence: `trò chuyện chân thành, tiếp cận từ tốn`
+
+- Quá trừu tượng: “Xử Nữ ưu tiên kết nối có chiều sâu và nhịp độ an toàn.”
+- Claim expansion: “Xử Nữ thường nhắn ít nhưng câu nào cũng suy nghĩ kỹ.”
+- Có hình ảnh hơn mà vẫn an toàn: “Dễ hình dung là một cuộc nói chuyện không cần lao vào quá nhanh, nhưng điều nói ra vẫn đủ thật để người kia biết mình đang nghiêm túc với cuộc trò chuyện.”
+
+Các ví dụ trên calibrate **mức cụ thể**, không phải template. Không copy cùng skeleton cho batch.
