@@ -185,11 +185,26 @@ Body slide 1 phải cụ thể hóa title, không paraphrase title. Không áp c
 
 Tránh cấu trúc lặp `claim → giải thích → tổng kết` trên mọi slide. Không kết bằng câu AI tóm tắt hoặc moral. Kết ở observation/distinction đã được evidence hỗ trợ.
 
-## 9. Độ dài và format — theo contract package
+## 9. Độ dài, fit và format — theo contract package
 
 Giới hạn chung chỉ là hướng dẫn mặc định: headline tối đa 55 ký tự; body ưu tiên 225–240 ký tự khi package cho phép, không phải mức tối thiểu. Không nhồi chữ để đủ độ dài.
 
 `OUTPUT_CONTRACT`, `OUTPUT_TEMPLATE`, `SLIDE_OPTIONS` quyết định trần, số dòng, số slide, thứ tự và block ID. Contract override giới hạn kỹ thuật chung khi có xung đột; nội dung vẫn phải qua editorial gates.
+
+### Adaptive fit
+
+Giới hạn ký tự của block là **hard fit cap của geometry**, không phải tín hiệu bắt Writer làm ý nghèo đi. Nếu một narrative beat đang có giá trị nhưng recipe/layout chỉ cho vùng body quá hẹp để diễn đạt rõ, pipeline được phép tạo một phương án fit rộng hơn.
+
+Thứ tự ưu tiên:
+
+1. Nếu đang dùng recipe nén do auto-presentation, ưu tiên đổi sang recipe ít nén hơn trước.
+2. Nếu beat vẫn bị bó bởi geometry hiện tại và việc rút ngắn sẽ làm mất micro-behavior/distinction đáng giá, có thể tách **tối đa một support slide trong một lần fit**.
+3. Support slide phải nối trực tiếp với cùng narrative beat/evidence trace; nó chỉ được concretize, foreground hoặc tiếp tục phần chi tiết đã được support, không thêm claim mới.
+4. Không tách slide chỉ để đạt quota 225–240 ký tự. Nếu câu ngắn đã đủ rõ và mạnh thì giữ ngắn.
+5. Một support slide phải có chức năng khác slide nguồn; cấm chia một câu/paraphrase thành hai slide.
+6. Standalone adaptive fit mặc định không vượt 5 slide. Nếu vẫn không fit sau một lần tách, ưu tiên đổi layout hoặc rút prose thay vì tiếp tục sinh slide.
+
+Khi `SLIDE_OPTIONS` có cả base count và base+1 do fit, Writer được chọn base+1 trong preview nếu chất lượng rõ ràng tốt hơn. JSON cuối phải dùng đúng một option đã chọn và giữ nguyên block contract của option đó.
 
 Header dùng sentence case, không ALL CAPS. Không dùng dash làm công cụ cấu trúc câu trong carousel. Tránh cliché rỗng, thuật ngữ niche và nhiều twist trên cùng slide.
 
@@ -206,7 +221,7 @@ Trước khi gửi, xác nhận:
 - Title rõ nội dung; body không lặp title hoặc preference bằng nhiều câu khác nhau.
 - Mỗi slide có reality anchor đủ cụ thể; ưu tiên micro-behavior vượt qua Camera Test. Behavioral illustration được phép suy một bước gần từ evidence nhưng không thêm motive/cause/outcome/frequency hoặc biến thành relationship abstraction.
 - Batch không lặp cùng skeleton chỉ đổi tên cung.
-- Số slide khớp NarrativePlan/contract; không còn bắt buộc khớp 1:1 với số evidence beat.
+- Số slide khớp NarrativePlan/contract; adaptive fit chỉ được thêm support slide có trace rõ ràng, không còn bắt buộc khớp 1:1 với số evidence beat.
 - JSON cuối khớp response contract sau approval flow.
 
 Nếu một mục fail, quay lại gate sớm nhất liên quan. Không dùng chỉnh prose, kéo dài câu, slang, clickbait hoặc ví dụ để che lỗi insight, evidence hay progression.
