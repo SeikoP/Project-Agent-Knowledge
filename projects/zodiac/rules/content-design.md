@@ -104,23 +104,23 @@ Câu giữa sống động hơn vì có hành động và tình huống, nhưng 
 
 Concrete before abstract. Source boilerplate như tên website, “theo chiêm tinh”, “không phải kết luận thực nghiệm” không phải memorable point và không đưa vào prose trừ khi người dùng hỏi về chất lượng nguồn.
 
-## 7. Viral Overlay — tối ưu sức hút, không mở rộng claim
+## 7. Viral Focus và plugin phân tích — công cụ, không phải nguồn rule
 
-`VIRAL_OVERLAY` là tùy chọn và chỉ chạy sau khi EditorialDesign đã hợp lệ.
+`VIRAL_FOCUS`, nếu có trong Writer Context, chỉ mang **anchor riêng của package** như recognition anchor và headline anchor. Nó không chứa rule prose.
 
-Nó có thể chứa các hướng như:
+Plugin phân tích content viral có thể được dùng như **phương pháp làm việc** trước khi viết: Quan sát → Phân tích → tìm điểm đặc biệt → Delete/A-B test → đúc kết hướng trình bày. Plugin không phải nguồn rule thứ hai. Mọi đề xuất từ plugin phải quay về file này để kiểm tra evidence boundary trước khi dùng.
 
-- `attention_strategy`: thứ gì khiến người xem dừng lại;
-- `recognition_strategy`: điểm nào dễ khiến người xem nhận ra mình/người quen;
-- `share_reason`: vì sao người xem có thể muốn tag/chia sẻ;
-- `headline_direction`: hướng headline rõ và đáng xem hơn;
-- `tone_direction`: nhịp nói phù hợp;
-- `pattern_interrupt`: cách tránh mở bài quá quen;
-- `avoid_patterns`: clickbait, consequence giả, stereotype hoặc cấu trúc AI cần tránh.
+Được phép dùng plugin để tìm:
+- chi tiết nào nên foreground để người xem dừng lại;
+- recognition anchor nào có tính đời thường nhất;
+- cách headline rõ hơn hoặc có pattern interrupt;
+- behavioral illustration nào làm evidence dễ hình dung hơn.
 
-Overlay không được thêm fact, motive, cause, consequence, frequency, outcome hay certainty mới. Nó **được phép gợi ý minh họa hành vi** theo mục 6, miễn minh họa không bị viết thành trait của subject. Nếu một headline chỉ hấp dẫn khi biến minh họa thành claim mới thì bỏ headline đó.
+Không được dùng plugin để cấp thêm fact, motive, cause, consequence, frequency, outcome hay certainty về cung.
 
-Không dùng quota slang, emoji, filler, curiosity gap hay “hook score”. Các từ như “thật ra”, “mà”, “hay ở chỗ”, “cơ mà”, “kiểu” chỉ dùng khi tự nhiên với câu.
+Nếu một câu hấp dẫn hơn nhờ **minh họa hành vi**, áp dụng ranh giới ở mục 6: giữ ví dụ dưới dạng “kiểu…”, “dễ hình dung là…”, “chẳng hạn…”, hoặc một tình huống minh họa không gán thành trait của subject.
+
+Không dùng quota slang, emoji, filler, curiosity gap hay hook score. Tự nhiên quan trọng hơn việc “trông viral”.
 
 Viral analysis từ performance thật có thể cập nhật pattern library, nhưng pattern chỉ tối ưu cách trình bày; pattern không bao giờ trở thành evidence về cung.
 
@@ -149,7 +149,7 @@ Trước khi gửi, xác nhận:
 - EditorialDesign không chứa source boilerplate hoặc instruction meta thay cho insight.
 - Nếu có một beat duy nhất, không bịa thêm beat để “đủ insight”.
 - Nếu có nhiều beat, progression giữ được khác biệt thật giữa chúng.
-- Viral Overlay chỉ thay đổi cách gây chú ý/nhận diện, không thay đổi claim.
+- Viral Focus/plugin chỉ thay đổi cách foreground, minh họa và gây chú ý; không thay đổi claim.
 - Title rõ nội dung; body không lặp title hoặc preference bằng nhiều câu khác nhau.
 - Mỗi slide có reality anchor đủ cụ thể; behavioral illustration được phép sống động hơn evidence nhưng không được gán thành trait/frequency/certainty của subject.
 - Batch không lặp cùng skeleton chỉ đổi tên cung.
