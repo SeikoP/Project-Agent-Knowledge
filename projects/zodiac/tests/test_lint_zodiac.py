@@ -139,7 +139,7 @@ class ZodiacVoiceLintTests(unittest.TestCase):
         self.assertEqual(self.rules("Họ khen bạn liền."), [])
         self.assertIn(
             "voice.filler_over_1_per_slide",
-            self.rules("Họ khen bạn liền nha."),
+            self.rules("Họ khen bạn liền, đúng nha."),
         )
 
     def test_same_filler_cannot_repeat_on_adjacent_slides(self):
