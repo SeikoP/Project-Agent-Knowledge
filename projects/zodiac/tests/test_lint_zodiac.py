@@ -45,7 +45,7 @@ class ZodiacVoiceLintTests(unittest.TestCase):
         rules = self.rules(
             "Họ không chỉ nghe chuyện xảy ra mà còn để ý xem chuyện đó làm bạn vui hay khó chịu."
         )
-        self.assertIn("voice.banned_clause_connector", rules)
+        self.assertIn("voice.sentence_over_18_words", rules)
 
     def test_bad_leo_bookish_word_is_caught(self):
         rules = self.rules("Sư Tử thể hiện sự chú ý qua lời khen.")
