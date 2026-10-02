@@ -129,9 +129,7 @@ def lint_payload(payload: dict, blacklist: Iterable[str]) -> list[dict]:
         if not isinstance(idea, dict):
             errors.append(_error(0, "", f"schema.idea_{idea_index}_must_be_object"))
             continue
-        idea_id = idea.get("idea_id", idea_index)
-        for error in lint_idea(idea, blacklist):
-            errors.append({"idea_id": idea_id, **error})
+        errors.extend(lint_idea(idea, blacklist))
     return errors
 
 
