@@ -1,4 +1,4 @@
-# ZODIAC CONTENT MEMORY — v8
+# ZODIAC CONTENT MEMORY — v9
 
 ## Mục đích và thứ tự ưu tiên
 
@@ -181,8 +181,8 @@ Có bốn mức cần phân biệt:
 Ví dụ evidence: `lắng nghe, chăm sóc và quan tâm đến cảm xúc`
 
 - Quá sát nguồn: “Cự Giải có cảm tình thường lắng nghe kỹ và để ý cảm xúc của người kia.”
-- Chấp nhận: “Kiểu người kia kể một chuyện, họ không chỉ nghe chuyện gì đã xảy ra mà còn để ý xem chuyện đó làm người kia vui hay khó chịu.”
-- **Ưu tiên:** “Kiểu nhớ một chuyện người kia từng kể, rồi lần sau còn hỏi lại xem chuyện đó ổn chưa.”
+- Chấp nhận: “Bạn kể một chuyện. Họ để ý đoạn làm bạn vui hay khó chịu.”
+- **Ưu tiên:** “Nhớ chuyện bạn kể hôm trước. Lần sau gặp còn hỏi: giờ ổn chưa?”
 
 Câu cuối thêm continuity và follow-up chưa có nguyên văn trong evidence, nhưng vẫn là một hiện thực hóa gần của “lắng nghe + chăm sóc + để ý cảm xúc”. Nó được phép vì không thêm motive, verdict hay outcome.
 
@@ -219,7 +219,7 @@ Plugin phân tích content viral có thể được dùng như **phương pháp 
 
 Không được dùng plugin để cấp thêm fact, motive, cause, consequence, frequency, outcome hay certainty về cung.
 
-Nếu một câu hấp dẫn hơn nhờ **minh họa hành vi**, áp dụng ranh giới ở mục 6: giữ ví dụ dưới dạng “kiểu…”, “dễ hình dung là…”, “chẳng hạn…”, hoặc một tình huống minh họa không gán thành trait của subject.
+Nếu một câu hấp dẫn hơn nhờ **minh họa hành vi**, áp dụng ranh giới ở mục 6. Hedging chỉ dùng khi cần tránh tuyệt đối hóa; không mở câu mặc định bằng “kiểu…”, “dễ hình dung là…” hay “chẳng hạn…”.
 
 Không dùng quota slang, emoji, filler, curiosity gap hay hook score. Tự nhiên quan trọng hơn việc “trông viral”.
 
@@ -233,9 +233,32 @@ Nếu slide 1 có headline, phần còn lại của slide phải cụ thể hóa
 
 Tránh cấu trúc lặp `claim → giải thích → tổng kết` trên mọi slide. Không kết bằng câu AI tóm tắt hoặc moral. Kết ở observation/distinction đã được evidence hỗ trợ.
 
+## 8b. Voice và anti-AI lexicon
+
+Giọng mục tiêu: như bạn thân đang nhận xét một người lúc nhắn tin; gần, cụ thể, không giảng giải.
+- **TODO-TUNE:** tối đa 18 từ/câu. Một câu chỉ giữ một hành động, cảnh hoặc ý.
+- Không nối hai vế bằng `nhưng`, `trong khi`, `trong lúc`; tách thành hai câu nếu cả hai vế đều đáng giữ.
+- `không chỉ… mà còn` và `không phải… mà là`: tối đa 1 lần/post.
+- Không kết slide bằng câu khái quát, moral hoặc câu giải nghĩa lại phần trên.
+- Hai slide liền nhau không cùng từ mở đầu; tránh cùng số câu nếu contract không ép.
+- Cho phép câu cụt, câu hỏi, bỏ chủ ngữ. `thì` / `à` / `đấy` tối đa 1 lần/slide.
+- Hedging chỉ để tránh tuyệt đối hóa, không phải khuôn mở câu.
+
+**BLACKLIST trong prose — TODO-TUNE:** `phía họ`, `tương tác`, `sự chú ý`, `kết nối`, `cảm nhận rõ`, `thể hiện`, `đón nhận`, `điều này cho thấy`, `qua đó`, `nhìn chung`, `tóm lại`, `vì vậy`.
+**PREFER khi evidence hỗ trợ:** động từ và vật thể nhìn thấy được như `nhắn`, `trả lời`, `hỏi lại`, `nhớ`, `gõ`, `gửi`, `để đó`, `im`, `nói thẳng`, `khen`. Không biến danh sách này thành template hành vi.
+
+**STYLE PASS bắt buộc sau nháp:** soi từng câu bằng 4 câu hỏi:
+1. Bạn thân có thật sự nói câu này không?
+2. Có từ/cụm BLACKLIST không?
+3. Câu đang tả hành vi hay đang giải thích hành vi?
+4. Xóa câu cuối thì ý chính còn đủ không?
+
+Fail bất kỳ câu hỏi nào thì viết lại hẳn câu đó; không sửa nhẹ bằng đổi vài từ.
+
+
 ## 9. Độ dài, fit và format — theo contract package
 
-Giới hạn chung chỉ là hướng dẫn mặc định: headline tối đa 55 ký tự; body ưu tiên 225–240 ký tự khi package cho phép, không phải mức tối thiểu. Không nhồi chữ để đủ độ dài.
+Giới hạn chung chỉ là hướng dẫn mặc định: headline tối đa 55 ký tự. Với body, `max_chars` của contract là **trần kỹ thuật, không phải mục tiêu**; viết bản ngắn nhất mà vẫn rõ và còn giữ được micro-behavior/distinction đáng giá. Mốc 225–240 chỉ dùng để đánh giá sức chứa/fit khi pipeline cần, không phải target prose.
 
 `OUTPUT_CONTRACT`, `OUTPUT_TEMPLATE`, `SLIDE_OPTIONS` quyết định trần, số dòng, số slide, thứ tự và block ID. Contract override giới hạn kỹ thuật chung khi có xung đột; nội dung vẫn phải qua editorial gates.
 
@@ -273,6 +296,9 @@ Trước khi gửi, xác nhận:
 - Mỗi slide có reality anchor đủ cụ thể; ưu tiên micro-behavior vượt qua Camera Test. Behavioral illustration được phép suy một bước gần từ evidence nhưng không thêm motive/cause/outcome/frequency hoặc biến thành relationship abstraction.
 - Batch không lặp cùng skeleton chỉ đổi tên cung.
 - Số slide khớp NarrativePlan/contract; adaptive fit chỉ được thêm support slide có trace rõ ràng, không còn bắt buộc khớp 1:1 với số evidence beat.
+- STYLE PASS ở mục 8b đã chạy trên từng câu.
+- Lint pass; không còn từ/cụm BLACKLIST trong prose.
+- Không có hai slide liền nhau cùng từ mở đầu.
 - JSON cuối khớp response contract sau approval flow.
 
 Nếu một mục fail, quay lại gate sớm nhất liên quan. Không dùng chỉnh prose, kéo dài câu, slang, clickbait hoặc ví dụ để che lỗi insight, evidence hay progression.
@@ -286,35 +312,42 @@ Hashtag, CTA và emoji trong caption/slide chưa có rule chung. Không tự suy
 
 ### Cự Giải · evidence: lắng nghe, chăm sóc, để ý cảm xúc
 
-- **Không ưu tiên:** “Cự Giải có cảm tình thường lắng nghe kỹ và để ý xem người kia đang cảm thấy thế nào.”  
-  Đúng nhưng chỉ restate evidence.
+- **Không ưu tiên:** “Cự Giải thường lắng nghe kỹ. Họ để ý cảm xúc của người kia.”  
+  Đúng nhưng mới restate evidence.
+- **Chấp nhận:** “Bạn kể một chuyện. Họ để ý đoạn làm bạn vui hay khó chịu.”  
+  Có cảnh, vẫn còn hơi mô tả.
+- **Ưu tiên:** “Nhớ chuyện bạn kể hôm trước. Lần sau gặp còn hỏi: giờ ổn chưa?”  
+  Có micro-behavior và continuity; vẫn trong cùng claim boundary.
 
-- **Chấp nhận:** “Kiểu người kia kể một chuyện, họ không chỉ nghe chuyện gì đã xảy ra mà còn để ý xem chuyện đó làm người kia vui hay khó chịu.”  
-  Có hành vi để hình dung nhưng vẫn còn khá mô tả.
+### BAD → GOOD về giọng
 
-- **Ưu tiên:** “Kiểu nhớ một chuyện người kia từng kể, rồi lần sau còn hỏi lại xem chuyện đó ổn chưa.”  
-  Có micro-behavior, continuity và follow-up; recognition mạnh hơn nhưng vẫn cùng bản chất evidence.
+- **Bạch Dương:** — / — (chưa có evidence trong file)
+- **Kim Ngưu:** — / — (chưa có evidence trong file)
+- **Song Tử:** — / — (chưa có evidence trong file)
+- **Cự Giải 1:** BAD “Cự Giải có cảm tình thường lắng nghe kỹ và để ý cảm xúc của người kia.” → GOOD “Nhớ chuyện bạn kể hôm trước. Lần sau gặp còn hỏi: giờ ổn chưa?” — BAD: mô tả trait; GOOD: chỉ có cảnh.
+- **Cự Giải 2:** BAD “Họ không chỉ nghe chuyện xảy ra mà còn để ý bạn thấy thế nào.” → GOOD “Bạn kể một chuyện buồn. Họ hỏi lại đúng đoạn làm bạn khó chịu.” — BAD: cấu trúc giải thích; GOOD: một hành động cụ thể.
+- **Sư Tử 1:** BAD “Sư Tử thể hiện sự chú ý thông qua lời khen dành cho người kia.” → GOOD “Thấy một điểm hay là khen đúng điểm đó.” — BAD: từ sách vở; GOOD: động từ trực tiếp.
+- **Sư Tử 2:** BAD “Người kia có thể cảm nhận rõ mình đang được Sư Tử chú ý.” → GOOD “Đang nói chuyện, họ bắt đúng một chi tiết rồi khen.” — BAD: có kết luận; GOOD: chỉ có cảnh.
+- **Xử Nữ 1:** BAD “Xử Nữ không đẩy mọi thứ quá nhanh để mối quan hệ tiến từng chút.” → GOOD “Nói chuyện chậm rãi. Điều gì nghĩ thật thì nói thật.” — BAD: suy rộng quan hệ; GOOD: bám `từ tốn + chân thành`.
+- **Xử Nữ 2:** BAD “Họ biết chừa khoảng riêng để người kia cảm thấy thoải mái.” → GOOD “Bạn muốn giữ chuyện riêng thì họ không gặng hỏi.” — BAD: thêm outcome; GOOD: hiện thực hóa `tôn trọng riêng tư`.
+- **Thiên Bình:** — / — (chưa có evidence trong file)
+- **Bọ Cạp:** — / — (chưa có evidence trong file)
+- **Nhân Mã:** — / — (chưa có evidence trong file)
+- **Ma Kết:** — / — (chưa có evidence trong file)
+- **Bảo Bình:** — / — (chưa có evidence trong file)
+- **Song Ngư:** — / — (chưa có evidence trong file)
 
-### Sư Tử · evidence: chủ động chú ý và lời khen
-
-Các hướng “để người kia biết mình đang được chú ý”, “lời khen bật ra khi nhận thấy một điểm hay”, hoặc “người kia cảm nhận rõ mình được để ý hơn” đều **chấp nhận được**, nhưng chưa mặc định là mức tốt nhất. Writer nên tiếp tục tìm micro-behavior cụ thể hơn nếu evidence cho phép, thay vì dừng ở một câu mô tả chung.
-
-### Xử Nữ · evidence: chân thành, tiếp cận từ tốn, tôn trọng riêng tư
-
-Không tự động biến `từ tốn` thành:
-- “không đẩy mọi thứ quá nhanh”;
-- “để mối quan hệ tiến từng chút”;
-- “giữ khoảng cách”;
-- “chừa khoảng riêng cho nhau”.
-
-Các câu này dễ trượt sang relationship abstraction hoặc đổi semantic. Nếu chưa tìm được micro-behavior tốt, dùng observation ngắn, cụ thể và sát evidence; không bắt buộc phải có illustration dài.
+Các cặp trên calibrate **giọng**, không cấp thêm evidence và không phải template câu.
 
 ### Nguyên tắc rút ra
 
-**Độ hay không tỷ lệ với độ xa evidence. Độ hay tăng khi câu chuyển evidence thành một micro-behavior có thể nhận ra.**
+**Độ hay không tỷ lệ với độ xa evidence. Độ hay tăng khi evidence thành một micro-behavior dễ nhận ra.**
 
-Ưu tiên theo thứ tự:
+Ưu tiên: `micro-behavior cụ thể` → `behavioral illustration` → `evidence restatement` → tránh `abstract relational inference`.
 
-`micro-behavior cụ thể` → `behavioral illustration chung` → `evidence restatement` → tránh `abstract relational inference`.
+## Changelog v9
 
-Các ví dụ calibrate mức cụ thể, không phải template câu.
+- Thêm Voice/anti-AI + STYLE PASS vì v8 kiểm soát ý tốt nhưng chưa khóa giọng ở tầng câu.
+- Đổi length guidance và hedging vì target 225–240 cùng câu mở “kiểu…” dễ kéo prose dài, mềm và giống template.
+- Viết lại calibration/BAD→GOOD vì ví dụ cũ vô tình dạy Writer dùng cấu trúc AI dù vẫn đúng evidence.
+- Thêm lint hooks vào Final validation vì naturalness trước đây chủ yếu là lời khuyên, chưa có cơ chế bắt lỗi.
