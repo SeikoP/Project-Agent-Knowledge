@@ -1,4 +1,4 @@
-# ZODIAC CONTENT MEMORY — v9.5
+# ZODIAC CONTENT MEMORY — v9.6
 
 ## Mục đích và thứ tự ưu tiên
 
@@ -261,6 +261,21 @@ Sau nháp, hỏi với mỗi body: **nếu chỉ đọc slide này, người xem
 Ưu tiên **cho người xem thấy chuyện đang xảy ra trước, rồi mới gọi tên điều đáng nhớ**. Với recognition content, một body tốt thường có nhịp:
 `cảnh quen → chỗ thay đổi → chi tiết đọng lại`.
 
+### Recognition Reference
+
+Khi evidence cho phép, mỗi narrative beat nên có ít nhất một **reference mà người xem có thể nhận ra ngay từ đời thật**, thay vì chỉ mô tả khái niệm.
+
+Recognition Reference có thể là:
+
+- một câu nhắn ngắn đặt trong ngoặc kép, ví dụ `“ừ thôi nha”`, `“để mai nói tiếp”`, nếu câu đó chỉ dùng để minh họa **thứ đáng lẽ có thể xuất hiện nhưng evidence nói là không có**;
+- một hành động nhìn thấy được, như `bạn nhắn trước thì họ mới rep`;
+- một trạng thái đối chiếu, như `tin nhắn chưa được trả lời nhưng người đó vẫn online`;
+- một vật thể/dấu vết cụ thể, như `đoạn đã gõ vẫn nằm trong ô nháp`.
+
+Reference không được biến thành fact mới. Nó chỉ **neo proposition vào một cảnh hoặc câu chữ quen thuộc**. Nếu phải bịa địa điểm, lịch học, story, seen, emoji, thời gian cụ thể hoặc nội dung tin nhắn mà evidence không support thì bỏ.
+
+Sau mỗi body, hỏi: **có chi tiết nào khiến người xem nói “à, đúng kiểu này” không?** Nếu không có, body có nguy cơ chỉ đang giải thích.
+
 Ví dụ cùng một claim "vẫn trả lời nhưng không còn chủ động": đừng dừng ở câu giải thích. Có thể cho thấy `bạn nhắn thì vẫn rep → chờ họ nhắn trước thì không thấy → phần chủ động đã mất`. Đây vẫn là một evidence trace, không phải ba claim mới.
 
 Không biến checkpoint này thành template cứng. Nếu evidence không có cảnh/contrast đủ rõ, giữ direct fact còn tốt hơn bịa thêm tình huống.
@@ -499,3 +514,10 @@ Các cặp trên calibrate **giọng**, không cấp thêm evidence và không p
 - Thêm Natural syntax test — vì "vibe học sinh" không được phép làm câu sai nhịp tự nhiên như `người mở lời cứ thành bạn` hoặc `tin nhắn với bạn đứng im`.
 - Loại placeholder mơ hồ kiểu `ở chỗ khác`, `điểm nằm ở đây` khi referent không rõ.
 - STYLE PASS kiểm tra riêng semantic payload và cú pháp tự nhiên, thay vì coi slang/từ nối là bằng chứng rằng câu đã đời thường.
+
+
+## Changelog v9.6
+
+- Thêm Recognition Reference — vì content đúng evidence nhưng thiếu một câu/chi tiết để người xem đối chiếu với trải nghiệm thật vẫn dễ thành mô tả chung.
+- Cho phép dùng câu nhắn mẫu ngắn như một reference khi nó minh họa trực tiếp cho phần có/không có trong evidence; không biến câu mẫu thành fact mới.
+- Phân biệt Recognition Reference với visual reference: mục tiêu nằm trong prose, không phải yêu cầu thêm hình minh họa.
