@@ -54,11 +54,11 @@ class ZodiacVoiceLintTests(unittest.TestCase):
             [],
         )
 
-    def test_bad_cancer_explanatory_sentence_is_caught_by_syllable_limit(self):
+    def test_sentence_over_24_syllables_is_caught(self):
         rules = self.rules(
-            "Họ nghe bạn kể chuyện rồi hỏi thêm từng chi tiết để hiểu rõ hơn trước khi hai người nói sang chuyện khác."
+            "Họ nghe bạn kể chuyện rồi hỏi thêm từng chi tiết để hiểu rõ hơn trước khi hai người nói sang chuyện khác, rồi vẫn cố giải thích tiếp cho thật đầy đủ."
         )
-        self.assertIn("voice.sentence_over_18_syllables", rules)
+        self.assertIn("voice.sentence_over_24_syllables", rules)
 
     def test_good_leo_scene_passes(self):
         self.assertEqual(self.rules("Thấy bạn có điểm hay là khen liền."), [])
@@ -72,12 +72,18 @@ class ZodiacVoiceLintTests(unittest.TestCase):
         self.assertEqual(self.rules("Bạn không muốn kể là họ thôi, không hỏi nữa luôn."), [])
 
     def test_banned_connectors_are_caught(self):
-        for connector in ("nhưng", "trong khi", "trong lúc"):
+        for connector in ("trong khi", "trong lúc"):
             with self.subTest(connector=connector):
                 self.assertIn(
                     "voice.banned_clause_connector",
                     self.rules(f"Họ nghe {connector} bạn vẫn đang nói."),
                 )
+
+    def test_nhung_is_allowed_for_natural_contrast(self):
+        self.assertNotIn(
+            "voice.banned_clause_connector",
+            self.rules("Họ vẫn trả lời, nhưng không mở chuyện trước."),
+        )
 
     def test_adjacent_opening_uses_two_words_after_pronoun(self):
         rules = self.rules("Bạn nhắn trước.", "Bạn kể chuyện.")
