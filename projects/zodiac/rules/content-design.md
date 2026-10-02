@@ -246,7 +246,7 @@ Giọng mục tiêu: như bạn thân đang nhận xét một người lúc nh�
 - Cho phép câu cụt, câu hỏi, bỏ chủ ngữ. `thì` / `à` / `đấy` tối đa 1 lần/slide.
 - Hedging chỉ để tránh tuyệt đối hóa, không phải khuôn mở câu.
 
-**BLACKLIST trong prose:** `phía họ`, `tương tác`, `sự chú ý`, `kết nối`, `cảm nhận rõ`, `điều này cho thấy`, `qua đó`, `nhìn chung`, `tóm lại`, `vì vậy`.
+**BLACKLIST trong prose:** `phía họ`, `tương tác`, `sự chú ý`, `kết nối`, `cảm nhận rõ`, `điều này cho thấy`, `nhìn chung`, `tóm lại`, `vì vậy`.
 **PREFER khi evidence hỗ trợ:** động từ và vật thể nhìn thấy được như `nhắn`, `trả lời`, `hỏi lại`, `nhớ`, `gõ`, `gửi`, `để đó`, `im`, `nói thẳng`, `khen`. Không biến danh sách này thành template hành vi.
 
 **STYLE PASS bắt buộc sau nháp:** soi từng câu bằng 4 câu hỏi:
