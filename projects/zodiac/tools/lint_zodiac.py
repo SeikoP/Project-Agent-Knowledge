@@ -55,15 +55,19 @@ def first_word(text: str) -> str:
     return match.group(0).casefold() if match else ""
 
 
-def slide_text(slide: dict) -> str:
+def slide_block_texts(slide: dict) -> list[str]:
     blocks = slide.get("content_blocks")
     if not isinstance(blocks, list):
-        return ""
-    return " ".join(
+        return []
+    return [
         str(block.get("text") or "").strip()
         for block in blocks
         if isinstance(block, dict) and str(block.get("text") or "").strip()
-    ).strip()
+    ]
+
+
+def slide_text(slide: dict) -> str:
+    return " ".join(slide_block_texts(slide)).strip()
 
 
 def _error(slide: int, sentence: str, rule: str) -> dict:
@@ -77,34 +81,39 @@ def lint_idea(idea: dict, blacklist: Iterable[str]) -> list[dict]:
         return [_error(0, "", "schema.slides_required")]
 
     all_slide_texts = [slide_text(slide) if isinstance(slide, dict) else "" for slide in slides]
+    all_block_texts: list[str] = []
 
     previous_opening = ""
-    for slide_index, text in enumerate(all_slide_texts, 1):
+    for slide_index, slide in enumerate(slides, 1):
+        block_texts = slide_block_texts(slide) if isinstance(slide, dict) else []
+        text = " ".join(block_texts).strip()
         opening = first_word(text)
         if opening and previous_opening and opening == previous_opening:
             errors.append(_error(slide_index, text, "voice.adjacent_slides_same_opening"))
         if opening:
             previous_opening = opening
 
-        slide_sentences = sentences(text)
-        for sentence_index, sentence in enumerate(slide_sentences, 1):
-            if word_count(sentence) > MAX_WORDS_PER_SENTENCE:
-                errors.append(_error(
-                    slide_index,
-                    sentence,
-                    f"voice.sentence_over_{MAX_WORDS_PER_SENTENCE}_words",
-                ))
-            if BANNED_CONNECTOR_RE.search(sentence):
-                errors.append(_error(slide_index, sentence, "voice.banned_clause_connector"))
-            if sentence_index == len(slide_sentences) and GENERALIZATION_START_RE.search(sentence):
-                errors.append(_error(slide_index, sentence, "voice.generalizing_ending"))
+        for block_text in block_texts:
+            all_block_texts.append(block_text)
+            block_sentences = sentences(block_text)
+            for sentence_index, sentence in enumerate(block_sentences, 1):
+                if word_count(sentence) > MAX_WORDS_PER_SENTENCE:
+                    errors.append(_error(
+                        slide_index,
+                        sentence,
+                        f"voice.sentence_over_{MAX_WORDS_PER_SENTENCE}_words",
+                    ))
+                if BANNED_CONNECTOR_RE.search(sentence):
+                    errors.append(_error(slide_index, sentence, "voice.banned_clause_connector"))
+                if sentence_index == len(block_sentences) and GENERALIZATION_START_RE.search(sentence):
+                    errors.append(_error(slide_index, sentence, "voice.generalizing_ending"))
 
-            lowered = sentence.casefold()
-            for term in blacklist:
-                if term.casefold() in lowered:
-                    errors.append(_error(slide_index, sentence, f"voice.blacklist:{term}"))
+                lowered = sentence.casefold()
+                for term in blacklist:
+                    if term.casefold() in lowered:
+                        errors.append(_error(slide_index, sentence, f"voice.blacklist:{term}"))
 
-    post_text = " ".join(all_slide_texts)
+    post_text = ". ".join(all_block_texts)
     for name, pattern in PAIRED_PATTERNS.items():
         matches = list(pattern.finditer(post_text))
         if len(matches) > MAX_PAIRED_CONSTRUCTION_PER_POST:
