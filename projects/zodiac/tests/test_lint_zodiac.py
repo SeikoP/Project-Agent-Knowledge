@@ -99,16 +99,16 @@ class ZodiacVoiceLintTests(unittest.TestCase):
     def test_headline_is_not_linted_but_callout_is(self):
         data = payload_blocks(
             [
-                {"block_id": "headline-1", "type": "headline", "text": "Họ tương tác rất nhiều"},
+                {"block_id": "headline-1", "type": "headline", "text": "Họ phản hồi rất nhiều"},
                 {"block_id": "body-1", "type": "body", "text": "Bạn nhắn trước."},
             ],
             [
-                {"block_id": "callout-1", "type": "callout", "text": "Họ tương tác."},
+                {"block_id": "callout-1", "type": "callout", "text": "Họ phản hồi."},
             ],
         )
         errors = lint_zodiac.lint_payload(data, BLACKLIST)
         rules = [item["rule"] for item in errors]
-        self.assertEqual(sum(rule == "voice.blacklist:tương tác" for rule in rules), 1)
+        self.assertEqual(sum(rule == "voice.blacklist:phản hồi" for rule in rules), 1)
         self.assertNotIn("voice.adjacent_slides_same_opening", rules)
 
     def test_paired_constructions_are_not_hard_limited(self):
@@ -193,7 +193,7 @@ class ZodiacVoiceLintTests(unittest.TestCase):
             bad = Path(d) / "bad.json"
             missing = Path(d) / "missing.json"
             good.write_text(json.dumps(payload("Họ trả lời."), ensure_ascii=False), encoding="utf-8")
-            bad.write_text(json.dumps(payload("Họ tương tác."), ensure_ascii=False), encoding="utf-8")
+            bad.write_text(json.dumps(payload("Họ phản hồi."), ensure_ascii=False), encoding="utf-8")
             with contextlib.redirect_stdout(io.StringIO()):
                 self.assertEqual(lint_zodiac.main([str(good)]), 0)
                 self.assertEqual(lint_zodiac.main([str(bad)]), 1)
