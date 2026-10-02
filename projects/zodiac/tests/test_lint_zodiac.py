@@ -54,11 +54,11 @@ class ZodiacVoiceLintTests(unittest.TestCase):
             [],
         )
 
-    def test_sentence_over_24_syllables_is_caught(self):
+    def test_long_natural_sentence_is_not_hard_rejected(self):
         rules = self.rules(
             "Họ nghe bạn kể chuyện rồi hỏi thêm từng chi tiết để hiểu rõ hơn trước khi hai người nói sang chuyện khác, rồi vẫn cố giải thích tiếp cho thật đầy đủ."
         )
-        self.assertIn("voice.sentence_over_24_syllables", rules)
+        self.assertFalse(any(rule.startswith("voice.sentence_over_") for rule in rules))
 
     def test_good_leo_scene_passes(self):
         self.assertEqual(self.rules("Thấy bạn có điểm hay là khen liền."), [])
@@ -67,39 +67,34 @@ class ZodiacVoiceLintTests(unittest.TestCase):
         rules = self.rules("Sư Tử thể hiện sự chú ý thông qua lời khen dành cho người kia.")
         self.assertTrue(any(rule.startswith("voice.blacklist:") for rule in rules))
 
-    def test_report_like_chat_phrases_are_caught(self):
-        cases = {
-            "Cuộc chat tự nhiên im.": "voice.blacklist:cuộc chat",
-            "Không có câu chốt.": "voice.blacklist:câu chốt",
-            "Họ chuyển sang mục tiêu khác.": "voice.blacklist:chuyển sang mục tiêu khác",
-        }
-        for text, expected in cases.items():
+    def test_context_dependent_terms_are_not_hard_blacklisted(self):
+        for text in (
+            "Họ vẫn tương tác nhẹ.",
+            "Sự chú ý của họ đổi sang chuyện khác.",
+            "Hai người chưa có kết nối rõ.",
+            "Cuộc chat tự nhiên im.",
+            "Không có câu chốt.",
+            "Họ chuyển sang mục tiêu khác.",
+        ):
             with self.subTest(text=text):
-                self.assertIn(expected, self.rules(text))
+                self.assertFalse(any(rule.startswith("voice.blacklist:") for rule in self.rules(text)))
 
     def test_good_virgo_scenes_pass(self):
         self.assertEqual(self.rules("Họ nói chuyện từ từ. Mà nghĩ sao nói vậy hà."), [])
         self.assertEqual(self.rules("Bạn không muốn kể là họ thôi, không hỏi nữa luôn."), [])
 
-    def test_banned_connectors_are_caught(self):
-        for connector in ("trong khi", "trong lúc"):
-            with self.subTest(connector=connector):
-                self.assertIn(
-                    "voice.banned_clause_connector",
-                    self.rules(f"Họ nghe {connector} bạn vẫn đang nói."),
-                )
+    def test_connectors_are_not_hard_banned(self):
+        for text in (
+            "Họ vẫn trả lời, nhưng không mở chuyện trước.",
+            "Họ online trong khi tin nhắn của bạn vẫn chưa được trả lời.",
+            "Trong lúc hai đứa vẫn đang tìm hiểu, họ có thể im giữa chừng.",
+        ):
+            with self.subTest(text=text):
+                self.assertNotIn("voice.banned_clause_connector", self.rules(text))
 
-    def test_nhung_is_allowed_for_natural_contrast(self):
-        self.assertNotIn(
-            "voice.banned_clause_connector",
-            self.rules("Họ vẫn trả lời, nhưng không mở chuyện trước."),
-        )
-
-    def test_adjacent_opening_uses_two_words_after_pronoun(self):
-        rules = self.rules("Bạn nhắn trước.", "Bạn kể chuyện.")
-        self.assertNotIn("voice.adjacent_slides_same_opening", rules)
+    def test_adjacent_opening_is_not_hard_linted(self):
         rules = self.rules("Bạn nhắn trước.", "Họ nhắn trước.")
-        self.assertIn("voice.adjacent_slides_same_opening", rules)
+        self.assertNotIn("voice.adjacent_slides_same_opening", rules)
 
     def test_headline_is_not_linted_but_callout_is(self):
         data = payload_blocks(
@@ -116,16 +111,18 @@ class ZodiacVoiceLintTests(unittest.TestCase):
         self.assertEqual(sum(rule == "voice.blacklist:tương tác" for rule in rules), 1)
         self.assertNotIn("voice.adjacent_slides_same_opening", rules)
 
-    def test_paired_construction_twice_in_one_post_is_caught(self):
-        first = "Họ không chỉ nghe mà còn hỏi lại."
-        second = "Bạn không chỉ kể mà còn nói rõ hơn."
-        rules = self.rules(first, second)
-        self.assertIn("voice.khong_chi_ma_con_over_1_per_post", rules)
+    def test_paired_constructions_are_not_hard_limited(self):
+        rules = self.rules(
+            "Họ không chỉ nghe mà còn hỏi lại.",
+            "Bạn không chỉ kể mà còn nói rõ hơn.",
+        )
+        self.assertFalse(any("khong_chi_ma_con_over_" in rule for rule in rules))
 
-        first = "Họ không phải im mà là đang nghe."
-        second = "Bạn không phải đoán mà là hỏi thẳng."
-        rules = self.rules(first, second)
-        self.assertIn("voice.khong_phai_ma_la_over_1_per_post", rules)
+        rules = self.rules(
+            "Họ không phải im mà là đang nghe.",
+            "Bạn không phải đoán mà là hỏi thẳng.",
+        )
+        self.assertFalse(any("khong_phai_ma_la_over_" in rule for rule in rules))
 
     def test_paired_construction_does_not_join_across_slides(self):
         rules = self.rules("Họ không chỉ nghe chuyện.", "Mà còn hỏi lại.")
@@ -147,29 +144,17 @@ class ZodiacVoiceLintTests(unittest.TestCase):
         ]
         self.assertEqual(len(relevant), 1)
 
-    def test_hedge_opener_kieu_is_caught(self):
-        self.assertIn("voice.hedge_opener", self.rules("Kiểu họ nhắn trước."))
+    def test_kieu_is_not_hard_linted(self):
+        self.assertNotIn("voice.hedge_opener", self.rules("Kiểu họ nhắn trước."))
 
-    def test_fillers_count_only_at_sentence_or_clause_end(self):
-        self.assertEqual(self.rules("Họ luôn nói thật. Rồi làm liền mạch."), [])
-        self.assertEqual(self.rules("Họ khen bạn liền."), [])
-        self.assertIn(
-            "voice.filler_over_1_per_slide",
-            self.rules("Họ khen bạn liền, đúng nha."),
-        )
-
-    def test_same_filler_cannot_repeat_on_adjacent_slides(self):
-        rules = self.rules("Thấy hay là khen liền.", "Nghe xong là trả lời liền.")
-        self.assertIn("voice.filler_repeated_adjacent:liền", rules)
-
-    def test_post_filler_cap(self):
+    def test_fillers_are_not_hard_quota_linted(self):
         rules = self.rules(
-            "Chuyện đó ổn á.",
-            "Nói rõ hơn nha.",
-            "Nghe cũng ghê.",
+            "Chuyện đó ổn á, nghe cũng đúng nha.",
+            "Thấy hay là khen liền.",
+            "Nghe xong là trả lời liền.",
             "Vậy là xong hà.",
         )
-        self.assertIn("voice.filler_over_3_per_post", rules)
+        self.assertFalse(any("voice.filler_" in rule for rule in rules))
 
     def test_extra_top_level_keys_are_ignored_but_ideas_is_required(self):
         data = payload("Họ trả lời.")
