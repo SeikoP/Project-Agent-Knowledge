@@ -1,4 +1,4 @@
-# ZODIAC CONTENT MEMORY — v9.4
+# ZODIAC CONTENT MEMORY — v9.5
 
 ## Mục đích và thứ tự ưu tiên
 
@@ -265,6 +265,27 @@ Ví dụ cùng một claim "vẫn trả lời nhưng không còn chủ động":
 
 Không biến checkpoint này thành template cứng. Nếu evidence không có cảnh/contrast đủ rõ, giữ direct fact còn tốt hơn bịa thêm tình huống.
 
+### Semantic Payload Test
+
+Mỗi câu trong body phải làm ít nhất một việc thật:
+
+1. đặt rõ bối cảnh đang xảy ra giữa hai người;
+2. cho thấy một hành động/thay đổi có thể hình dung;
+3. thêm condition/distinction đã được evidence support;
+4. đẩy progression sang lớp tiếp theo.
+
+Cắt câu nếu nó chỉ **bình luận về chính nội dung** mà không thêm gì, kiểu `cảm giác lạ nằm ở đó`, `điểm khác nằm ở đây`, `nghe khó hiểu ở chỗ...`. Những câu này tạo cảm giác có chiều sâu nhưng thực tế không mang thêm thông tin.
+
+Tránh placeholder mơ hồ như `ở chỗ khác`, `đoạn này`, `cái đó` khi người đọc phải đoán chúng đang chỉ cái gì. Nếu chi tiết không thể gọi rõ mà vẫn giữ evidence boundary, bỏ câu đó thay vì giữ một placeholder.
+
+### Natural syntax test
+
+Giọng học sinh vẫn phải là **câu nói tự nhiên**, không phải câu bị bẻ để cố đời thường.
+
+- Tránh các cấu trúc gượng như `người mở lời cứ thành bạn`, `tin nhắn với bạn đứng im`, `bớt rep từ từ`.
+- Ưu tiên trật tự nói bình thường: `càng về sau, bạn càng phải nhắn trước`; `tin nhắn bạn gửi không được trả lời`; `đang nói bình thường rồi im luôn`.
+- Không dùng một từ văn nói nếu cả cụm xung quanh vẫn vô nghĩa. `rep`, `xong`, `mà` chỉ hữu ích khi câu đang nói một việc rõ.
+
 Tránh cấu trúc lặp `claim → giải thích → tổng kết` trên mọi slide. Không kết bằng câu AI tóm tắt hoặc moral. Kết ở observation/distinction đã được evidence hỗ trợ.
 
 ## 8b. Voice và anti-AI lexicon
@@ -306,13 +327,15 @@ Danh sách trong Markdown chỉ là bản tóm tắt để người đọc thấ
 
 **PREFER khi evidence hỗ trợ:** động từ và vật thể nhìn thấy được như `nhắn`, `trả lời`, `hỏi lại`, `nhớ`, `gõ`, `gửi`, `để đó`, `im`, `nói thẳng`, `khen`. Không biến danh sách này thành template hành vi.
 
-**STYLE PASS bắt buộc sau nháp:** soi từng câu/body bằng 6 câu hỏi:
+**STYLE PASS bắt buộc sau nháp:** soi từng câu/body bằng 8 câu hỏi:
 1. Một bạn cùng lớp có thật sự kể câu này như vậy không, hay nó nghe như bài phân tích?
 2. Có từ/cụm BLACKLIST không?
 3. Câu đang cho thấy chuyện gì xảy ra hay chỉ đang gọi tên/giải thích nó?
-4. Body đã đi đủ sâu vào beat chưa, hay mới dừng ở một câu fact?
-5. Có chỗ nào có thể đổi từ nhãn như `cuộc...`, `mục tiêu...`, `câu chốt...` thành hành động nhìn thấy được không?
-6. Xóa câu cuối thì slide mất một bước đáng nhớ hay chỉ mất câu tổng kết?
+4. Câu có semantic payload thật không, hay chỉ bình luận kiểu `điểm lạ nằm ở đây`?
+5. Chủ ngữ, hành động và đối tượng có rõ không, hay câu bị gượng chỉ để nghe "đời thường"?
+6. Body đã đi đủ sâu vào beat chưa, hay mới dừng ở một câu fact?
+7. Có chỗ nào có thể đổi từ nhãn như `cuộc...`, `mục tiêu...`, `câu chốt...` thành hành động nhìn thấy được không?
+8. Xóa câu cuối thì slide mất một bước đáng nhớ hay chỉ mất câu tổng kết?
 
 Fail bất kỳ câu hỏi nào thì viết lại hẳn câu đó; không sửa nhẹ bằng đổi vài từ.
 
@@ -468,3 +491,11 @@ Các cặp trên calibrate **giọng**, không cấp thêm evidence và không p
 - Thêm Context frame của concept — vì output ghosting có thể đúng evidence nhưng vẫn sai câu chuyện nếu Writer vô tình kể thành hai người bạn bình thường.
 - Với ghosting/flirting/dating, cho phép neo bối cảnh mềm như `đang tìm hiểu` hoặc `đang nói chuyện theo hướng tình cảm` mà không coi đó là claim mới về trait.
 - Cấm tự nâng mức quan hệ thành người yêu/chính thức nếu package không hỗ trợ; context chỉ giúp người xem hiểu đúng loại tình huống.
+
+
+## Changelog v9.5
+
+- Thêm Semantic Payload Test — vì output có thể nghe giống văn nói nhưng vẫn chứa các câu phản ứng rỗng, không thêm cảnh hay nghĩa.
+- Thêm Natural syntax test — vì "vibe học sinh" không được phép làm câu sai nhịp tự nhiên như `người mở lời cứ thành bạn` hoặc `tin nhắn với bạn đứng im`.
+- Loại placeholder mơ hồ kiểu `ở chỗ khác`, `điểm nằm ở đây` khi referent không rõ.
+- STYLE PASS kiểm tra riêng semantic payload và cú pháp tự nhiên, thay vì coi slang/từ nối là bằng chứng rằng câu đã đời thường.
