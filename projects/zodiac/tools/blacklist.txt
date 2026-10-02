@@ -1,4 +1,4 @@
-# Zodiac v9.1 prose blacklist
+# Zodiac v9.2 prose blacklist
 # TODO-TUNE: tune from real Writer outputs; this file is lint data and the canonical blacklist source.
 phía họ
 tương tác
