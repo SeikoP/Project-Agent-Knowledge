@@ -23,7 +23,7 @@ Workflow bắt buộc:
 5a. Viewer experience / ExperiencePlan nếu package có
 6. Naturalness và recognition
 7. Viral overlay nếu có
-8. Prose rhythm
+8. Prose rhythm + Voice/STYLE PASS (mục 8 và 8b)
 9. Độ dài và format
 10. Final validation
 
@@ -186,6 +186,8 @@ Ví dụ evidence: `lắng nghe, chăm sóc và quan tâm đến cảm xúc`
 
 Câu cuối thêm continuity và follow-up chưa có nguyên văn trong evidence, nhưng vẫn là một hiện thực hóa gần của “lắng nghe + chăm sóc + để ý cảm xúc”. Nó được phép vì không thêm motive, verdict hay outcome.
 
+Một **cảnh minh họa** không bắt buộc phải mở bằng “kiểu…”, “có thể…” ở từng câu. Guard chống tuyệt đối hóa có thể đặt một lần ở title/headline/câu dẫn; các câu cụt phía sau vẫn được hiểu là illustration nếu không biến chúng thành quy luật chắc chắn về cung. Nếu đứng riêng mà câu đọc như một sự thật tuyệt đối, phải thêm hedge ở tầng attribution thay vì rải hedge vào mọi câu.
+
 Ngược lại, không phải suy một bước nào cũng hữu ích. Với evidence `trò chuyện chân thành, tiếp cận từ tốn`, các câu như “không đẩy mọi thứ quá nhanh”, “để mối quan hệ tiến từng chút”, “biết chừa khoảng riêng” có thể hợp logic nhưng dễ chuyển sang **relationship abstraction**. Nếu không tìm được micro-behavior thật sự rõ, giữ câu ngắn và sát evidence còn tốt hơn kéo sang loại diễn giải này.
 
 ### Camera Test
@@ -236,15 +238,15 @@ Tránh cấu trúc lặp `claim → giải thích → tổng kết` trên mọi 
 ## 8b. Voice và anti-AI lexicon
 
 Giọng mục tiêu: như bạn thân đang nhận xét một người lúc nhắn tin; gần, cụ thể, không giảng giải.
-- **TODO-TUNE:** tối đa 18 từ/câu. Một câu chỉ giữ một hành động, cảnh hoặc ý.
+- Tối đa 18 từ/câu. Một câu chỉ giữ một hành động, cảnh hoặc ý.
 - Không nối hai vế bằng `nhưng`, `trong khi`, `trong lúc`; tách thành hai câu nếu cả hai vế đều đáng giữ.
 - `không chỉ… mà còn` và `không phải… mà là`: tối đa 1 lần/post.
 - Không kết slide bằng câu khái quát, moral hoặc câu giải nghĩa lại phần trên.
-- Hai slide liền nhau phải khác từ mở đầu và khác số câu, trừ khi contract/composition khóa cả hai ở một câu.
+- Tránh hai slide liền nhau mở cùng một cụm. Ưu tiên khác nhịp/số câu khi tự nhiên; không ép chỉ để tạo khác biệt.
 - Cho phép câu cụt, câu hỏi, bỏ chủ ngữ. `thì` / `à` / `đấy` tối đa 1 lần/slide.
 - Hedging chỉ để tránh tuyệt đối hóa, không phải khuôn mở câu.
 
-**BLACKLIST trong prose — TODO-TUNE:** `phía họ`, `tương tác`, `sự chú ý`, `kết nối`, `cảm nhận rõ`, `thể hiện`, `đón nhận`, `điều này cho thấy`, `qua đó`, `nhìn chung`, `tóm lại`, `vì vậy`.
+**BLACKLIST trong prose:** `phía họ`, `tương tác`, `sự chú ý`, `kết nối`, `cảm nhận rõ`, `điều này cho thấy`, `qua đó`, `nhìn chung`, `tóm lại`, `vì vậy`.
 **PREFER khi evidence hỗ trợ:** động từ và vật thể nhìn thấy được như `nhắn`, `trả lời`, `hỏi lại`, `nhớ`, `gõ`, `gửi`, `để đó`, `im`, `nói thẳng`, `khen`. Không biến danh sách này thành template hành vi.
 
 **STYLE PASS bắt buộc sau nháp:** soi từng câu bằng 4 câu hỏi:
@@ -297,8 +299,9 @@ Trước khi gửi, xác nhận:
 - Batch không lặp cùng skeleton chỉ đổi tên cung.
 - Số slide khớp NarrativePlan/contract; adaptive fit chỉ được thêm support slide có trace rõ ràng, không còn bắt buộc khớp 1:1 với số evidence beat.
 - STYLE PASS ở mục 8b đã chạy trên từng câu.
-- Lint pass; không còn từ/cụm BLACKLIST trong prose.
-- Không có hai slide liền nhau cùng từ mở đầu.
+- Automated lint ở bước import/validation đã pass; Writer không tự tuyên bố đã chạy script.
+- Không còn từ/cụm BLACKLIST trong prose.
+- Không có hai slide liền nhau cùng opening signature theo lint.
 - JSON cuối khớp response contract sau approval flow.
 
 Nếu một mục fail, quay lại gate sớm nhất liên quan. Không dùng chỉnh prose, kéo dài câu, slang, clickbait hoặc ví dụ để che lỗi insight, evidence hay progression.
@@ -321,27 +324,24 @@ Hashtag, CTA và emoji trong caption/slide chưa có rule chung. Không tự suy
 
 ### BAD → GOOD về giọng
 
-- **Bạch Dương:** — / — (chưa có evidence trong file)
-- **Kim Ngưu:** — / — (chưa có evidence trong file)
-- **Song Tử:** — / — (chưa có evidence trong file)
 - **Cự Giải 1:** BAD “Cự Giải thể hiện sự quan tâm bằng cách lắng nghe và để ý cảm xúc.” → GOOD “Nhớ chuyện bạn kể hôm trước. Lần sau gặp còn hỏi: giờ ổn chưa?” — BAD: từ sách vở; GOOD: chỉ có cảnh.
 - **Cự Giải 2:** BAD “Họ không chỉ nghe chuyện gì xảy ra mà còn để ý xem chuyện đó làm bạn vui hay khó chịu.” → GOOD “Bạn kể một chuyện buồn. Họ hỏi lại đúng đoạn làm bạn khó chịu.” — BAD: cấu trúc giải thích; GOOD: một hành động cụ thể.
 - **Sư Tử 1:** BAD “Sư Tử thể hiện sự chú ý thông qua lời khen dành cho người kia.” → GOOD “Thấy một điểm hay là khen đúng điểm đó.” — BAD: từ sách vở; GOOD: động từ trực tiếp.
 - **Sư Tử 2:** BAD “Sự chú ý của Sư Tử thường đi cùng một lời khen.” → GOOD “Đang nói chuyện, họ bắt đúng một chi tiết rồi khen.” — BAD: danh từ hóa; GOOD: chỉ có cảnh.
 - **Xử Nữ 1:** BAD “Xử Nữ nói chuyện chân thành nhưng vẫn tiếp cận từ tốn.” → GOOD “Nói chuyện chậm rãi. Điều gì nghĩ thật thì nói thật.” — BAD: ghép hai vế; GOOD: tách thành hai nhịp.
 - **Xử Nữ 2:** BAD “Họ thể hiện sự tôn trọng riêng tư của người kia.” → GOOD “Bạn muốn giữ chuyện riêng thì họ không gặng hỏi.” — BAD: mô tả khái niệm; GOOD: hiện thực hóa `tôn trọng riêng tư`.
-- **Thiên Bình:** — / — (chưa có evidence trong file)
-- **Bọ Cạp:** — / — (chưa có evidence trong file)
-- **Nhân Mã:** — / — (chưa có evidence trong file)
-- **Ma Kết:** — / — (chưa có evidence trong file)
-- **Bảo Bình:** — / — (chưa có evidence trong file)
-- **Song Ngư:** — / — (chưa có evidence trong file)
+
+Các cung chưa có evidence trong file này thì không thêm cặp BAD→GOOD.
+
+**Guard Sư Tử:** evidence hiện có là chủ động chú ý và lời khen. Các hướng “để người kia biết mình đang được chú ý”, “lời khen bật ra khi nhận thấy một điểm hay” vẫn chấp nhận được nhưng chưa mặc định là mức tốt nhất; tiếp tục tìm micro-behavior cụ thể hơn nếu evidence cho phép.
+
+**Guard Xử Nữ:** evidence hiện có là chân thành, tiếp cận từ tốn, tôn trọng riêng tư. Không tự động biến `từ tốn` thành “không đẩy mọi thứ quá nhanh”, “để mối quan hệ tiến từng chút”, “giữ khoảng cách” hoặc “chừa khoảng riêng cho nhau”; các câu này dễ đổi semantic hoặc trượt sang relationship abstraction.
 
 Các cặp trên calibrate **giọng**, không cấp thêm evidence và không phải template câu.
 
 ### Nguyên tắc rút ra
 
-**Độ hay không tỷ lệ với độ xa evidence. Độ hay tăng khi evidence thành một micro-behavior dễ nhận ra.**
+**Độ hay không tỷ lệ với độ xa evidence. Độ hay tăng khi câu biến evidence thành một micro-behavior dễ nhận ra.**
 
 Ưu tiên: `micro-behavior cụ thể` → `behavioral illustration` → `evidence restatement` → tránh `abstract relational inference`.
 
@@ -352,3 +352,6 @@ Các cặp trên calibrate **giọng**, không cấp thêm evidence và không p
 - Viết lại calibration/BAD→GOOD vì ví dụ cũ vô tình dạy Writer dùng cấu trúc AI dù vẫn đúng evidence.
 - Thêm lint hooks vào Final validation vì naturalness trước đây chủ yếu là lời khuyên, chưa có cơ chế bắt lỗi.
 - Thêm `lint_zodiac.py` + `blacklist.txt` + tests vì STYLE PASS cần một kiểm tra tự động, chỉnh được mà không tạo nguồn evidence/rule mới.
+- Khôi phục guard Sư Tử/Xử Nữ và làm rõ cảnh minh họa vì bỏ “kiểu…” không được làm yếu evidence boundary.
+- Bỏ `thể hiện`/`đón nhận` khỏi blacklist vì chúng có thể là wording hợp lệ của shared question/evidence.
+- TODO-TUNE: ngưỡng 18 từ và blacklist cần hiệu chỉnh bằng corpus output tốt; stdlib lint hiện dùng lexical token làm proxy cho từ tiếng Việt.
