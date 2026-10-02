@@ -1,4 +1,4 @@
-# ZODIAC CONTENT MEMORY — v9.6
+# ZODIAC CONTENT MEMORY — v9.7
 
 ## Mục đích và thứ tự ưu tiên
 
@@ -313,15 +313,14 @@ Tránh cấu trúc lặp `claim → giải thích → tổng kết` trên mọi 
 - Tránh câu nghe "nặng", nhãn hóa hoặc quá văn viết khi có cách nói thường hơn, như `đủ để thành một lời giải thích`, `thứ xuất hiện trong cuộc chat`, `rút khỏi cuộc trò chuyện`, `khép lại cuộc trao đổi`.
 - Nếu một câu mô tả được bằng thứ người xem **thấy trên màn hình điện thoại** hoặc **nghe trong một câu kể**, ưu tiên bản đó thay cho danh từ trừu tượng.
 - Từ phổ thông, thuần Việt, ưu tiên từ đơn; tránh Hán-Việt trừu tượng khi có cách nói thường ngày rõ hơn.
-- Ưu tiên khoảng **8–18 tiếng/câu** cho nhịp nói tự nhiên; lint chỉ fail khi một câu vượt **24 tiếng**. Một câu giữ một ý chính, nhưng có thể chứa hai hành động liền nhau nếu chúng vẫn là cùng một beat.
-- `nhưng` được dùng khi contrast nghe tự nhiên; không dùng nó để nhét hai claim khác nhau vào một câu. `trong khi` và `trong lúc` vẫn tránh trong prose carousel vì dễ kéo câu sang giọng giải thích.
-- `không chỉ… mà còn` và `không phải… mà là`: tối đa 1 lần/post.
+- Không đặt hard limit số tiếng/câu. Viết theo nhịp nói tự nhiên và đọc thành tiếng; chỉ tách khi câu có hai ý độc lập, khó theo dõi hoặc đọc lên phải lấy hơi ở chỗ không tự nhiên.
+- Từ nối như `nhưng`, `trong khi`, `trong lúc`, `rồi`, `xong`, `thế mà` được dùng khi chúng làm mạch kể rõ hơn. Không cấm theo từ khóa; chỉ sửa khi câu bị văn viết, vòng hoặc nhét nhiều claim.
+- Các cấu trúc như `không chỉ… mà còn`, `không phải… mà là` không có quota. Chỉ sửa khi cùng một post lặp chúng đến mức thành công thức.
 - Không kết slide bằng câu khái quát, moral hoặc câu giải nghĩa lại phần trên.
-- Hai slide liền nhau phải khác opening signature: so 2 từ đầu của prose, bỏ qua đại từ mở đầu `bạn`, `họ`, `mình`, `người ta`; đồng thời vẫn tránh cùng số câu nếu contract/composition không khóa nhịp.
-- Cho phép câu cụt, câu hỏi, bỏ chủ ngữ. `thì` / `à` / `đấy` tối đa 1 lần/slide.
-- Hedging chỉ để tránh tuyệt đối hóa, không phải khuôn mở câu; không dùng `kiểu…` để làm yếu một claim.
-- Tối đa 1 từ đệm/slide trong nhóm `á`, `nha`, `luôn`, `liền`, `ghê`, `hà`; không dùng cùng một từ đệm ở 2 slide liền nhau; không dùng ở mọi slide. Toàn post nên giữ khoảng tối đa 3 từ đệm.
-- Từ đệm không được mang thêm ý về cảm xúc, nguyên nhân, kết quả, mức độ hay certainty.
+- Không ép hai slide liền nhau phải khác opening signature hay khác số câu. Chỉ sửa khi cả batch lặp cùng một skeleton khiến các cung nghe như thay tên vào mẫu.
+- Câu cụt chỉ dùng khi chủ thể/nghĩa vẫn rõ và nhịp đó thật sự tự nhiên; không cắt câu để né lint. Ưu tiên câu có chủ ngữ, hành động và đối tượng rõ.
+- `kiểu` và các hedge văn nói được phép khi đúng ngữ cảnh; không dùng chúng như cách mặc định để làm yếu claim hoặc hợp thức hóa claim vượt §2.
+- Không có quota từ đệm theo slide/post. Dùng `á`, `nha`, `luôn`, `liền`, `ghê`, `hà` khi câu nói tự nhiên hơn; bỏ nếu chúng chỉ trang trí hoặc xuất hiện dày tới mức thành diễn.
 - Không emoji, không teen code.
 
 **Bảng đổi từ khi evidence cho phép diễn đạt đời thường hơn:**
@@ -336,7 +335,9 @@ Tránh cấu trúc lặp `claim → giải thích → tổng kết` trên mọi 
 | `trải nghiệm` / `hành vi` | `chuyện` / `việc` / `cách họ làm` |
 
 **BLACKLIST trong prose — nguồn thật duy nhất là `tools/blacklist.txt`**:
-`phía họ`, `tương tác`, `sự chú ý`, `kết nối`, `cảm nhận rõ`, `thể hiện`, `đón nhận`, `điều này cho thấy`, `qua đó`, `nhìn chung`, `tóm lại`, `vì vậy`, `tiếp cận`, `bày tỏ`, `phản hồi`, `biểu hiện`, `duy trì`, `thiết lập`, `gắn kết`, `trải nghiệm`, `cuộc chat`, `câu chốt`, `chuyển sang mục tiêu khác`.
+`phía họ`, `cảm nhận rõ`, `thể hiện`, `đón nhận`, `điều này cho thấy`, `qua đó`, `nhìn chung`, `tóm lại`, `vì vậy`, `tiếp cận`, `bày tỏ`, `phản hồi`, `biểu hiện`, `duy trì`, `thiết lập`, `gắn kết`, `trải nghiệm`.
+
+Các cụm từng cho output xấu như `cuộc chat`, `câu chốt`, `chuyển sang mục tiêu khác` là **calibration BAD**, không phải từ cấm tuyệt đối. `tương tác`, `sự chú ý`, `kết nối` cũng không bị hard-ban vì đôi khi chúng là cách giữ đúng semantic của evidence; Writer vẫn phải ưu tiên cách nói đời thường hơn khi có bản thay thế tự nhiên.
 
 Danh sách trong Markdown chỉ là bản tóm tắt để người đọc thấy rule; test C3 bắt buộc nó đồng bộ hai chiều với `tools/blacklist.txt`. Blacklist chỉ áp cho prose Writer xuất ra, không áp cho evidence, shared_question hay phân tích. Được phép diễn đạt lại evidence bằng từ thường hơn, nhưng §2 vẫn là biên claim.
 
@@ -401,7 +402,7 @@ Trước khi gửi, xác nhận:
 - Số slide khớp NarrativePlan/contract; adaptive fit chỉ được thêm support slide có trace rõ ràng, không còn bắt buộc khớp 1:1 với số evidence beat.
 - Writer tự soi từng câu bằng STYLE PASS ở mục 8b; Writer không tự tuyên bố `lint pass`.
 - Pipeline/consumer chạy `tools/lint_zodiac.py` trên Writer prose sau draft; nếu lint fail, feed danh sách lỗi lại cho vòng Writer retry trước approval/render.
-- Không có hai slide liền nhau cùng opening signature theo mục 8b.
+- Không có skeleton lặp máy móc ở cấp batch; opening giống nhau chỉ là lỗi khi nó làm các slide nghe như cùng một template.
 - JSON cuối khớp response contract sau approval flow.
 
 Nếu một mục fail, quay lại gate sớm nhất liên quan. Không dùng chỉnh prose, kéo dài câu, slang, clickbait hoặc ví dụ để che lỗi insight, evidence hay progression.
@@ -521,3 +522,12 @@ Các cặp trên calibrate **giọng**, không cấp thêm evidence và không p
 - Thêm Recognition Reference — vì content đúng evidence nhưng thiếu một câu/chi tiết để người xem đối chiếu với trải nghiệm thật vẫn dễ thành mô tả chung.
 - Cho phép dùng câu nhắn mẫu ngắn như một reference khi nó minh họa trực tiếp cho phần có/không có trong evidence; không biến câu mẫu thành fact mới.
 - Phân biệt Recognition Reference với visual reference: mục tiêu nằm trong prose, không phải yêu cầu thêm hình minh họa.
+
+
+## Changelog v9.7
+
+- Gỡ hard lint theo số tiếng/câu; nhịp câu chuyển sang read-aloud + semantic clarity thay vì một ngưỡng số học.
+- Gỡ hard-ban `trong khi` / `trong lúc`, opening signature, filler quota, hedge `kiểu` và quota paired-construction — vì các guard này đang phạt chính những móc nối giúp văn nói tự nhiên.
+- Câu cụt không còn được khuyến khích để "tạo nhịp"; ưu tiên chủ ngữ + hành động + đối tượng rõ, phù hợp Natural syntax và tài liệu human-touch.
+- Thu gọn blacklist cứng: `tương tác`, `sự chú ý`, `kết nối`, `cuộc chat`, `câu chốt`, `chuyển sang mục tiêu khác` chuyển thành context-dependent/calibration, không còn bị lint từ khóa.
+- Giữ nguyên §2 evidence boundary, Progression Test, Camera Test, Body Depth, Semantic Payload, Natural Syntax và Recognition Reference.
