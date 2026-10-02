@@ -324,12 +324,12 @@ Hashtag, CTA và emoji trong caption/slide chưa có rule chung. Không tự suy
 - **Bạch Dương:** — / — (chưa có evidence trong file)
 - **Kim Ngưu:** — / — (chưa có evidence trong file)
 - **Song Tử:** — / — (chưa có evidence trong file)
-- **Cự Giải 1:** BAD “Cự Giải có cảm tình thường lắng nghe kỹ và để ý cảm xúc của người kia.” → GOOD “Nhớ chuyện bạn kể hôm trước. Lần sau gặp còn hỏi: giờ ổn chưa?” — BAD: mô tả trait; GOOD: chỉ có cảnh.
-- **Cự Giải 2:** BAD “Họ không chỉ nghe chuyện xảy ra mà còn để ý bạn thấy thế nào.” → GOOD “Bạn kể một chuyện buồn. Họ hỏi lại đúng đoạn làm bạn khó chịu.” — BAD: cấu trúc giải thích; GOOD: một hành động cụ thể.
+- **Cự Giải 1:** BAD “Cự Giải thể hiện sự quan tâm bằng cách lắng nghe và để ý cảm xúc.” → GOOD “Nhớ chuyện bạn kể hôm trước. Lần sau gặp còn hỏi: giờ ổn chưa?” — BAD: từ sách vở; GOOD: chỉ có cảnh.
+- **Cự Giải 2:** BAD “Họ không chỉ nghe chuyện gì xảy ra mà còn để ý xem chuyện đó làm bạn vui hay khó chịu.” → GOOD “Bạn kể một chuyện buồn. Họ hỏi lại đúng đoạn làm bạn khó chịu.” — BAD: cấu trúc giải thích; GOOD: một hành động cụ thể.
 - **Sư Tử 1:** BAD “Sư Tử thể hiện sự chú ý thông qua lời khen dành cho người kia.” → GOOD “Thấy một điểm hay là khen đúng điểm đó.” — BAD: từ sách vở; GOOD: động từ trực tiếp.
-- **Sư Tử 2:** BAD “Người kia có thể cảm nhận rõ mình đang được Sư Tử chú ý.” → GOOD “Đang nói chuyện, họ bắt đúng một chi tiết rồi khen.” — BAD: có kết luận; GOOD: chỉ có cảnh.
-- **Xử Nữ 1:** BAD “Xử Nữ không đẩy mọi thứ quá nhanh để mối quan hệ tiến từng chút.” → GOOD “Nói chuyện chậm rãi. Điều gì nghĩ thật thì nói thật.” — BAD: suy rộng quan hệ; GOOD: bám `từ tốn + chân thành`.
-- **Xử Nữ 2:** BAD “Họ biết chừa khoảng riêng để người kia cảm thấy thoải mái.” → GOOD “Bạn muốn giữ chuyện riêng thì họ không gặng hỏi.” — BAD: thêm outcome; GOOD: hiện thực hóa `tôn trọng riêng tư`.
+- **Sư Tử 2:** BAD “Sự chú ý của Sư Tử thường đi cùng một lời khen.” → GOOD “Đang nói chuyện, họ bắt đúng một chi tiết rồi khen.” — BAD: danh từ hóa; GOOD: chỉ có cảnh.
+- **Xử Nữ 1:** BAD “Xử Nữ nói chuyện chân thành nhưng vẫn tiếp cận từ tốn.” → GOOD “Nói chuyện chậm rãi. Điều gì nghĩ thật thì nói thật.” — BAD: ghép hai vế; GOOD: tách thành hai nhịp.
+- **Xử Nữ 2:** BAD “Họ thể hiện sự tôn trọng riêng tư của người kia.” → GOOD “Bạn muốn giữ chuyện riêng thì họ không gặng hỏi.” — BAD: mô tả khái niệm; GOOD: hiện thực hóa `tôn trọng riêng tư`.
 - **Thiên Bình:** — / — (chưa có evidence trong file)
 - **Bọ Cạp:** — / — (chưa có evidence trong file)
 - **Nhân Mã:** — / — (chưa có evidence trong file)
