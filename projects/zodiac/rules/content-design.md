@@ -1,4 +1,4 @@
-# ZODIAC CONTENT MEMORY — v9
+# ZODIAC CONTENT MEMORY — v9.1
 
 ## Mục đích và thứ tự ưu tiên
 
@@ -24,6 +24,7 @@ Workflow bắt buộc:
 6. Naturalness và recognition
 7. Viral overlay nếu có
 8. Prose rhythm
+8b. Voice và anti-AI lexicon
 9. Độ dài và format
 10. Final validation
 
@@ -41,9 +42,13 @@ Ví dụ: RAW IDEA nói “các cung tiếp cận trực tiếp và cởi mở�
 
 Format, series, angle, headline và layout chỉ định cách trình bày; chúng không đổi chủ thể, không cấp thêm claim và không phải nguồn evidence.
 
+BLACKLIST ở mục 8b chỉ áp cho **PROSE do Writer viết**; không áp cho `RAW_IDEA`, `shared_question` hay phân tích/editorial metadata ở gate này. Không sửa dữ liệu đầu vào chỉ để né blacklist.
+
 ## 2. Ranh giới evidence — claim phải truy ngược được
 
 Mọi insight, distinction, trigger, tension, payoff và hệ quả phải được hỗ trợ bởi context/evidence của package. Evidence đặt biên cho claim, không bắt buộc giữ nguyên câu chữ của nguồn.
+
+BLACKLIST không áp cho evidence, evidence trace hoặc phân tích nội bộ ở mục này. Writer được phép diễn đạt lại evidence bằng từ thường hơn miễn không đổi claim; ví dụ `tiếp cận từ tốn` có thể thành `nói chuyện từ từ`. Ranh giới claim vẫn do toàn bộ §2 quyết định.
 
 Không thêm motive, fear, consequence, trạng thái tâm lý, preference, tần suất, outcome hay hành vi cụ thể nếu package không hỗ trợ. Không biến một diễn giải chiêm tinh thành sự thật đúng với mọi người thuộc cung đó. Tránh tuyệt đối hóa, nhưng cũng không lặp disclaimer/source boilerplate vào prose.
 
@@ -176,7 +181,7 @@ Có bốn mức cần phân biệt:
 
 - hành vi là biểu hiện tự nhiên, gần nghĩa của evidence;
 - hành vi không cần thêm motive, nguyên nhân hay kết quả để đứng vững;
-- câu được viết như một minh họa/kiểu hành vi, không như quy luật chắc chắn của cung.
+- câu cụt dạng cảnh được coi là **illustration**, không phải quy luật chắc chắn của cung; nếu cần hedge, ưu tiên độ mềm ở title/caption hoặc dùng `á` / `hà` / `hay` tự nhiên thay vì mở câu bằng `kiểu`. Illustration vẫn phải giữ nguyên ranh giới §2, không thêm claim.
 
 Ví dụ evidence: `lắng nghe, chăm sóc và quan tâm đến cảm xúc`
 
@@ -235,16 +240,36 @@ Tránh cấu trúc lặp `claim → giải thích → tổng kết` trên mọi 
 
 ## 8b. Voice và anti-AI lexicon
 
-Giọng mục tiêu: như bạn thân đang nhận xét một người lúc nhắn tin; gần, cụ thể, không giảng giải.
-- **TODO-TUNE:** tối đa 18 từ/câu. Một câu chỉ giữ một hành động, cảnh hoặc ý.
+**REGISTER + VIBE:** như đang kể cho bạn cùng bàn nghe về một người.
+
+- Từ phổ thông, thuần Việt, ưu tiên từ đơn; tránh Hán-Việt trừu tượng khi có cách nói thường ngày rõ hơn.
+- Tối đa **18 tiếng (âm tiết)/câu**. Một câu chỉ giữ một hành động, cảnh hoặc ý.
 - Không nối hai vế bằng `nhưng`, `trong khi`, `trong lúc`; tách thành hai câu nếu cả hai vế đều đáng giữ.
 - `không chỉ… mà còn` và `không phải… mà là`: tối đa 1 lần/post.
 - Không kết slide bằng câu khái quát, moral hoặc câu giải nghĩa lại phần trên.
-- Hai slide liền nhau phải khác từ mở đầu và khác số câu, trừ khi contract/composition khóa cả hai ở một câu.
+- Hai slide liền nhau phải khác opening signature: so 2 từ đầu của prose, bỏ qua đại từ mở đầu `bạn`, `họ`, `mình`, `người ta`; đồng thời vẫn tránh cùng số câu nếu contract/composition không khóa nhịp.
 - Cho phép câu cụt, câu hỏi, bỏ chủ ngữ. `thì` / `à` / `đấy` tối đa 1 lần/slide.
-- Hedging chỉ để tránh tuyệt đối hóa, không phải khuôn mở câu.
+- Hedging chỉ để tránh tuyệt đối hóa, không phải khuôn mở câu; không dùng `kiểu…` để làm yếu một claim.
+- Tối đa 1 từ đệm/slide trong nhóm `á`, `nha`, `luôn`, `liền`, `ghê`, `hà`; không dùng cùng một từ đệm ở 2 slide liền nhau; không dùng ở mọi slide. Toàn post nên giữ khoảng tối đa 3 từ đệm.
+- Từ đệm không được mang thêm ý về cảm xúc, nguyên nhân, kết quả, mức độ hay certainty.
+- Không emoji, không teen code.
 
-**BLACKLIST trong prose — TODO-TUNE:** `phía họ`, `tương tác`, `sự chú ý`, `kết nối`, `cảm nhận rõ`, `thể hiện`, `đón nhận`, `điều này cho thấy`, `qua đó`, `nhìn chung`, `tóm lại`, `vì vậy`.
+**Bảng đổi từ khi evidence cho phép diễn đạt đời thường hơn:**
+
+| Tránh | Ưu tiên |
+|---|---|
+| `tiếp cận` / `bày tỏ` | `nói chuyện` / `nói ra` |
+| `phản hồi` | `trả lời` / `rep` |
+| `biểu hiện` / `thể hiện` | `làm` / `cho thấy` |
+| `duy trì` / `thiết lập` | `giữ` / `bắt đầu` |
+| `gắn kết` / `kết nối` | `gần nhau` / `thân hơn` |
+| `trải nghiệm` / `hành vi` | `chuyện` / `việc` / `cách họ làm` |
+
+**BLACKLIST trong prose — nguồn thật duy nhất là `tools/blacklist.txt`**:
+`phía họ`, `tương tác`, `sự chú ý`, `kết nối`, `cảm nhận rõ`, `thể hiện`, `đón nhận`, `điều này cho thấy`, `qua đó`, `nhìn chung`, `tóm lại`, `vì vậy`, `tiếp cận`, `bày tỏ`, `phản hồi`, `biểu hiện`, `duy trì`, `thiết lập`, `gắn kết`, `trải nghiệm`.
+
+Danh sách trong Markdown chỉ là bản tóm tắt để người đọc thấy rule; test C3 bắt buộc nó đồng bộ hai chiều với `tools/blacklist.txt`. Blacklist chỉ áp cho prose Writer xuất ra, không áp cho evidence, shared_question hay phân tích. Được phép diễn đạt lại evidence bằng từ thường hơn, nhưng §2 vẫn là biên claim.
+
 **PREFER khi evidence hỗ trợ:** động từ và vật thể nhìn thấy được như `nhắn`, `trả lời`, `hỏi lại`, `nhớ`, `gõ`, `gửi`, `để đó`, `im`, `nói thẳng`, `khen`. Không biến danh sách này thành template hành vi.
 
 **STYLE PASS bắt buộc sau nháp:** soi từng câu bằng 4 câu hỏi:
@@ -254,7 +279,6 @@ Giọng mục tiêu: như bạn thân đang nhận xét một người lúc nh�
 4. Xóa câu cuối thì ý chính còn đủ không?
 
 Fail bất kỳ câu hỏi nào thì viết lại hẳn câu đó; không sửa nhẹ bằng đổi vài từ.
-
 
 ## 9. Độ dài, fit và format — theo contract package
 
@@ -296,9 +320,9 @@ Trước khi gửi, xác nhận:
 - Mỗi slide có reality anchor đủ cụ thể; ưu tiên micro-behavior vượt qua Camera Test. Behavioral illustration được phép suy một bước gần từ evidence nhưng không thêm motive/cause/outcome/frequency hoặc biến thành relationship abstraction.
 - Batch không lặp cùng skeleton chỉ đổi tên cung.
 - Số slide khớp NarrativePlan/contract; adaptive fit chỉ được thêm support slide có trace rõ ràng, không còn bắt buộc khớp 1:1 với số evidence beat.
-- STYLE PASS ở mục 8b đã chạy trên từng câu.
-- Lint pass; không còn từ/cụm BLACKLIST trong prose.
-- Không có hai slide liền nhau cùng từ mở đầu.
+- Writer tự soi từng câu bằng STYLE PASS ở mục 8b; Writer không tự tuyên bố `lint pass`.
+- Pipeline/consumer chạy `tools/lint_zodiac.py` trên Writer prose sau draft; nếu lint fail, feed danh sách lỗi lại cho vòng Writer retry trước approval/render.
+- Không có hai slide liền nhau cùng opening signature theo mục 8b.
 - JSON cuối khớp response contract sau approval flow.
 
 Nếu một mục fail, quay lại gate sớm nhất liên quan. Không dùng chỉnh prose, kéo dài câu, slang, clickbait hoặc ví dụ để che lỗi insight, evidence hay progression.
@@ -319,29 +343,34 @@ Hashtag, CTA và emoji trong caption/slide chưa có rule chung. Không tự suy
 - **Ưu tiên:** “Nhớ chuyện bạn kể hôm trước. Lần sau gặp còn hỏi: giờ ổn chưa?”  
   Có micro-behavior và continuity; vẫn trong cùng claim boundary.
 
+### Sư Tử · evidence: chủ động chú ý và lời khen
+
+Các hướng “để người kia biết mình đang được chú ý”, “lời khen bật ra khi nhận thấy một điểm hay”, hoặc “người kia cảm nhận rõ mình được để ý hơn” đều **chấp nhận được**, nhưng chưa mặc định là mức tốt nhất. Writer nên tiếp tục tìm micro-behavior cụ thể hơn nếu evidence cho phép, thay vì dừng ở một câu mô tả chung.
+
+### Xử Nữ · evidence: chân thành, tiếp cận từ tốn, tôn trọng riêng tư
+
+Không tự động biến `từ tốn` thành:
+- “không đẩy mọi thứ quá nhanh”;
+- “để mối quan hệ tiến từng chút”;
+- “giữ khoảng cách”;
+- “chừa khoảng riêng cho nhau”.
+
+Các câu này dễ trượt sang relationship abstraction hoặc đổi semantic. Nếu chưa tìm được micro-behavior tốt, dùng observation ngắn, cụ thể và sát evidence; không bắt buộc phải có illustration dài.
+
 ### BAD → GOOD về giọng
 
-- **Bạch Dương:** — / — (chưa có evidence trong file)
-- **Kim Ngưu:** — / — (chưa có evidence trong file)
-- **Song Tử:** — / — (chưa có evidence trong file)
-- **Cự Giải 1:** BAD “Cự Giải thể hiện sự quan tâm bằng cách lắng nghe và để ý cảm xúc.” → GOOD “Nhớ chuyện bạn kể hôm trước. Lần sau gặp còn hỏi: giờ ổn chưa?” — BAD: từ sách vở; GOOD: chỉ có cảnh.
+- **Cự Giải 1:** BAD “Cự Giải thể hiện sự quan tâm bằng cách lắng nghe và để ý cảm xúc.” → GOOD “Chuyện bạn kể hôm trước, họ nhớ á. Lần sau gặp là hỏi: chuyện đó ổn chưa?” — BAD: từ sách vở; GOOD: chỉ có cảnh.
 - **Cự Giải 2:** BAD “Họ không chỉ nghe chuyện gì xảy ra mà còn để ý xem chuyện đó làm bạn vui hay khó chịu.” → GOOD “Bạn kể một chuyện buồn. Họ hỏi lại đúng đoạn làm bạn khó chịu.” — BAD: cấu trúc giải thích; GOOD: một hành động cụ thể.
-- **Sư Tử 1:** BAD “Sư Tử thể hiện sự chú ý thông qua lời khen dành cho người kia.” → GOOD “Thấy một điểm hay là khen đúng điểm đó.” — BAD: từ sách vở; GOOD: động từ trực tiếp.
+- **Sư Tử 1:** BAD “Sư Tử thể hiện sự chú ý thông qua lời khen dành cho người kia.” → GOOD “Thấy bạn có điểm hay là khen liền.” — BAD: từ sách vở; GOOD: động từ trực tiếp.
 - **Sư Tử 2:** BAD “Sự chú ý của Sư Tử thường đi cùng một lời khen.” → GOOD “Đang nói chuyện, họ bắt đúng một chi tiết rồi khen.” — BAD: danh từ hóa; GOOD: chỉ có cảnh.
-- **Xử Nữ 1:** BAD “Xử Nữ nói chuyện chân thành nhưng vẫn tiếp cận từ tốn.” → GOOD “Nói chuyện chậm rãi. Điều gì nghĩ thật thì nói thật.” — BAD: ghép hai vế; GOOD: tách thành hai nhịp.
-- **Xử Nữ 2:** BAD “Họ thể hiện sự tôn trọng riêng tư của người kia.” → GOOD “Bạn muốn giữ chuyện riêng thì họ không gặng hỏi.” — BAD: mô tả khái niệm; GOOD: hiện thực hóa `tôn trọng riêng tư`.
-- **Thiên Bình:** — / — (chưa có evidence trong file)
-- **Bọ Cạp:** — / — (chưa có evidence trong file)
-- **Nhân Mã:** — / — (chưa có evidence trong file)
-- **Ma Kết:** — / — (chưa có evidence trong file)
-- **Bảo Bình:** — / — (chưa có evidence trong file)
-- **Song Ngư:** — / — (chưa có evidence trong file)
+- **Xử Nữ 1:** BAD “Xử Nữ nói chuyện chân thành nhưng vẫn tiếp cận từ tốn.” → GOOD “Họ nói chuyện từ từ. Mà nghĩ sao nói vậy hà.” — BAD: ghép hai vế; GOOD: tách thành hai nhịp.
+- **Xử Nữ 2:** BAD “Họ thể hiện sự tôn trọng riêng tư của người kia.” → GOOD “Bạn không muốn kể là họ thôi, không hỏi nữa luôn.” — BAD: mô tả khái niệm; GOOD: hiện thực hóa `tôn trọng riêng tư`.
 
 Các cặp trên calibrate **giọng**, không cấp thêm evidence và không phải template câu.
 
 ### Nguyên tắc rút ra
 
-**Độ hay không tỷ lệ với độ xa evidence. Độ hay tăng khi evidence thành một micro-behavior dễ nhận ra.**
+**Độ hay không tỷ lệ với độ xa evidence. Độ hay tăng khi câu chuyển evidence thành một micro-behavior dễ nhận ra.**
 
 Ưu tiên: `micro-behavior cụ thể` → `behavioral illustration` → `evidence restatement` → tránh `abstract relational inference`.
 
@@ -352,3 +381,18 @@ Các cặp trên calibrate **giọng**, không cấp thêm evidence và không p
 - Viết lại calibration/BAD→GOOD vì ví dụ cũ vô tình dạy Writer dùng cấu trúc AI dù vẫn đúng evidence.
 - Thêm lint hooks vào Final validation vì naturalness trước đây chủ yếu là lời khuyên, chưa có cơ chế bắt lỗi.
 - Thêm `lint_zodiac.py` + `blacklist.txt` + tests vì STYLE PASS cần một kiểm tra tự động, chỉnh được mà không tạo nguồn evidence/rule mới.
+
+
+## Changelog v9.1
+
+- Khôi phục guard Sư Tử và Xử Nữ — vì v9 đã xóa mất hai calibration guard giúp ngăn micro-behavior trượt khỏi evidence.
+- Siết illustration/hedging và bỏ `kiểu…` làm guard — vì hedge không được dùng để hợp thức hóa claim vượt §2.
+- Giới hạn blacklist đúng vào Writer prose và cho phép diễn đạt evidence bằng từ thường hơn — vì evidence/shared_question là dữ liệu biên claim, không phải prose để lint.
+- Đổi đơn vị độ dài từ “từ” sang “tiếng (âm tiết)” nhưng giữ N=18 — vì tiếng Việt đọc theo nhịp âm tiết; chưa có đủ dữ liệu để tự hạ ngưỡng.
+- TODO-TUNE độ dài: v9.1 có 13 câu trong các ví dụ Ưu tiên/GOOD, min 5, median 8, p75 9, p90 11, max 11, mean 7.69 tiếng; đề xuất thử N=12 trên output thật trước khi đổi — vì 18 đang rộng hơn đáng kể so với calibration nhưng chưa được xác nhận.
+- Xóa 9 dòng `— / —` và thêm 8b vào workflow — vì placeholder không có evidence không nên nằm trong calibration Writer.
+- Làm rõ STYLE PASS của Writer và lint của pipeline — vì Writer tự soi style, còn pass/fail tự động phải do consumer chạy lint và feed lỗi vào retry.
+- Điểm tích hợp còn lại: `Zodiac-Controversy-Factory/zodiac_factory/writer.py` tại vòng retry của `OpenCodeWriter.generate` / `generate_batch`; repo Knowledge này không chứa runtime nên PR này không sửa cross-repo — vì không nên tạo integration giả trong repo rule.
+- Bổ sung REGISTER + VIBE, filler discipline và bảng đổi từ — vì prose cần đời thường hơn mà không thêm motive/cause/outcome.
+- Cập nhật GOOD cho Cự Giải, Sư Tử, Xử Nữ và sửa câu “Nguyên tắc rút ra” — vì ví dụ phải vừa qua Camera Test vừa giữ nguyên evidence boundary.
+- Mở rộng blacklist đúng danh sách v9.1 và bắt đồng bộ Markdown ↔ `blacklist.txt` — vì `blacklist.txt` là nguồn thật duy nhất, tránh drift.
