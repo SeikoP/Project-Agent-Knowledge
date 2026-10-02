@@ -1,0 +1,21 @@
+name: zodiac-lint
+
+on:
+  pull_request:
+    paths:
+      - "projects/zodiac/**"
+  push:
+    branches:
+      - main
+    paths:
+      - "projects/zodiac/**"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m unittest discover projects/zodiac/tests
