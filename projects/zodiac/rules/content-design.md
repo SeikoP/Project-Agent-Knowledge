@@ -240,7 +240,7 @@ Giọng mục tiêu: như bạn thân đang nhận xét một người lúc nh�
 - Không nối hai vế bằng `nhưng`, `trong khi`, `trong lúc`; tách thành hai câu nếu cả hai vế đều đáng giữ.
 - `không chỉ… mà còn` và `không phải… mà là`: tối đa 1 lần/post.
 - Không kết slide bằng câu khái quát, moral hoặc câu giải nghĩa lại phần trên.
-- Hai slide liền nhau không cùng từ mở đầu; tránh cùng số câu nếu contract không ép.
+- Hai slide liền nhau phải khác từ mở đầu và khác số câu, trừ khi contract/composition khóa cả hai ở một câu.
 - Cho phép câu cụt, câu hỏi, bỏ chủ ngữ. `thì` / `à` / `đấy` tối đa 1 lần/slide.
 - Hedging chỉ để tránh tuyệt đối hóa, không phải khuôn mở câu.
 
@@ -351,3 +351,4 @@ Các cặp trên calibrate **giọng**, không cấp thêm evidence và không p
 - Đổi length guidance và hedging vì target 225–240 cùng câu mở “kiểu…” dễ kéo prose dài, mềm và giống template.
 - Viết lại calibration/BAD→GOOD vì ví dụ cũ vô tình dạy Writer dùng cấu trúc AI dù vẫn đúng evidence.
 - Thêm lint hooks vào Final validation vì naturalness trước đây chủ yếu là lời khuyên, chưa có cơ chế bắt lỗi.
+- Thêm `lint_zodiac.py` + `blacklist.txt` + tests vì STYLE PASS cần một kiểm tra tự động, chỉnh được mà không tạo nguồn evidence/rule mới.
