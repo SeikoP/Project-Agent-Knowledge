@@ -34,41 +34,43 @@ class ZodiacVoiceLintTests(unittest.TestCase):
     def rules(self, *slides: str) -> list[str]:
         return [item["rule"] for item in lint_zodiac.lint_payload(payload(*slides), BLACKLIST)]
 
-    def test_good_cancer_camera_scene_passes(self):
+    def test_good_cancer_scene_passes(self):
         self.assertEqual(
             self.rules("Nhớ chuyện bạn kể hôm trước. Lần sau gặp còn hỏi: giờ ổn chưa?"),
             [],
         )
 
-    def test_bad_cancer_explanatory_pair_is_caught(self):
+    def test_bad_cancer_explanatory_sentence_is_caught(self):
         rules = self.rules(
-            "Họ không chỉ nghe chuyện xảy ra mà còn để ý xem chuyện đó làm bạn vui hay khó chịu."
+            "Họ không chỉ nghe chuyện gì xảy ra mà còn để ý xem chuyện đó làm bạn vui hay khó chịu."
         )
         self.assertIn("voice.sentence_over_18_words", rules)
 
-    def test_bad_leo_bookish_word_is_caught(self):
-        rules = self.rules("Sư Tử thể hiện sự chú ý qua lời khen.")
-        self.assertTrue(any(rule.startswith("voice.blacklist:") for rule in rules))
-
-    def test_good_leo_action_passes(self):
+    def test_good_leo_scene_passes(self):
         self.assertEqual(self.rules("Thấy một điểm hay là khen đúng điểm đó."), [])
 
-    def test_good_virgo_privacy_scene_passes(self):
-        self.assertEqual(self.rules("Bạn muốn giữ chuyện riêng thì họ không gặng hỏi."), [])
+    def test_bad_leo_bookish_sentence_is_caught(self):
+        rules = self.rules("Sư Tử thể hiện sự chú ý thông qua lời khen dành cho người kia.")
+        self.assertTrue(any(rule.startswith("voice.blacklist:") for rule in rules))
 
-    def test_generalizing_ending_is_caught(self):
-        rules = self.rules("Bạn nhắn. Họ trả lời. Vì vậy đây là dấu hiệu rõ nhất.")
-        self.assertIn("voice.generalizing_ending", rules)
+    def test_good_virgo_scene_passes(self):
+        self.assertEqual(self.rules("Nói chuyện chậm rãi. Điều gì nghĩ thật thì nói thật."), [])
 
-    def test_adjacent_slides_same_opening_is_caught(self):
-        rules = self.rules("Bạn kể chuyện.", "Bạn nhắn trước.")
+    def test_bad_virgo_joined_clause_is_caught(self):
+        rules = self.rules("Xử Nữ nói chuyện chân thành nhưng vẫn tiếp cận từ tốn.")
+        self.assertIn("voice.banned_clause_connector", rules)
+
+    def test_two_good_examples_still_fail_if_adjacent_opening_repeats(self):
+        rules = self.rules(
+            "Bạn kể một chuyện buồn. Họ hỏi lại đúng đoạn làm bạn khó chịu.",
+            "Bạn muốn giữ chuyện riêng thì họ không gặng hỏi.",
+        )
         self.assertIn("voice.adjacent_slides_same_opening", rules)
 
-    def test_sentence_over_18_words_is_caught(self):
-        rules = self.rules(
-            "Đang nói chuyện bình thường rồi họ vẫn tiếp tục giải thích rất dài về điều vừa xảy ra trong đoạn chat đó."
-        )
-        self.assertIn("voice.sentence_over_18_words", rules)
+    def test_paired_construction_twice_in_one_post_is_caught(self):
+        bad = "Họ không chỉ nghe chuyện gì xảy ra mà còn để ý xem chuyện đó làm bạn vui hay khó chịu."
+        rules = self.rules(bad, bad)
+        self.assertIn("voice.khong_chi_ma_con_over_1_per_post", rules)
 
 
 if __name__ == "__main__":
