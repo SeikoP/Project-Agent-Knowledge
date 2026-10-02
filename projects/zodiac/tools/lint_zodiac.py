@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
-"""Lint Writer JSON against measurable Zodiac v9.5 voice rules.
+"""Lint Writer JSON against measurable Zodiac v9.7 prose rules.
 
 Stdlib only. Extra top-level payload keys are ignored by voice lint.
 Only configured prose block types are linted; the default follows the current
 carousel contract and includes body plus callout blocks.
+
+v9.7 intentionally keeps lint narrow: schema, hard blacklist terms and
+generalizing endings. Rhythm, connectors, filler, opening variety and sentence
+length are reviewed by the editorial/style pass instead of hard keyword quotas.
 """
 from __future__ import annotations
 
@@ -16,39 +20,15 @@ from pathlib import Path
 from typing import Iterable
 
 
-WORD_RE = re.compile(r"[\wÀ-ỹĐđ]+", re.UNICODE)
 SENTENCE_RE = re.compile(r"[^.!?…]+[.!?…]*", re.UNICODE)
-BANNED_CONNECTOR_RE = re.compile(
-    r"(?<!\w)(trong\s+khi|trong\s+lúc)(?!\w)",
-    re.IGNORECASE | re.UNICODE,
-)
-PAIRED_PATTERNS = {
-    "khong_chi_ma_con": re.compile(
-        r"(?<!\w)không\s+chỉ(?!\w).*?(?<!\w)mà\s+còn(?!\w)",
-        re.IGNORECASE | re.UNICODE,
-    ),
-    "khong_phai_ma_la": re.compile(
-        r"(?<!\w)không\s+phải(?!\w).*?(?<!\w)mà\s+là(?!\w)",
-        re.IGNORECASE | re.UNICODE,
-    ),
-}
 GENERALIZATION_START_RE = re.compile(
     r"^\s*(tóm\s+lại|vì\s+vậy|điều\s+này\s+cho\s+thấy)\b",
     re.IGNORECASE | re.UNICODE,
 )
-HEDGE_OPENER_RE = re.compile(r"^\s*kiểu\b", re.IGNORECASE | re.UNICODE)
-FILLER_END_RE = re.compile(
-    r"(?<!\w)(á|nha|luôn|liền|ghê|hà)(?!\w)(?=\s*(?:[,;:.!?…]|$))",
-    re.IGNORECASE | re.UNICODE,
-)
-
-MAX_SYLLABLES_PER_SENTENCE = 24  # v9.2: allow fuller spoken sentences; 8–18 remains the preferred prose range.
-MAX_PAIRED_CONSTRUCTION_PER_POST = 1
-MAX_FILLERS_PER_SLIDE = 1
-MAX_FILLERS_PER_POST = 3  # TODO-TUNE: validate against real Writer output before tightening.
 DEFAULT_PROSE_BLOCK_TYPES = frozenset({"body", "callout"})
-OPENING_PRONOUNS = frozenset({"bạn", "họ", "mình"})
-GENERALIZATION_BLACKLIST_TERMS = frozenset({"tóm lại", "vì vậy", "điều này cho thấy"})
+GENERALIZATION_BLACKLIST_TERMS = frozenset(
+    {"tóm lại", "vì vậy", "điều này cho thấy"}
+)
 
 
 def normalize_text(text: object) -> str:
@@ -82,25 +62,6 @@ def sentences(text: str) -> list[str]:
             if match.group(0).strip()
         )
     return out
-
-
-def syllable_count(text: str) -> int:
-    """Approximate Vietnamese tiếng/âm tiết by whitespace-separated word tokens."""
-    return len(WORD_RE.findall(normalize_text(text)))
-
-
-def opening_signature(text: str) -> tuple[str, ...]:
-    words = [token.casefold() for token in WORD_RE.findall(normalize_text(text))]
-    if words[:2] == ["người", "ta"]:
-        words = words[2:]
-    elif words and words[0] in OPENING_PRONOUNS:
-        words = words[1:]
-    return tuple(words[:2])
-
-
-def filler_terms(text: str) -> list[str]:
-    normalized = normalize_text(text)
-    return [match.group(1).casefold() for match in FILLER_END_RE.finditer(normalized)]
 
 
 def slide_block_texts(
@@ -156,62 +117,19 @@ def lint_idea(
     prose_block_types: Iterable[str] = DEFAULT_PROSE_BLOCK_TYPES,
 ) -> list[dict]:
     errors: list[dict] = []
-    slides = idea["slides"]
-
     normalized_blacklist = [normalize_text(term) for term in blacklist]
     blacklist_patterns = [(term, term_regex(term)) for term in normalized_blacklist]
-    paired_counts = {name: 0 for name in PAIRED_PATTERNS}
 
-    previous_opening: tuple[str, ...] = ()
-    previous_fillers: set[str] = set()
-    total_fillers = 0
-
-    for slide_index, slide in enumerate(slides, 1):
+    for slide_index, slide in enumerate(idea["slides"], 1):
         block_texts = (
             slide_block_texts(slide, prose_block_types)
             if isinstance(slide, dict)
             else []
         )
-        text = " ".join(block_texts).strip()
-
-        opening = opening_signature(text)
-        if opening and previous_opening and opening == previous_opening:
-            errors.append(_error(slide_index, text, "voice.adjacent_slides_same_opening"))
-        previous_opening = opening
-
-        current_fillers = filler_terms(text)
-        total_fillers += len(current_fillers)
-        if len(current_fillers) > MAX_FILLERS_PER_SLIDE:
-            errors.append(
-                _error(
-                    slide_index,
-                    text,
-                    f"voice.filler_over_{MAX_FILLERS_PER_SLIDE}_per_slide",
-                )
-            )
-        repeated = sorted(set(current_fillers) & previous_fillers)
-        for filler in repeated:
-            errors.append(
-                _error(slide_index, text, f"voice.filler_repeated_adjacent:{filler}")
-            )
-        previous_fillers = set(current_fillers)
 
         for block_text in block_texts:
             block_sentences = sentences(block_text)
             for sentence_index, sentence in enumerate(block_sentences, 1):
-                if syllable_count(sentence) > MAX_SYLLABLES_PER_SENTENCE:
-                    errors.append(
-                        _error(
-                            slide_index,
-                            sentence,
-                            f"voice.sentence_over_{MAX_SYLLABLES_PER_SENTENCE}_syllables",
-                        )
-                    )
-                if BANNED_CONNECTOR_RE.search(sentence):
-                    errors.append(
-                        _error(slide_index, sentence, "voice.banned_clause_connector")
-                    )
-
                 generalization_match = None
                 if sentence_index == len(block_sentences):
                     generalization_match = GENERALIZATION_START_RE.search(sentence)
@@ -219,9 +137,6 @@ def lint_idea(
                         errors.append(
                             _error(slide_index, sentence, "voice.generalizing_ending")
                         )
-
-                if HEDGE_OPENER_RE.search(sentence):
-                    errors.append(_error(slide_index, sentence, "voice.hedge_opener"))
 
                 lowered = normalize_text(sentence).casefold()
                 generalization_term = (
@@ -241,27 +156,6 @@ def lint_idea(
                         errors.append(
                             _error(slide_index, sentence, f"voice.blacklist:{term}")
                         )
-
-                for name, pattern in PAIRED_PATTERNS.items():
-                    for match in pattern.finditer(sentence):
-                        paired_counts[name] += 1
-                        if paired_counts[name] > MAX_PAIRED_CONSTRUCTION_PER_POST:
-                            errors.append(
-                                _error(
-                                    slide_index,
-                                    match.group(0),
-                                    f"voice.{name}_over_{MAX_PAIRED_CONSTRUCTION_PER_POST}_per_post",
-                                )
-                            )
-
-    if total_fillers > MAX_FILLERS_PER_POST:
-        errors.append(
-            _error(
-                0,
-                "",
-                f"voice.filler_over_{MAX_FILLERS_PER_POST}_per_post",
-            )
-        )
 
     return errors
 
