@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Lint Writer JSON against measurable Zodiac v9.2 voice rules.
+"""Lint Writer JSON against measurable Zodiac v9.3 voice rules.
 
 Stdlib only. Extra top-level payload keys are ignored by voice lint.
 Only configured prose block types are linted; the default follows the current

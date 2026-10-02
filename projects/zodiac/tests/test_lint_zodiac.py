@@ -67,6 +67,16 @@ class ZodiacVoiceLintTests(unittest.TestCase):
         rules = self.rules("Sư Tử thể hiện sự chú ý thông qua lời khen dành cho người kia.")
         self.assertTrue(any(rule.startswith("voice.blacklist:") for rule in rules))
 
+    def test_report_like_chat_phrases_are_caught(self):
+        cases = {
+            "Cuộc chat tự nhiên im.": "voice.blacklist:cuộc chat",
+            "Không có câu chốt.": "voice.blacklist:câu chốt",
+            "Họ chuyển sang mục tiêu khác.": "voice.blacklist:chuyển sang mục tiêu khác",
+        }
+        for text, expected in cases.items():
+            with self.subTest(text=text):
+                self.assertIn(expected, self.rules(text))
+
     def test_good_virgo_scenes_pass(self):
         self.assertEqual(self.rules("Họ nói chuyện từ từ. Mà nghĩ sao nói vậy hà."), [])
         self.assertEqual(self.rules("Bạn không muốn kể là họ thôi, không hỏi nữa luôn."), [])

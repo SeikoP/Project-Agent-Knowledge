@@ -1,4 +1,4 @@
-# ZODIAC CONTENT MEMORY — v9.2
+# ZODIAC CONTENT MEMORY — v9.3
 
 ## Mục đích và thứ tự ưu tiên
 
@@ -247,14 +247,26 @@ Sau nháp, hỏi với mỗi body: **nếu chỉ đọc slide này, người xem
 - Body ngắn vẫn hợp lệ khi beat tự nó đã đủ sắc. Không kéo dài để đủ quota.
 - Ngược lại, body còn nhiều room trong contract mà chỉ có một câu restatement phải được xem lại trước khi duyệt.
 
+### Show-first checkpoint
+
+Ưu tiên **cho người xem thấy chuyện đang xảy ra trước, rồi mới gọi tên điều đáng nhớ**. Với recognition content, một body tốt thường có nhịp:
+`cảnh quen → chỗ thay đổi → chi tiết đọng lại`.
+
+Ví dụ cùng một claim "vẫn trả lời nhưng không còn chủ động": đừng dừng ở câu giải thích. Có thể cho thấy `bạn nhắn thì vẫn rep → chờ họ nhắn trước thì không thấy → phần chủ động đã mất`. Đây vẫn là một evidence trace, không phải ba claim mới.
+
+Không biến checkpoint này thành template cứng. Nếu evidence không có cảnh/contrast đủ rõ, giữ direct fact còn tốt hơn bịa thêm tình huống.
+
 Tránh cấu trúc lặp `claim → giải thích → tổng kết` trên mọi slide. Không kết bằng câu AI tóm tắt hoặc moral. Kết ở observation/distinction đã được evidence hỗ trợ.
 
 ## 8b. Voice và anti-AI lexicon
 
-**REGISTER + VIBE:** như một học sinh đang kể cho bạn cùng bàn nghe về một người — gần, nhẹ, dễ hiểu, có chút nhịp nói chuyện thật; không mang giọng bài phân tích.
+**REGISTER + VIBE:** như một học sinh đang kể cho bạn cùng bàn nghe về một người — gần, nhẹ, dễ hiểu, có nhịp nói chuyện thật; không mang giọng bài phân tích.
 
+- "Vibe học sinh" đến từ **cách kể**, không phải nhồi teen code. Ưu tiên `đang nhắn`, `nói dở`, `rep`, `để đó`, `online`, `gõ xong lại thôi`; dùng từ mà một bạn lớp 10–12 có thể nói tự nhiên với bạn bên cạnh.
+- Cho phép từ nối văn nói như `xong`, `rồi`, `mà`, `tự dưng`, `thế là` khi chúng nối đúng diễn tiến. Không đặt quota và không rải vào mọi câu.
 - Ưu tiên cách nói có thể xuất hiện trong giờ ra chơi hoặc chat nhóm: `đang nói tự nhiên im luôn`, `gõ rồi lại thôi`, `vẫn rep mà không mở chuyện trước`. Đây là calibration giọng, không phải template claim.
-- Tránh câu nghe "nặng" hoặc quá văn viết khi có cách nói thường hơn, như `đủ để thành một lời giải thích`, `thứ xuất hiện trong cuộc chat`, `rút khỏi cuộc trò chuyện`.
+- Tránh câu nghe "nặng", nhãn hóa hoặc quá văn viết khi có cách nói thường hơn, như `đủ để thành một lời giải thích`, `thứ xuất hiện trong cuộc chat`, `rút khỏi cuộc trò chuyện`, `khép lại cuộc trao đổi`.
+- Nếu một câu mô tả được bằng thứ người xem **thấy trên màn hình điện thoại** hoặc **nghe trong một câu kể**, ưu tiên bản đó thay cho danh từ trừu tượng.
 - Từ phổ thông, thuần Việt, ưu tiên từ đơn; tránh Hán-Việt trừu tượng khi có cách nói thường ngày rõ hơn.
 - Ưu tiên khoảng **8–18 tiếng/câu** cho nhịp nói tự nhiên; lint chỉ fail khi một câu vượt **24 tiếng**. Một câu giữ một ý chính, nhưng có thể chứa hai hành động liền nhau nếu chúng vẫn là cùng một beat.
 - `nhưng` được dùng khi contrast nghe tự nhiên; không dùng nó để nhét hai claim khác nhau vào một câu. `trong khi` và `trong lúc` vẫn tránh trong prose carousel vì dễ kéo câu sang giọng giải thích.
@@ -279,18 +291,19 @@ Tránh cấu trúc lặp `claim → giải thích → tổng kết` trên mọi 
 | `trải nghiệm` / `hành vi` | `chuyện` / `việc` / `cách họ làm` |
 
 **BLACKLIST trong prose — nguồn thật duy nhất là `tools/blacklist.txt`**:
-`phía họ`, `tương tác`, `sự chú ý`, `kết nối`, `cảm nhận rõ`, `thể hiện`, `đón nhận`, `điều này cho thấy`, `qua đó`, `nhìn chung`, `tóm lại`, `vì vậy`, `tiếp cận`, `bày tỏ`, `phản hồi`, `biểu hiện`, `duy trì`, `thiết lập`, `gắn kết`, `trải nghiệm`.
+`phía họ`, `tương tác`, `sự chú ý`, `kết nối`, `cảm nhận rõ`, `thể hiện`, `đón nhận`, `điều này cho thấy`, `qua đó`, `nhìn chung`, `tóm lại`, `vì vậy`, `tiếp cận`, `bày tỏ`, `phản hồi`, `biểu hiện`, `duy trì`, `thiết lập`, `gắn kết`, `trải nghiệm`, `cuộc chat`, `câu chốt`, `chuyển sang mục tiêu khác`.
 
 Danh sách trong Markdown chỉ là bản tóm tắt để người đọc thấy rule; test C3 bắt buộc nó đồng bộ hai chiều với `tools/blacklist.txt`. Blacklist chỉ áp cho prose Writer xuất ra, không áp cho evidence, shared_question hay phân tích. Được phép diễn đạt lại evidence bằng từ thường hơn, nhưng §2 vẫn là biên claim.
 
 **PREFER khi evidence hỗ trợ:** động từ và vật thể nhìn thấy được như `nhắn`, `trả lời`, `hỏi lại`, `nhớ`, `gõ`, `gửi`, `để đó`, `im`, `nói thẳng`, `khen`. Không biến danh sách này thành template hành vi.
 
-**STYLE PASS bắt buộc sau nháp:** soi từng câu/body bằng 5 câu hỏi:
+**STYLE PASS bắt buộc sau nháp:** soi từng câu/body bằng 6 câu hỏi:
 1. Một bạn cùng lớp có thật sự kể câu này như vậy không, hay nó nghe như bài phân tích?
 2. Có từ/cụm BLACKLIST không?
-3. Câu đang tả/làm rõ hành vi hay chỉ đổi chữ để giải thích lại?
+3. Câu đang cho thấy chuyện gì xảy ra hay chỉ đang gọi tên/giải thích nó?
 4. Body đã đi đủ sâu vào beat chưa, hay mới dừng ở một câu fact?
-5. Xóa câu cuối thì slide mất một bước đáng nhớ hay chỉ mất câu tổng kết?
+5. Có chỗ nào có thể đổi từ nhãn như `cuộc...`, `mục tiêu...`, `câu chốt...` thành hành động nhìn thấy được không?
+6. Xóa câu cuối thì slide mất một bước đáng nhớ hay chỉ mất câu tổng kết?
 
 Fail bất kỳ câu hỏi nào thì viết lại hẳn câu đó; không sửa nhẹ bằng đổi vài từ.
 
@@ -429,3 +442,12 @@ Các cặp trên calibrate **giọng**, không cấp thêm evidence và không p
 - Cho phép `nhưng` khi contrast tự nhiên; tiếp tục tránh `trong khi` / `trong lúc` trong prose carousel — vì blanket ban làm câu bị cắt vụn và thiếu chất nói.
 - Đổi REGISTER + VIBE sang giọng học sinh kể cho bạn cùng bàn, thêm guard chống câu “nặng”/văn viết — vì đời thường không chỉ là bỏ từ blacklist.
 - Thêm calibration Nặng → nhẹ và final checks cho body depth/register — vì prose cần vừa qua evidence boundary vừa có chuyện để người xem nhớ.
+
+
+## Changelog v9.3
+
+- Thêm Show-first checkpoint từ vòng phân tích viral: ưu tiên cảnh quen → chỗ thay đổi → chi tiết đọng lại, thay vì giải thích bằng nhãn.
+- Làm rõ "vibe học sinh" là nhịp kể và từ nối văn nói, không phải teen code hay slang quota.
+- Thêm `cuộc chat`, `câu chốt`, `chuyển sang mục tiêu khác` vào prose blacklist sau review output thật — vì ba cụm này nghe như người viết đang tóm tắt nội dung hơn là một học sinh đang kể chuyện.
+- Mở PREFER cho `xong`, `rồi`, `mà`, `tự dưng`, `thế là` khi chúng nối diễn tiến tự nhiên; không dùng như filler quota.
+- STYLE PASS thêm câu hỏi "đang cho thấy hay đang gọi tên" để chống body đúng fact nhưng không có hình ảnh/nhịp kể.
