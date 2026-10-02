@@ -1,4 +1,4 @@
-# ZODIAC CONTENT MEMORY — v9.1
+# ZODIAC CONTENT MEMORY — v9.2
 
 ## Mục đích và thứ tự ưu tiên
 
@@ -234,17 +234,30 @@ Viral analysis từ performance thật có thể cập nhật pattern library, n
 
 Thiết kế title trước body để định vị rõ **toàn post**. Title là post identity/metadata; chỉ dùng nguyên title làm visual headline slide 1 khi composition/contract có headline slot và yêu cầu slot đó. Không thêm headline block chỉ để chứa title. Clarity đứng trước hook.
 
-Nếu slide 1 có headline, phần còn lại của slide phải cụ thể hóa chứ không paraphrase headline/title. Nếu slide 1 không có headline, block mở đầu phải thực hiện đúng experience role đã được plan chọn thay vì lặp title bằng một câu khác. Không áp cùng một skeleton câu cho mọi cung. Nếu 2 câu đã đủ thì dừng; 3–4 câu chỉ dùng khi mỗi câu thực sự thêm một việc.
+Nếu slide 1 có headline, phần còn lại của slide phải cụ thể hóa chứ không paraphrase headline/title. Nếu slide 1 không có headline, block mở đầu phải thực hiện đúng experience role đã được plan chọn thay vì lặp title bằng một câu khác. Không áp cùng một skeleton câu cho mọi cung.
+
+Không đặt mục tiêu "càng ít câu càng tốt". Một narrative beat có thể mở ra thành 2–4 câu nếu các câu lần lượt làm rõ **cùng một beat**: đặt cảnh, zoom vào chỗ thay đổi, rồi để lại observation đáng nhớ. Các câu bổ sung không được thêm motive, cause, consequence, frequency, outcome hay claim mới.
+
+### Body Depth Test
+
+Sau nháp, hỏi với mỗi body: **nếu chỉ đọc slide này, người xem có biết mình đang nói sâu về điểm nào không?**
+
+- Nếu body chỉ nói lại proposition bằng 1–2 câu khác chữ, chưa đạt depth dù đúng evidence.
+- Có thể đào sâu cùng một evidence trace bằng diễn tiến của hành vi, phần còn/phần mất, chi tiết nhìn thấy trong cảnh, hoặc distinction đã có sẵn.
+- Body ngắn vẫn hợp lệ khi beat tự nó đã đủ sắc. Không kéo dài để đủ quota.
+- Ngược lại, body còn nhiều room trong contract mà chỉ có một câu restatement phải được xem lại trước khi duyệt.
 
 Tránh cấu trúc lặp `claim → giải thích → tổng kết` trên mọi slide. Không kết bằng câu AI tóm tắt hoặc moral. Kết ở observation/distinction đã được evidence hỗ trợ.
 
 ## 8b. Voice và anti-AI lexicon
 
-**REGISTER + VIBE:** như đang kể cho bạn cùng bàn nghe về một người.
+**REGISTER + VIBE:** như một học sinh đang kể cho bạn cùng bàn nghe về một người — gần, nhẹ, dễ hiểu, có chút nhịp nói chuyện thật; không mang giọng bài phân tích.
 
+- Ưu tiên cách nói có thể xuất hiện trong giờ ra chơi hoặc chat nhóm: `đang nói tự nhiên im luôn`, `gõ rồi lại thôi`, `vẫn rep mà không mở chuyện trước`. Đây là calibration giọng, không phải template claim.
+- Tránh câu nghe "nặng" hoặc quá văn viết khi có cách nói thường hơn, như `đủ để thành một lời giải thích`, `thứ xuất hiện trong cuộc chat`, `rút khỏi cuộc trò chuyện`.
 - Từ phổ thông, thuần Việt, ưu tiên từ đơn; tránh Hán-Việt trừu tượng khi có cách nói thường ngày rõ hơn.
-- Tối đa **18 tiếng (âm tiết)/câu**. Một câu chỉ giữ một hành động, cảnh hoặc ý.
-- Không nối hai vế bằng `nhưng`, `trong khi`, `trong lúc`; tách thành hai câu nếu cả hai vế đều đáng giữ.
+- Ưu tiên khoảng **8–18 tiếng/câu** cho nhịp nói tự nhiên; lint chỉ fail khi một câu vượt **24 tiếng**. Một câu giữ một ý chính, nhưng có thể chứa hai hành động liền nhau nếu chúng vẫn là cùng một beat.
+- `nhưng` được dùng khi contrast nghe tự nhiên; không dùng nó để nhét hai claim khác nhau vào một câu. `trong khi` và `trong lúc` vẫn tránh trong prose carousel vì dễ kéo câu sang giọng giải thích.
 - `không chỉ… mà còn` và `không phải… mà là`: tối đa 1 lần/post.
 - Không kết slide bằng câu khái quát, moral hoặc câu giải nghĩa lại phần trên.
 - Hai slide liền nhau phải khác opening signature: so 2 từ đầu của prose, bỏ qua đại từ mở đầu `bạn`, `họ`, `mình`, `người ta`; đồng thời vẫn tránh cùng số câu nếu contract/composition không khóa nhịp.
@@ -272,17 +285,20 @@ Danh sách trong Markdown chỉ là bản tóm tắt để người đọc thấ
 
 **PREFER khi evidence hỗ trợ:** động từ và vật thể nhìn thấy được như `nhắn`, `trả lời`, `hỏi lại`, `nhớ`, `gõ`, `gửi`, `để đó`, `im`, `nói thẳng`, `khen`. Không biến danh sách này thành template hành vi.
 
-**STYLE PASS bắt buộc sau nháp:** soi từng câu bằng 4 câu hỏi:
-1. Bạn thân có thật sự nói câu này không?
+**STYLE PASS bắt buộc sau nháp:** soi từng câu/body bằng 5 câu hỏi:
+1. Một bạn cùng lớp có thật sự kể câu này như vậy không, hay nó nghe như bài phân tích?
 2. Có từ/cụm BLACKLIST không?
-3. Câu đang tả hành vi hay đang giải thích hành vi?
-4. Xóa câu cuối thì ý chính còn đủ không?
+3. Câu đang tả/làm rõ hành vi hay chỉ đổi chữ để giải thích lại?
+4. Body đã đi đủ sâu vào beat chưa, hay mới dừng ở một câu fact?
+5. Xóa câu cuối thì slide mất một bước đáng nhớ hay chỉ mất câu tổng kết?
 
 Fail bất kỳ câu hỏi nào thì viết lại hẳn câu đó; không sửa nhẹ bằng đổi vài từ.
 
 ## 9. Độ dài, fit và format — theo contract package
 
-Giới hạn chung chỉ là hướng dẫn mặc định: headline tối đa 55 ký tự. Với body, `max_chars` của contract là **trần kỹ thuật, không phải mục tiêu**; viết bản ngắn nhất mà vẫn rõ và còn giữ được micro-behavior/distinction đáng giá. Mốc 225–240 chỉ dùng để đánh giá sức chứa/fit khi pipeline cần, không phải target prose.
+Giới hạn chung chỉ là hướng dẫn mặc định: headline tối đa 55 ký tự. Với body, `max_chars` của contract là **trần kỹ thuật, không phải mục tiêu**; viết đủ để beat có cảnh, diễn tiến hoặc distinction đáng nhớ rồi mới dừng. Mốc 225–240 chỉ dùng để đánh giá sức chứa/fit khi pipeline cần, không phải target prose.
+
+Không có hard minimum cho body. Tuy vậy, với block có cap khoảng 320 ký tự, một body rất ngắn phải qua Body Depth Test: nếu nó chỉ restate evidence thì Writer phải đào sâu **cùng evidence trace**, không được viện cớ anti-AI để cắt nội dung thành vài câu cụt.
 
 `OUTPUT_CONTRACT`, `OUTPUT_TEMPLATE`, `SLIDE_OPTIONS` quyết định trần, số dòng, số slide, thứ tự và block ID. Contract override giới hạn kỹ thuật chung khi có xung đột; nội dung vẫn phải qua editorial gates.
 
@@ -319,6 +335,8 @@ Trước khi gửi, xác nhận:
 - Title rõ nội dung ở cấp post; visual headline chỉ xuất hiện khi contract có headline slot. Block đầu không lặp title/preference bằng nhiều câu khác nhau.
 - Mỗi slide có reality anchor đủ cụ thể; ưu tiên micro-behavior vượt qua Camera Test. Behavioral illustration được phép suy một bước gần từ evidence nhưng không thêm motive/cause/outcome/frequency hoặc biến thành relationship abstraction.
 - Batch không lặp cùng skeleton chỉ đổi tên cung.
+- Body Depth Test đã qua: mỗi slide nói đủ sâu về beat của nó, không dừng ở restatement chỉ vì câu ngắn dễ lint.
+- Register đọc thành tiếng vẫn giống một học sinh kể cho bạn nghe; không trượt sang giọng bài phân tích hoặc caption "nặng".
 - Số slide khớp NarrativePlan/contract; adaptive fit chỉ được thêm support slide có trace rõ ràng, không còn bắt buộc khớp 1:1 với số evidence beat.
 - Writer tự soi từng câu bằng STYLE PASS ở mục 8b; Writer không tự tuyên bố `lint pass`.
 - Pipeline/consumer chạy `tools/lint_zodiac.py` trên Writer prose sau draft; nếu lint fail, feed danh sách lỗi lại cho vòng Writer retry trước approval/render.
@@ -356,6 +374,12 @@ Không tự động biến `từ tốn` thành:
 - “chừa khoảng riêng cho nhau”.
 
 Các câu này dễ trượt sang relationship abstraction hoặc đổi semantic. Nếu chưa tìm được micro-behavior tốt, dùng observation ngắn, cụ thể và sát evidence; không bắt buộc phải có illustration dài.
+
+### Nặng → nhẹ mà vẫn giữ evidence
+
+- BAD: “Có thể họ đã gõ ra điều muốn nói, đủ để thành một lời giải thích. Rồi dòng chữ ấy vẫn nằm trong ô nháp. Cuối cùng thứ xuất hiện trong cuộc chat không phải lời chia tay hay lời chốt nào cả, mà là im lặng.”
+- GOOD: “Có khi lời giải thích đã gõ rồi, xong lại để đó. Không gửi. Đoạn chat im luôn, còn tin nhắn vẫn nằm trong bản nháp.”
+- BAD đúng claim nhưng dùng nhiều cụm văn viết và dựng câu theo kiểu phân tích. GOOD giữ cùng evidence trace, nhẹ hơn, có cảnh và đọc giống lời kể hơn.
 
 ### BAD → GOOD về giọng
 
@@ -396,3 +420,12 @@ Các cặp trên calibrate **giọng**, không cấp thêm evidence và không p
 - Bổ sung REGISTER + VIBE, filler discipline và bảng đổi từ — vì prose cần đời thường hơn mà không thêm motive/cause/outcome.
 - Cập nhật GOOD cho Cự Giải, Sư Tử, Xử Nữ và sửa câu “Nguyên tắc rút ra” — vì ví dụ phải vừa qua Camera Test vừa giữ nguyên evidence boundary.
 - Mở rộng blacklist đúng danh sách v9.1 và bắt đồng bộ Markdown ↔ `blacklist.txt` — vì `blacklist.txt` là nguồn thật duy nhất, tránh drift.
+
+
+## Changelog v9.2
+
+- Bỏ tư duy “2 câu đủ thì dừng” và thêm Body Depth Test — vì anti-AI không được làm narrative beat teo thành một mẩu fact.
+- Nới hard cap câu từ 18 lên 24 tiếng, nhưng giữ vùng 8–18 làm nhịp ưu tiên — vì câu nói tự nhiên đôi khi cần giữ hai hành động cùng một beat.
+- Cho phép `nhưng` khi contrast tự nhiên; tiếp tục tránh `trong khi` / `trong lúc` trong prose carousel — vì blanket ban làm câu bị cắt vụn và thiếu chất nói.
+- Đổi REGISTER + VIBE sang giọng học sinh kể cho bạn cùng bàn, thêm guard chống câu “nặng”/văn viết — vì đời thường không chỉ là bỏ từ blacklist.
+- Thêm calibration Nặng → nhẹ và final checks cho body depth/register — vì prose cần vừa qua evidence boundary vừa có chuyện để người xem nhớ.
