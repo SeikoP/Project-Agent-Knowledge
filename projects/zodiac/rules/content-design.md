@@ -389,7 +389,7 @@ Các cặp trên calibrate **giọng**, không cấp thêm evidence và không p
 - Siết illustration/hedging và bỏ `kiểu…` làm guard — vì hedge không được dùng để hợp thức hóa claim vượt §2.
 - Giới hạn blacklist đúng vào Writer prose và cho phép diễn đạt evidence bằng từ thường hơn — vì evidence/shared_question là dữ liệu biên claim, không phải prose để lint.
 - Đổi đơn vị độ dài từ “từ” sang “tiếng (âm tiết)” nhưng giữ N=18 — vì tiếng Việt đọc theo nhịp âm tiết; chưa có đủ dữ liệu để tự hạ ngưỡng.
-- TODO-TUNE độ dài: v9 có 13 câu trong các ví dụ Ưu tiên/GOOD, min 4, median 8, p75 9, p90 10, max 11, mean 7.46 tiếng; đề xuất thử N=12 trên output thật trước khi đổi — vì 18 đang rộng hơn đáng kể so với calibration nhưng chưa được xác nhận.
+- TODO-TUNE độ dài: v9.1 có 13 câu trong các ví dụ Ưu tiên/GOOD, min 5, median 8, p75 9, p90 11, max 11, mean 7.69 tiếng; đề xuất thử N=12 trên output thật trước khi đổi — vì 18 đang rộng hơn đáng kể so với calibration nhưng chưa được xác nhận.
 - Xóa 9 dòng `— / —` và thêm 8b vào workflow — vì placeholder không có evidence không nên nằm trong calibration Writer.
 - Làm rõ STYLE PASS của Writer và lint của pipeline — vì Writer tự soi style, còn pass/fail tự động phải do consumer chạy lint và feed lỗi vào retry.
 - Điểm tích hợp còn lại: `Zodiac-Controversy-Factory/zodiac_factory/writer.py` tại vòng retry của `OpenCodeWriter.generate` / `generate_batch`; repo Knowledge này không chứa runtime nên PR này không sửa cross-repo — vì không nên tạo integration giả trong repo rule.
