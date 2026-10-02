@@ -1,0 +1,14 @@
+# Zodiac v9 prose blacklist
+# TODO-TUNE: tune from real Writer outputs; this file is lint data, not a second prose ruleset.
+phía họ
+tương tác
+sự chú ý
+kết nối
+cảm nhận rõ
+thể hiện
+đón nhận
+điều này cho thấy
+qua đó
+nhìn chung
+tóm lại
+vì vậy
