@@ -1,4 +1,4 @@
-# ZODIAC CONTENT MEMORY — v9.3
+# ZODIAC CONTENT MEMORY — v9.4
 
 ## Mục đích và thứ tự ưu tiên
 
@@ -41,6 +41,15 @@ Khi RAW IDEA là một câu hỏi hoặc premise đủ rộng và evidence của
 Ví dụ: RAW IDEA nói “các cung tiếp cận trực tiếp và cởi mở”, nhưng evidence của Cự Giải nói lắng nghe/chăm sóc, Sư Tử nói chủ động chú ý/khen ngợi, Xử Nữ nói chân thành/từ tốn. Khi đó câu hỏi dùng để viết phải broadening về “mỗi cung thể hiện và đón nhận sự quan tâm theo cách nào khi tán tỉnh?”, còn RAW IDEA vẫn được giữ để truy provenance.
 
 Format, series, angle, headline và layout chỉ định cách trình bày; chúng không đổi chủ thể, không cấp thêm claim và không phải nguồn evidence.
+
+### Context frame của concept
+
+Ngoài claim về subject, Writer phải giữ đúng **bối cảnh quan hệ** mà concept đang nói tới. Context frame không cấp thêm trait cho cung, nhưng nó quyết định người xem đang hình dung "chuyện gì đang xảy ra giữa những ai".
+
+- Với concept về **ghosting / flirting / dating / compatibility / yêu đương**, không mặc định kể như hai người bạn bình thường nếu product intent đang ở ngữ cảnh tình cảm.
+- Nếu package không nói rõ mức độ quan hệ, ưu tiên khung mềm như `đang tìm hiểu`, `đang nói chuyện theo hướng tình cảm`, `hai người đang có gì đó với nhau`; không tự nâng thành `người yêu`, `mối quan hệ lâu dài` hay trạng thái chính thức.
+- Context frame được phép xuất hiện trong title/body để người xem hiểu tình huống, miễn nó không làm phát sinh motive, cause, outcome hoặc trait mới.
+- Nếu RAW IDEA rộng nhưng series/product intent có context frame rõ, giữ context frame đó nhất quán giữa các subject trong cùng batch.
 
 BLACKLIST ở mục 8b chỉ áp cho **PROSE do Writer viết**; không áp cho `RAW_IDEA`, `shared_question` hay phân tích/editorial metadata ở gate này. Không sửa dữ liệu đầu vào chỉ để né blacklist.
 
@@ -338,6 +347,7 @@ Header dùng sentence case, không ALL CAPS. Không dùng dash làm công cụ c
 Trước khi gửi, xác nhận:
 
 - RAW IDEA được giữ đúng provenance; shared question không ép premise hẹp lên subject không support.
+- Context frame của concept được giữ đúng: ghosting/dating không bị kể thành tình bạn thuần túy; đồng thời không tự nâng mức quan hệ vượt dữ liệu.
 - Mọi claim truy được về Knowledge.
 - EditorialDesign không chứa source boilerplate hoặc instruction meta thay cho insight.
 - Nếu chỉ có một evidence beat, không bịa thêm claim để “đủ insight”; concretization chỉ được tạo thêm narrative beat trong cùng claim boundary.
@@ -451,3 +461,10 @@ Các cặp trên calibrate **giọng**, không cấp thêm evidence và không p
 - Thêm `cuộc chat`, `câu chốt`, `chuyển sang mục tiêu khác` vào prose blacklist sau review output thật — vì ba cụm này nghe như người viết đang tóm tắt nội dung hơn là một học sinh đang kể chuyện.
 - Mở PREFER cho `xong`, `rồi`, `mà`, `tự dưng`, `thế là` khi chúng nối diễn tiến tự nhiên; không dùng như filler quota.
 - STYLE PASS thêm câu hỏi "đang cho thấy hay đang gọi tên" để chống body đúng fact nhưng không có hình ảnh/nhịp kể.
+
+
+## Changelog v9.4
+
+- Thêm Context frame của concept — vì output ghosting có thể đúng evidence nhưng vẫn sai câu chuyện nếu Writer vô tình kể thành hai người bạn bình thường.
+- Với ghosting/flirting/dating, cho phép neo bối cảnh mềm như `đang tìm hiểu` hoặc `đang nói chuyện theo hướng tình cảm` mà không coi đó là claim mới về trait.
+- Cấm tự nâng mức quan hệ thành người yêu/chính thức nếu package không hỗ trợ; context chỉ giúp người xem hiểu đúng loại tình huống.
