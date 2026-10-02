@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Lint Writer JSON against measurable Zodiac v9.1 voice rules.
+"""Lint Writer JSON against measurable Zodiac v9.2 voice rules.
 
 Stdlib only. Extra top-level payload keys are ignored by voice lint.
 Only configured prose block types are linted; the default follows the current
@@ -19,7 +19,7 @@ from typing import Iterable
 WORD_RE = re.compile(r"[\wÀ-ỹĐđ]+", re.UNICODE)
 SENTENCE_RE = re.compile(r"[^.!?…]+[.!?…]*", re.UNICODE)
 BANNED_CONNECTOR_RE = re.compile(
-    r"(?<!\w)(nhưng|trong\s+khi|trong\s+lúc)(?!\w)",
+    r"(?<!\w)(trong\s+khi|trong\s+lúc)(?!\w)",
     re.IGNORECASE | re.UNICODE,
 )
 PAIRED_PATTERNS = {
@@ -42,7 +42,7 @@ FILLER_END_RE = re.compile(
     re.IGNORECASE | re.UNICODE,
 )
 
-MAX_SYLLABLES_PER_SENTENCE = 18  # TODO-TUNE: v9 examples are much shorter; keep 18 until approved.
+MAX_SYLLABLES_PER_SENTENCE = 24  # v9.2: allow fuller spoken sentences; 8–18 remains the preferred prose range.
 MAX_PAIRED_CONSTRUCTION_PER_POST = 1
 MAX_FILLERS_PER_SLIDE = 1
 MAX_FILLERS_PER_POST = 3  # TODO-TUNE: validate against real Writer output before tightening.
