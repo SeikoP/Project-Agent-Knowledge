@@ -1,4 +1,4 @@
-# ZODIAC CONTENT MEMORY — v9.7
+# ZODIAC CONTENT MEMORY — v9.8
 
 ## Mục đích và thứ tự ưu tiên
 
@@ -260,6 +260,10 @@ Sau nháp, hỏi với mỗi body: **nếu chỉ đọc slide này, người xem
 
 Ưu tiên **cho người xem thấy chuyện đang xảy ra trước, rồi mới gọi tên điều đáng nhớ**. Với recognition content, một body tốt thường có nhịp:
 `cảnh quen → chỗ thay đổi → chi tiết đọng lại`.
+
+**Concrete before abstract không đồng nghĩa cấm từ khái quát.** Sau khi cảnh/hành vi đã đủ rõ, được phép dùng một từ hoặc cụm evidence-supported như `im lặng`, `chủ động`, `khoảng cách` để **gọi tên payoff/meaning** của phần vừa kể. Từ khái quát chỉ thành vấn đề khi nó thay thế hoàn toàn cho cảnh cụ thể hoặc thêm một lớp nghĩa evidence không support.
+
+Ví dụ tốt: `Bạn nhắn trước thì họ vẫn rep. Nhưng nếu bạn cũng không nhắn nữa, giữa hai đứa gần như chỉ còn sự im lặng.` Phần đầu cho thấy hành vi; `sự im lặng` ở cuối chỉ gọi tên trạng thái đã được cảnh phía trước làm rõ.
 
 ### Recognition Reference
 
@@ -531,3 +535,10 @@ Các cặp trên calibrate **giọng**, không cấp thêm evidence và không p
 - Câu cụt không còn được khuyến khích để "tạo nhịp"; ưu tiên chủ ngữ + hành động + đối tượng rõ, phù hợp Natural syntax và tài liệu human-touch.
 - Thu gọn blacklist cứng: `tương tác`, `sự chú ý`, `kết nối`, `cuộc chat`, `câu chốt`, `chuyển sang mục tiêu khác` chuyển thành context-dependent/calibration, không còn bị lint từ khóa.
 - Giữ nguyên §2 evidence boundary, Progression Test, Camera Test, Body Depth, Semantic Payload, Natural Syntax và Recognition Reference.
+
+
+## Changelog v9.8
+
+- Làm rõ `concrete before abstract` không phải lệnh cấm từ khái quát.
+- Cho phép một từ/cụm evidence-supported như `im lặng` làm payoff/meaning sau khi hành vi/cảnh đã đủ rõ.
+- Không thêm lint mới; đây là editorial guidance để Writer không né những từ đúng nghĩa rồi sinh câu vòng hoặc gượng.
