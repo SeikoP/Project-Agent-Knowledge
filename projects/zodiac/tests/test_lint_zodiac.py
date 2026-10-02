@@ -164,7 +164,7 @@ class ZodiacVoiceLintTests(unittest.TestCase):
         self.assertEqual(rules, ["schema.ideas_required"])
 
     def test_error_shape_uses_sentence_key(self):
-        error = lint_zodiac.lint_payload(payload("Họ tương tác."), BLACKLIST)[0]
+        error = lint_zodiac.lint_payload(payload("Họ phản hồi."), BLACKLIST)[0]
         self.assertIn("sentence", error)
         self.assertNotIn("câu", error)
 
