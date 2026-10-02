@@ -265,7 +265,7 @@ Tránh cấu trúc lặp `claim → giải thích → tổng kết` trên mọi 
 | `gắn kết` / `kết nối` | `gần nhau` / `thân hơn` |
 | `trải nghiệm` / `hành vi` | `chuyện` / `việc` / `cách họ làm` |
 
-**BLACKLIST trong prose — nguồn thật duy nhất là `tools/blacklist.txt`:**
+**BLACKLIST trong prose — nguồn thật duy nhất là `tools/blacklist.txt`**:
 `phía họ`, `tương tác`, `sự chú ý`, `kết nối`, `cảm nhận rõ`, `thể hiện`, `đón nhận`, `điều này cho thấy`, `qua đó`, `nhìn chung`, `tóm lại`, `vì vậy`, `tiếp cận`, `bày tỏ`, `phản hồi`, `biểu hiện`, `duy trì`, `thiết lập`, `gắn kết`, `trải nghiệm`.
 
 Danh sách trong Markdown chỉ là bản tóm tắt để người đọc thấy rule; test C3 bắt buộc nó đồng bộ hai chiều với `tools/blacklist.txt`. Blacklist chỉ áp cho prose Writer xuất ra, không áp cho evidence, shared_question hay phân tích. Được phép diễn đạt lại evidence bằng từ thường hơn, nhưng §2 vẫn là biên claim.
