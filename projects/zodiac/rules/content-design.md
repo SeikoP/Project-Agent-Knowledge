@@ -1,4 +1,4 @@
-# ZODIAC CONTENT MEMORY — v9.9
+# ZODIAC CONTENT MEMORY — v9.10
 
 ## Mục đích và thứ tự ưu tiên
 
@@ -152,10 +152,10 @@ Không tạo distractor, misconception, motive hoặc contrast chỉ để làm 
 
 ### Headline là công cụ trình bày, không phải cấu trúc bắt buộc của slide
 
-`title` là identity/metadata của cả post. Visual headline chỉ tồn tại khi composition/OUTPUT_CONTRACT của slide có headline slot.
+`title` là identity/metadata của cả post. **Slide 1 luôn có headline để người xem nhận biết nội dung đang xem.** Planner phải chọn composition mở đầu có headline slot trước khi xuất Writer Context; headline slide 1 dùng chính title và title phải fit cap của slot này. Với slide 2 trở đi, visual headline chỉ tồn tại khi composition/OUTPUT_CONTRACT có headline slot.
 
-- Nếu slide 1 có headline slot và contract yêu cầu, có thể dùng chính title làm headline slide 1.
-- Nếu slide 1 là `scene_text`, `statement_only`, `reveal_support` hoặc composition không có headline slot, **không tự chèn headline** chỉ để hiển thị title.
+- Slide 1 bắt buộc có headline slot; dùng chính title làm headline slide 1.
+- Nếu contract slide 1 cũ không có headline slot, báo package conflict và yêu cầu Refresh Plan hoặc migration trước khi viết/import. Không tự chèn block ngoài contract. Các composition không có headline chỉ được dùng từ slide 2 trở đi.
 - Một slide có thể chỉ có body, callout, hai body hoặc các primitive hợp lệ khác nếu contract chỉ định như vậy.
 - Writer không được đổi composition hoặc block type; Writer chỉ điền text vào exact content slot/block contract.
 
@@ -241,9 +241,9 @@ Viral analysis từ performance thật có thể cập nhật pattern library, n
 
 ## 8. Prose rhythm — viết sau khi gates đạt
 
-Thiết kế title trước body để định vị rõ **toàn post**. Title là post identity/metadata; chỉ dùng nguyên title làm visual headline slide 1 khi composition/contract có headline slot và yêu cầu slot đó. Không thêm headline block chỉ để chứa title. Clarity đứng trước hook.
+Thiết kế title trước body để định vị rõ **toàn post**. Title là post identity/metadata và dùng nguyên title làm headline slide 1. Slide 1 phải có headline slot; nếu contract cũ thiếu slot thì báo conflict để cập nhật plan, không thêm block ngoài contract. Clarity đứng trước hook.
 
-Nếu slide 1 có headline, phần còn lại của slide phải cụ thể hóa chứ không paraphrase headline/title. Nếu slide 1 không có headline, block mở đầu phải thực hiện đúng experience role đã được plan chọn thay vì lặp title bằng một câu khác. Không áp cùng một skeleton câu cho mọi cung.
+Slide 1 có headline; phần còn lại của slide phải cụ thể hóa chứ không paraphrase headline/title. Với slide 2 trở đi, block thực hiện đúng experience role đã được plan chọn. Không áp cùng một skeleton câu cho mọi cung.
 
 Không đặt mục tiêu "càng ít câu càng tốt". Một narrative beat có thể mở ra thành 2–4 câu nếu các câu lần lượt làm rõ **cùng một beat**: đặt cảnh, zoom vào chỗ thay đổi, rồi để lại observation đáng nhớ. Các câu bổ sung không được thêm motive, cause, consequence, frequency, outcome hay claim mới.
 
@@ -402,7 +402,7 @@ Trước khi gửi, xác nhận:
 - ExperiencePlan không tạo thêm narrative beat/fact; mỗi experience stage truy về narrative index hợp lệ, trừ fit continuation dùng lại cùng index có trace rõ.
 - Composition thực hiện đúng experience role; layout chỉ đổi geometry. Không ép mọi slide về headline + body.
 - Viral Focus/plugin chỉ thay đổi cách foreground, minh họa và gây chú ý; không thay đổi claim.
-- Title rõ nội dung ở cấp post; visual headline chỉ xuất hiện khi contract có headline slot. Block đầu không lặp title/preference bằng nhiều câu khác nhau.
+- Title rõ nội dung ở cấp post; slide 1 bắt buộc có headline bằng title và fit cap của slot. Từ slide 2 trở đi, visual headline chỉ xuất hiện khi contract có headline slot. Block đầu không lặp title/preference bằng nhiều câu khác nhau.
 - Mỗi slide có reality anchor đủ cụ thể; ưu tiên micro-behavior vượt qua Camera Test. Behavioral illustration được phép suy một bước gần từ evidence nhưng không thêm motive/cause/outcome/frequency hoặc biến thành relationship abstraction.
 - Batch không lặp cùng skeleton chỉ đổi tên cung.
 - Body Depth Test đã qua: mỗi slide nói đủ sâu về beat của nó, không dừng ở restatement chỉ vì câu ngắn dễ lint.
@@ -553,3 +553,9 @@ Các cặp trên calibrate **giọng**, không cấp thêm evidence và không p
 - Làm rõ mức sàn là semantic completeness + Body Depth, không phải quota từ/câu; body ngắn không được dùng để né chiều sâu.
 - Cho phép ceiling body 480 ký tự khi geometry hỗ trợ; contract cụ thể và render overflow QC vẫn quyết định fit.
 - Yêu cầu đồng bộ giới hạn qua Writer, contract, Presentation và renderer; giữ nguyên §2, Camera Test và Progression Test.
+
+
+## Changelog v9.10
+
+- Bắt buộc headline ở slide 1 để người xem nhận biết nội dung; title phải fit slot mở đầu. Contract cũ thiếu headline cần được migrate trước Writer, không tự thêm block khi export.
+- Giữ nguyên §2, Camera Test, Progression Test và các nguyên tắc độ sâu/fit.
