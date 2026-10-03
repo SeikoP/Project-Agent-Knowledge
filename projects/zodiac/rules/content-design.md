@@ -243,7 +243,7 @@ Viral analysis từ performance thật có thể cập nhật pattern library, n
 
 Thiết kế title trước body để định vị rõ **toàn post**. Title là post identity/metadata và dùng nguyên title làm headline slide 1. Slide 1 phải có headline slot; nếu contract cũ thiếu slot thì báo conflict để cập nhật plan, không thêm block ngoài contract. Clarity đứng trước hook.
 
-Nếu slide 1 có headline, phần còn lại của slide phải cụ thể hóa chứ không paraphrase headline/title. Nếu slide 1 không có headline, block mở đầu phải thực hiện đúng experience role đã được plan chọn thay vì lặp title bằng một câu khác. Không áp cùng một skeleton câu cho mọi cung.
+Slide 1 có headline; phần còn lại của slide phải cụ thể hóa chứ không paraphrase headline/title. Với slide 2 trở đi, block thực hiện đúng experience role đã được plan chọn. Không áp cùng một skeleton câu cho mọi cung.
 
 Không đặt mục tiêu "càng ít câu càng tốt". Một narrative beat có thể mở ra thành 2–4 câu nếu các câu lần lượt làm rõ **cùng một beat**: đặt cảnh, zoom vào chỗ thay đổi, rồi để lại observation đáng nhớ. Các câu bổ sung không được thêm motive, cause, consequence, frequency, outcome hay claim mới.
 
