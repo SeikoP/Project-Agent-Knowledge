@@ -1,4 +1,4 @@
-# ZODIAC CONTENT MEMORY — v9.8
+# ZODIAC CONTENT MEMORY — v9.9
 
 ## Mục đích và thứ tự ưu tiên
 
@@ -363,7 +363,11 @@ Fail bất kỳ câu hỏi nào thì viết lại hẳn câu đó; không sửa 
 
 Giới hạn chung chỉ là hướng dẫn mặc định: headline tối đa 55 ký tự. Với body, `max_chars` của contract là **trần kỹ thuật, không phải mục tiêu**; viết đủ để beat có cảnh, diễn tiến hoặc distinction đáng nhớ rồi mới dừng. Mốc 225–240 chỉ dùng để đánh giá sức chứa/fit khi pipeline cần, không phải target prose.
 
-Không có hard minimum cho body. Tuy vậy, với block có cap khoảng 320 ký tự, một body rất ngắn phải qua Body Depth Test: nếu nó chỉ restate evidence thì Writer phải đào sâu **cùng evidence trace**, không được viện cớ anti-AI để cắt nội dung thành vài câu cụt.
+Mức sàn bắt buộc của body là **đủ nghĩa và có chiều sâu cho narrative beat**: có hành vi/cảnh, diễn tiến, recognition reference hoặc distinction được evidence hỗ trợ, phù hợp chức năng của block. Không dùng số từ, số câu hay dấu chấm làm bằng chứng rằng body đã đủ sâu. Body/callout ngắn có chủ đích vẫn hợp lệ nếu thực hiện đủ chức năng của nó; một body chính chỉ restate proposition thì phải quay lại Body Depth Test.
+
+Không có hard minimum số học cho body. Tuy vậy, với block có cap khoảng 320–480 ký tự, một body rất ngắn phải qua Body Depth Test: nếu nó chỉ restate evidence thì Writer phải đào sâu **cùng evidence trace**, không được viện cớ anti-AI để cắt nội dung thành vài câu cụt.
+
+Runtime có thể cho body rộng tới 480 ký tự khi geometry thực sự đủ sức chứa. Đây là ceiling, không phải quota phải viết đầy; vùng nhỏ, font lớn hoặc callout giữ cap riêng. Khi tăng sức chứa phải đồng bộ Writer, schema/export/import, Presentation và render QC; không chỉ sửa prompt hoặc nâng cap mà bỏ kiểm tra overflow.
 
 `OUTPUT_CONTRACT`, `OUTPUT_TEMPLATE`, `SLIDE_OPTIONS` quyết định trần, số dòng, số slide, thứ tự và block ID. Contract override giới hạn kỹ thuật chung khi có xung đột; nội dung vẫn phải qua editorial gates.
 
@@ -542,3 +546,10 @@ Các cặp trên calibrate **giọng**, không cấp thêm evidence và không p
 - Làm rõ `concrete before abstract` không phải lệnh cấm từ khái quát.
 - Cho phép một từ/cụm evidence-supported như `im lặng` làm payoff/meaning sau khi hành vi/cảnh đã đủ rõ.
 - Không thêm lint mới; đây là editorial guidance để Writer không né những từ đúng nghĩa rồi sinh câu vòng hoặc gượng.
+
+
+## Changelog v9.9
+
+- Làm rõ mức sàn là semantic completeness + Body Depth, không phải quota từ/câu; body ngắn không được dùng để né chiều sâu.
+- Cho phép ceiling body 480 ký tự khi geometry hỗ trợ; contract cụ thể và render overflow QC vẫn quyết định fit.
+- Yêu cầu đồng bộ giới hạn qua Writer, contract, Presentation và renderer; giữ nguyên §2, Camera Test và Progression Test.
